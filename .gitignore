@@ -1,0 +1,114 @@
+# ===== Node.js =====
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.pnpm-store/
+
+# ===== Next.js =====
+.next/
+out/
+next-env.d.ts
+
+# ===== Build outputs =====
+dist/
+build/
+*.tsbuildinfo
+.tsbuildinfo
+
+# ===== Turborepo =====
+.turbo/
+
+# ===== Vercel =====
+.vercel/
+
+# ===== Tauri / Rust =====
+apps/desktop/src-tauri/target/
+apps/desktop/src-tauri/gen/
+apps/desktop/src-tauri/WixTools/
+**/target/
+Cargo.lock.bak
+
+# ===== Environment =====
+.env
+.env.*
+!.env.example
+!.env.sample
+
+# ===== OS =====
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# ===== Editors =====
+.idea/
+.vscode/*
+!.vscode/settings.json.example
+!.vscode/extensions.json
+!.vscode/launch.json.example
+*.swp
+*.swo
+*~
+.fleet/
+
+# ===== Logs =====
+*.log
+logs/
+
+# ===== Coverage / Tests =====
+coverage/
+.nyc_output/
+*.lcov
+playwright-report/
+test-results/
+.playwright/
+
+# ===== Secrets / Certs =====
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+secrets/
+
+# ===== Temp =====
+temp/
+tmp/
+*.tmp
+*.bak
+.cache/
+
+# ===== AI 생성 임시 파일 =====
+outputs/
+renders/
+test-exports/
+generated/
+*.generated.mp4
+*.generated.png
+*.generated.jpg
+
+# ===== Supabase local =====
+supabase/.branches/
+supabase/.temp/
+
+# ===== Tauri bundles =====
+*.app
+*.dmg
+*.msi
+*.exe.installer
+*.AppImage
+
+# ===== Misc =====
+.history/
+.eslintcache
+.stylelintcache
+.parcel-cache/
+.swc/
