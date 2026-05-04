@@ -13,6 +13,48 @@
 - 실행 기본값은 all-agent wave가 아니라 **relevant-agent routing**이다.
 - 현재 score는 Codex harness readiness **8.8/10**, product production readiness **68/100**이다.
 
+## Mac Bootstrap (2026-05-05 추가)
+
+> Windows → Mac 작업 이전을 위한 부트스트랩. 본 문단은 Mac에서 첫 세션 시작 시 사용한다.
+
+### Repository
+- Origin: `https://github.com/HMWKR/Aethon` (PRIVATE)
+- Mac 첫 명령:
+  ```bash
+  cd ~/Desktop && git clone https://github.com/HMWKR/Aethon.git && cd Aethon
+  pnpm install
+  ```
+
+### 환경 변수 (Git에 없음 — Mac에서 별도 셋업)
+- `apps/web/.env.local` — Supabase / Clerk / AI provider 키 일체. Windows의 `.env.local`을 안전 채널(1Password/Bitwarden 등)로 이전하거나 Vercel Env Vars에서 동기화한다.
+- `.env*`는 모두 `.gitignore` 차단됨 (보안 정책).
+
+### 머신 종속 항목 (clone 후 미존재 정상)
+- `.codex/`, `.codex-tmp/` — Codex 런타임 임시 상태. Mac에서 자체 생성됨.
+- `.claude/settings.local.json` — 머신 고유 hook 설정. Mac에서 필요 시 생성.
+- `apps/web/.next/`, `node_modules/` — `pnpm install` 후 자동 생성.
+- `apps/desktop/src-tauri/target/` — Rust 빌드 캐시. `pnpm tauri build` 시 생성.
+
+### Mac 첫 세션 진입 순서
+1. `git clone` + `pnpm install`
+2. `.env.local` 복원 (Windows에서 안전 채널로 이전)
+3. Docker Desktop 기동 → `pnpm supabase:start` (Supabase local stack)
+4. `pnpm dev` (Next.js 16 + Turbopack)
+5. 본 `session-handoff.md`의 §0~§8을 읽어 Loop 11W 직후 상태 인식
+6. `NEXT_SESSION_PROMPT.md`의 복붙 프롬프트를 첫 메시지로 사용
+
+### Mac 환경 검증 게이트
+- Node.js 24 LTS 설치 (`nvm install 24 && nvm use 24`)
+- pnpm 설치 (`corepack enable pnpm` 권장)
+- Docker Desktop for Mac (Supabase local stack 의존)
+- gh CLI 인증 (`gh auth login`)
+- 첫 검증: `pnpm production:check` (103 unit/security tests + 5-package typecheck/build + 38 production Playwright smoke)
+
+### 다음 작업 포인터
+- 현재 target: **Loop 11X — production C2PA signer / real render output / durable media storage slice** (위 §Next Session Bootstrap 참조).
+- 실행 기본값: **relevant-agent routing** (all-agent wave 아님).
+- 진행 상태: harness 8.8/10, product 68/100.
+
 ## 0. Loop 11C Current Direction - AI Planner, Export QC, and Agent Report Consolidation
 
 - User direction: Claude-only agent 하위 구조가 아니라 root-level `agents/`를 공용 agent contract로 사용한다.

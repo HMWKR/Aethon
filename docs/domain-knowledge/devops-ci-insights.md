@@ -3,6 +3,21 @@
 > 본 파일은 `devops-ci` 에이전트의 발견/결정을 축적한다.
 > 업데이트 규칙: CLAUDE.md "인사이트 분배 프로토콜" 참조.
 
+## 2026-05-05: GitHub 원격 저장소 부트스트랩 + Mac 인계 채널 확립
+
+- **발견**: 부트스트랩 직후 1 commit만 있던 로컬 repo를 GitHub PRIVATE 저장소(`HMWKR/Aethon`)로 승격. `gh repo create --source=. --remote=origin --push` 단일 명령으로 (a) 원격 생성 + (b) origin remote 등록 + (c) main push가 한 번에 처리된다. 200 files / +32,974 / 19.6 MB가 단일 commit `d72045e`로 동기화됐다.
+- **이유**: Windows → Mac 작업 이전을 위해 GitHub를 SSoT 동기화 허브로 채택. 백업이 부수 효과이고 본질은 머신 간 작업 연속성. D+60 MVP 일정에서 머신 전환 시 손실/공백 0을 목표로 한다.
+- **영향**:
+  - `.gitignore`에 `.codex/`, `.codex-tmp/`, `.claude/settings.local.json`, `.claude/runtime-state/` 추가 — Codex 런타임 임시 파일과 머신 고유 hook 설정이 영구 차단됨. 모든 머신은 동일한 ignore 정책을 공유한다.
+  - 시크릿 누출 검증 0건 — `.env*` 파일 자체 부재 + 하드코딩 시크릿 없음 + `supabase/config.toml`은 `env(...)` 참조만 사용. 즉, Mac에서는 `apps/web/.env.local`을 안전 채널로 별도 이전해야 한다 (1Password/Bitwarden 등).
+  - `session-handoff.md`에 "Mac Bootstrap" 섹션 추가 — Mac 첫 세션 진입 6단계(clone → install → env.local 복원 → Docker → dev → handoff 읽기) 명시.
+  - 향후 GitHub Actions 활성화의 출발점 — `.github/workflows/production-gate.yml`이 이미 push됨, 다음 라운드에서 Vercel Preview 분리·Tauri 매트릭스 빌드 워크플로우를 추가할 수 있다.
+- **출처**: 사용자 요청 "Mac에서 작업 이어가기 위해 GitHub push" + /what 4단계 프레임워크 (Why-What-How-So What) 확정 후 5-Phase 실행.
+- **다음**:
+  - Mac 환경 도착 후 `pnpm production:check` (103 unit/security + 5-package typecheck/build + 38 Playwright smoke) 게이트 통과 확인.
+  - GitHub Actions 매트릭스 빌드 워크플로우 추가 시 본 인사이트의 .gitignore 정책과 시크릿 부재 전제를 base로 한다.
+  - macOS 머신 도입 → Tauri 데스크톱 빌드(`macos-latest` runner) 워크플로우 활성화 가능.
+
 ## 2026-05-05: Supabase local verification is a repo script, not an implicit global dependency
 
 - **발견**: 전역 `supabase` 명령이 없어도 root dev dependency와 `pnpm exec supabase`로 CLI를 고정할 수 있다. Windows pnpm 설치 후 binary symlink가 처음 생성되지 않을 수 있어 package postinstall 실행으로 CLI binary를 복구했다.
