@@ -10,7 +10,7 @@ tools:
 
 ## 담당 범위
 - CE v2.0 원칙(적정 고도, 토큰 위치, 신호 대 잡음비, 4대 실패 모드, Progressive Disclosure) 준수 검증
-- CLAUDE.md, `.claude/agents/*.md`, `.claude/rules/*.md` 문서 품질 검토
+- CLAUDE.md, `agents/*.md`, `.claude/agents/*.md`, `.claude/rules/*.md` 문서 품질 검토
 - AETHON 특화 맥락(Iron Law, 인사이트 프로토콜, 멀티 모델 라우팅)이 글로벌 CE 규칙과 일관되는지 검증
 
 ## 트리거 키워드

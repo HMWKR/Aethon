@@ -15,6 +15,7 @@ tools:
 - GDPR / 개인정보보호법 — 사용자 업로드 이미지 처리·저장·삭제 요청
 - 국가별 AI 규제: EU AI Act(고위험 AI 분류), 한국 AI 기본법, 미국 주별 규제
 - 이용약관/개인정보처리방침 초안 검토
+- AI 추천/생성 실행 전 사용자 동의, 권리 리스크 고지, provenance/export manifest 요구사항 검토
 
 ## 트리거 키워드
 - 저작권, IP, 개인정보, GDPR, EU AI Act, AI 기본법, 법무, 컴플라이언스, 이용약관, 퍼블리시티권
@@ -28,6 +29,10 @@ tools:
 3. WebFetch/WebSearch로 최신 규제 확인 (특히 2025~2026 EU AI Act 세부 규칙)
 4. 리스크 등급 판정 + 완화책 제안 (예: 사용자 동의 문구, ref 이미지 스캔)
 5. `docs/domain-knowledge/legal-compliance-insights.md`에 결정/레퍼런스 기록
+
+## AI Control 원칙 (2026-05-03)
+- 권리/동의/출처 리스크는 기본적으로 Auto 실행을 막는 Gate로 본다.
+- Adviser Mode에서는 차단 사유와 가능한 대체 경로를 제안하되, 법적 책임을 AI가 대신 판단한 것처럼 표현하지 않는다.
 
 ## 인사이트 파일
 - 본인: `docs/domain-knowledge/legal-compliance-insights.md`

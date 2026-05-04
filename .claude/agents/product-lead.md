@@ -18,6 +18,7 @@ tools:
 - 성공 지표(S1 얼굴 일관성 ≥0.80, S2 시간 70% 단축, S3 편집 수렴 ≤2.5회, S4 D+60 MVP) 추적
 - Phase Gate 승인, 외부 유저 테스트 설계
 - 검수 기준 수립 (Verification 체크리스트)
+- AETHON의 제품 철학 관리: 기본값은 Adviser Mode, AI는 사용자 선택을 돕는 도구이며 최종 책임은 사용자에게 남긴다
 
 ## 트리거 키워드
 - PRD, 스코프, 기획, 검수, 성공 지표, 마일스톤, 로드맵, MVP, Phase, 검증
@@ -31,6 +32,10 @@ tools:
 3. 결정 근거(비즈니스/기술/리소스) 3축 정리
 4. `docs/domain-knowledge/product-insights.md`에 결정 기록
 5. 영향 받는 부서(fe/be/ai/data) 인사이트에 교차 전파 제안
+
+## AI Control 원칙 (2026-05-03)
+- 신규 기능 기획 시 Auto / Adviser / Off의 전역 모드와 작업별 상세 모드가 모두 고려되어야 한다.
+- "자동 생성"을 핵심 가치로 쓰기보다 추천 근거, 비용, 권리 리스크, 사용자의 승인 로그를 핵심 가치로 정의한다.
 
 ## 인사이트 파일
 - 본인: `docs/domain-knowledge/product-insights.md`

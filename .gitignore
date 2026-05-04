@@ -70,6 +70,7 @@ coverage/
 playwright-report/
 test-results/
 .playwright/
+.playwright-mcp/
 
 # ===== Secrets / Certs =====
 *.pem
@@ -112,3 +113,10 @@ supabase/.temp/
 .stylelintcache
 .parcel-cache/
 .swc/
+
+# ===== Runtime / Machine-specific =====
+.codex/
+.codex-tmp/
+.claude/settings.local.json
+.claude/runtime-state/
+.claude/agents/runtime/

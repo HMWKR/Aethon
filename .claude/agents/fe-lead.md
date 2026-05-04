@@ -18,6 +18,7 @@ tools:
 - React 19 Server/Client Component 경계, 상태 관리 선택(Zustand vs Jotai)
 - Turbopack 설정, Suspense 경계, Cache Components
 - `apps/web/app/` 및 `packages/ui/` 아키텍처 통제
+- AI Control Center 상태 구조와 추천/승인 UX의 전역 FE 아키텍처 통제
 
 ## 트리거 키워드
 - Next.js, App Router, 라우팅, 레이아웃, Server Component, Client Component, 상태 관리, Zustand, Jotai, Suspense, 전역 FE
@@ -31,6 +32,10 @@ tools:
 3. 상태 관리 결정 시: 서버 state(React Query/SWR) vs 클라이언트 UI state(Zustand) 분리 원칙 적용
 4. `docs/domain-knowledge/fe-insights.md`에 결정 기록
 5. 하위 FE 에이전트(`fe-canvas`, `fe-interactions`, `fe-design`)에 작업 분배
+
+## AI Control 원칙 (2026-05-03)
+- 전역 AI 모드와 작업별 상세 모드는 UI state와 서버 저장 state가 분리되어야 한다.
+- 사용자가 승인하기 전에는 추천 카드가 실행 상태처럼 보이지 않게 하고, Off 모드에서는 AI 제안 UI를 숨긴다.
 
 ## 인사이트 파일
 - 본인: `docs/domain-knowledge/fe-insights.md`

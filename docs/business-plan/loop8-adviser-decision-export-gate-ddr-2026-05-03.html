@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AETHON DDR - Loop 8 Adviser Decision Export Gate</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #090908;
+      --panel: #171713;
+      --line: #343329;
+      --ink: #f4f0e8;
+      --muted: #aaa497;
+      --teal: #62d6c7;
+      --amber: #e8b454;
+      --red: #f07069;
+    }
+    * { box-sizing: border-box; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      line-height: 1.65;
+      margin: 0;
+    }
+    main {
+      margin: 0 auto;
+      max-width: 1120px;
+      padding: 48px 24px 80px;
+    }
+    header, section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      margin-bottom: 18px;
+      padding: 24px;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { font-size: clamp(32px, 5vw, 56px); line-height: 1.05; }
+    h2 { color: var(--teal); font-size: 20px; }
+    h3 { color: var(--amber); font-size: 16px; }
+    code {
+      background: #0d0d0b;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      padding: 2px 5px;
+    }
+    ul { padding-left: 20px; }
+    .meta {
+      color: var(--muted);
+      display: grid;
+      gap: 4px;
+      font-size: 13px;
+    }
+    .grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .card {
+      background: #11110e;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .status {
+      color: var(--teal);
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    .risk {
+      color: var(--red);
+      font-weight: 700;
+    }
+    img {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      display: block;
+      height: auto;
+      margin-top: 12px;
+      max-width: 100%;
+    }
+    a { color: var(--teal); }
+    @media (max-width: 760px) {
+      .grid { grid-template-columns: 1fr; }
+      main { padding: 28px 14px 52px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="status">Accepted DDR</p>
+      <h1>Loop 8 - Adviser Decision Workflow and Export Gate</h1>
+      <div class="meta">
+        <span>Updated: 2026-05-03 22:51 KST</span>
+        <span>Project: AETHON</span>
+        <span>Scope: UI/UX, editor interaction, production smoke verification</span>
+        <span>Confidence: high, verified by <code>pnpm production:check</code> and Playwright screenshots</span>
+      </div>
+    </header>
+
+    <section>
+      <h2>Problem</h2>
+      <p>
+        AETHON의 핵심 원칙은 AI가 자동 실행자가 아니라 사용자의 더 나은 선택을 돕는 adviser라는 점이다.
+        기존 smoke는 editor shell과 export blocker를 확인했지만, 사용자가 AI suggestion을 승인, 수정 적용,
+        보류했을 때 pending decision과 export readiness가 실제로 함께 변하는지 충분히 증명하지 못했다.
+      </p>
+    </section>
+
+    <section>
+      <h2>Decision</h2>
+      <p>
+        Loop 8의 중심을 clip 선택 자체가 아니라 <strong>Adviser decision workflow</strong>로 고정한다.
+        사용자는 AI suggestion의 근거, 비용, 리스크를 본 뒤 <code>Approve</code>, <code>Edit Apply</code>,
+        <code>Hold</code> 중 하나를 선택한다. 그 결정은 pending/accepted metric에 반영되고,
+        export gate는 남은 AI decision, QC failure, rights review, preview render blocker를 계속 표시한다.
+      </p>
+      <div class="grid">
+        <div class="card">
+          <h3>Selected Option</h3>
+          <ul>
+            <li>AI Adviser decision을 e2e 테스트의 핵심 흐름으로 만든다.</li>
+            <li>timeline clip 선택, inspector context, tool rail 상태를 함께 검증한다.</li>
+            <li>모든 AI decision을 처리해도 QC/rights/render blocker가 남으면 export는 계속 disabled로 둔다.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Rejected Options</h3>
+          <ul>
+            <li>단순 clip selection smoke만 추가한다.</li>
+            <li>AI mode toggle만 추가하고 decision/export 관계는 검증하지 않는다.</li>
+            <li>export gate를 AI pending count만으로 열리게 한다.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Implementation</h2>
+      <ul>
+        <li><code>apps/web/app/studio-client.tsx</code>: inspector tab, tool rail, timeline clip, AI metric, export button selector를 보강했다.</li>
+        <li><code>select-clip</code> reducer는 clip 선택 시 <code>inspectorTab: "clip"</code>으로 전환한다.</li>
+        <li><code>apps/web/tests/e2e/studio.smoke.spec.ts</code>: Playwright smoke를 18개로 확장했다.</li>
+        <li>신규 smoke는 explicit adviser decision, all decisions handled, risky generated clip validation, tool state persistence를 desktop/mobile에서 확인한다.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Verification</h2>
+      <ul>
+        <li><code>pnpm --filter @aethon/web typecheck</code>: passed.</li>
+        <li><code>pnpm --filter @aethon/web test</code>: 3 tests passed.</li>
+        <li><code>pnpm --filter @aethon/web smoke</code>: 18 tests passed.</li>
+        <li><code>pnpm production:check</code>: passed.</li>
+        <li>Full gate: core 17 tests, db 13 tests, web 3 tests, 4-package typecheck, 4-package build, Playwright smoke 18 tests.</li>
+        <li>Screenshot evidence: desktop/mobile adviser decision export gate, console errors 0.</li>
+      </ul>
+      <p class="risk">
+        Note: Playwright MCP was attempted but blocked by a browser profile lock. The same Playwright runtime was used locally to capture evidence without external data transfer.
+      </p>
+    </section>
+
+    <section>
+      <h2>Visual Evidence</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Desktop 1440</h3>
+          <a href="./assets/aethon-loop8-adviser-decision-export-1440.png">Open screenshot</a>
+          <img src="./assets/aethon-loop8-adviser-decision-export-1440.png" alt="AETHON Loop 8 desktop adviser decision export gate screenshot">
+        </div>
+        <div class="card">
+          <h3>Mobile 390</h3>
+          <a href="./assets/aethon-loop8-adviser-decision-export-mobile-390.png">Open screenshot</a>
+          <img src="./assets/aethon-loop8-adviser-decision-export-mobile-390.png" alt="AETHON Loop 8 mobile adviser decision export gate screenshot">
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Dark Pattern Review</h2>
+      <ul>
+        <li>False urgency: avoided. AI suggestion 상태는 실제 pending/blocker만 표시한다.</li>
+        <li>Forced action: avoided. 사용자는 Approve, Edit Apply, Hold를 선택할 수 있다.</li>
+        <li>Confirm shaming: avoided. Hold가 나쁜 선택처럼 표현되지 않는다.</li>
+        <li>Drip pricing: avoided. 비용 metric과 provider cost range를 노출한다.</li>
+        <li>Bait and switch: avoided. AI mode toggle은 provider 실행으로 즉시 이어지지 않는다.</li>
+        <li>Interface interference: avoided. export disabled 상태는 blocker 이유와 함께 제공된다.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Next</h2>
+      <ul>
+        <li>Loop 9A: Supabase CLI 승인 후 live RLS catalog check 실행.</li>
+        <li>Loop 9B: DB-backed adviser decision persistence와 transaction/idempotency 설계.</li>
+        <li>Loop 9C: 실제 timeline edit operation(trim/split/ripple/undo) 중 하나를 구현하고 e2e로 검증.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

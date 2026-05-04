@@ -1,0 +1,25 @@
+{
+  "name": "aethon",
+  "private": true,
+  "packageManager": "pnpm@10.10.0",
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "production:check": "pnpm test && pnpm typecheck && pnpm build && pnpm --filter @aethon/web smoke:prod",
+    "supabase:db:reset": "supabase db reset --no-seed",
+    "supabase:start": "supabase start",
+    "supabase:stop": "supabase stop",
+    "supabase:verify": "pnpm supabase:verify:rls && pnpm supabase:verify:provider-sim",
+    "supabase:verify:provider-sim": "supabase db query --file packages/db/verification/provider-sim-runtime-check.sql --local -o table",
+    "supabase:verify:rls": "supabase db query --file packages/db/verification/rls-catalog-check.sql --local -o table",
+    "test": "turbo test",
+    "typecheck": "turbo typecheck"
+  },
+  "devDependencies": {
+    "supabase": "^2.98.1",
+    "turbo": "^2.5.0",
+    "typescript": "^5.8.0",
+    "vitest": "^4.1.5"
+  }
+}

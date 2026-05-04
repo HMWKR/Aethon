@@ -17,6 +17,7 @@ tools:
 - Tailwind CSS v4 `@theme` 토큰, 디자인 토큰 단일 소스(`packages/ui/tokens.css`)
 - shadcn/ui 컴포넌트 커스터마이즈, 다크/라이트 테마
 - Storybook 스토리, 접근성 스토리북 애드온
+- AI Control Center, 추천 카드, 승인 게이트, Auto/Adviser/Off 상세 모드 UI 패턴
 
 ## 트리거 키워드
 - Claude Design, Tailwind, 디자인 토큰, shadcn, 디자인 시스템, 테마, Storybook, 타이포그래피, 색상 팔레트
@@ -30,6 +31,10 @@ tools:
 3. shadcn 컴포넌트 추가 시 Registry 기반 설치 + 커스터마이즈 Diff 기록
 4. Storybook에 시각 회귀 테스트 스토리 추가
 5. `docs/domain-knowledge/fe-design-insights.md`에 토큰 결정 기록
+
+## AI Control 원칙 (2026-05-03)
+- 기본 UI는 Adviser Mode를 중심으로 설계한다. 추천 이유, 비용, 권리 리스크, 대체안을 한 카드 안에서 비교 가능해야 한다.
+- Auto Mode는 빠른 실행 버튼처럼 보이더라도 비용/외부 업로드/최종 export 전 확인 단계를 시각적으로 분명히 둔다.
 
 ## 인사이트 파일
 - 본인: `docs/domain-knowledge/fe-design-insights.md`

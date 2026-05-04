@@ -18,6 +18,7 @@ tools:
 - AI 3-tier 파이프라인: Claude(프롬프트 합성) → 이미지(FLUX 외) → 영상(Runway 외)
 - 비동기 상태 관리(긴 영상 생성 Job 큐), Vercel Queues 활용
 - 에러 폴백 전략(Gateway 장애 시 대체 프로바이더 라우팅)
+- AI 승인 게이트: Adviser Mode에서는 추천/대체안/비용/리스크를 반환하고, Auto Mode는 사용자 허용 범위와 임계값을 검사한 뒤 실행
 
 ## 트리거 키워드
 - Server Action, Route Handler, API, 오케스트레이션, 3-tier, Job 큐, Vercel Queues, 에러 폴백, AI 호출, 비동기 상태
@@ -31,6 +32,10 @@ tools:
 3. 긴 작업은 Vercel Queues/Workflow DevKit으로 durable 처리
 4. Server Action 진입 시 Clerk 세션 검증 필수
 5. `docs/domain-knowledge/be-insights.md`에 아키텍처 결정 기록
+
+## AI Control 원칙 (2026-05-03)
+- Server Action/Route Handler는 외부 AI 호출 전에 프로젝트/작업별 AI 모드와 승인 임계값을 검사한다.
+- Auto Mode라도 비용, 외부 업로드, 최종 export, 권리 리스크가 임계값을 넘으면 사용자 확인을 요구한다.
 
 ## 인사이트 파일
 - 본인: `docs/domain-knowledge/be-insights.md`

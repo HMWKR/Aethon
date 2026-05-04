@@ -14,7 +14,8 @@ tools:
 
 ## 담당 범위
 - Supabase Postgres 스키마(`packages/db/schema.sql`): projects, characters, backgrounds, scenes
-- scenes 테이블 멀티 모델 필드: image_model, video_model, model_auto_selected, model_selection_reason, inpaint_pins
+- scenes 테이블 멀티 모델 필드: image_model, video_model, model_auto_selected, model_selection_reason, ai_mode, inpaint_pins
+- AI 제어 스키마: ai_preferences, ai_suggestions, generation_runs.trigger_mode, export_manifests
 - Storage 버킷 정책(이미지/영상 클립), Realtime 채널(협업 P11)
 - RLS 정책(프로젝트 오너 + 향후 협업자 공유)
 - 마이그레이션 순서 관리
@@ -32,6 +33,10 @@ tools:
 4. `DROP/TRUNCATE/DELETE WHERE 없이` 절대 금지
 5. `docs/domain-knowledge/data-insights.md`에 스키마 결정/마이그레이션 노트 기록
 6. TypeScript 타입 생성(`supabase gen types`) 자동화 유지
+
+## AI Control 원칙 (2026-05-03)
+- 모든 AI 실행/추천 데이터는 사용자가 어떤 모드(Auto/Adviser/Off)에서 어떤 근거로 선택했는지 추적 가능해야 한다.
+- 비용 발생 또는 외부 provider 호출은 `generation_runs.trigger_mode`, `ai_suggestions.user_decision`, `decision_reason`으로 감사 가능하게 남긴다.
 
 ## 인사이트 파일
 - 본인: `docs/domain-knowledge/data-insights.md`

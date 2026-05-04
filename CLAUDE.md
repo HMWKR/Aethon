@@ -1,6 +1,6 @@
 # AETHON — Claude Code 프로젝트 지침
 
-> **AI Video Creation Studio** — Claude Design 스타일 UX(고정값 + 인라인 편집)를 AI 영상 제작 타임라인에 최초 접목한 스튜디오.
+> **AI-native Video Editing Studio** — AI가 선택지를 제안하고, 사용자가 결정하며, 타임라인이 그 근거를 기억하는 편집 표준.
 > 모든 에이전트/작업은 본 문서를 최상위 계약으로 따른다. 상세 플랜: `.claude/plans/ai-typed-dusk.md`
 
 ---
@@ -14,6 +14,7 @@
 
 **예외 경로 (allowlist)** — Agent 선행 호출 없이 직접 편집 허용:
 - `docs/domain-knowledge/`
+- `agents/`
 - `.claude/plans/`
 - `.claude/agents/`
 - `.claude/rules/`
@@ -40,7 +41,7 @@
 
 ## 프로젝트 개요
 
-AETHON은 창작자가 스토리/연출 의도에만 집중하고, 반복 프롬프트 입력과 캐릭터/배경/그림체 연속성 유지는 AI가 전담하는 타임라인 기반 AI 영상 제작 스튜디오다. 기존 AI 영상 툴(Runway Gen-3, Kling, Sora 등)이 **단발 장면 생성**에만 집중하여 장면 간 일관성이 깨지는 문제를 해결한다.
+AETHON은 AI 영상을 이미 만들어 본 창작자가 기획표, 레퍼런스, 모델 선택, 생성 결과, 부분수정, 최종 편집을 한 프로젝트 타임라인에서 책임 있게 관리하는 AI-native NLE다. AI는 자동 실행자가 아니라 더 나은 선택지, 놓친 리스크, 비용/권리/품질 근거를 제안하는 도구이며 최종 결정은 사용자가 한다. 기존 AI 영상 툴(Runway Gen-3, Kling, Sora 등)이 **단발 장면 생성**에 집중해 장면 간 일관성과 편집 맥락이 끊기는 문제를 해결한다.
 
 **제공 형태**:
 - **웹앱** — Next.js 16 + Vercel Fluid Compute 기반 MVP
@@ -60,7 +61,7 @@ AETHON은 창작자가 스토리/연출 의도에만 집중하고, 반복 프롬
   - Distraction(산만): 무관한 정보가 주의를 분산
   - Confusion(혼동): 모순되는 지시가 병존
   - Clash(충돌): 시스템 프롬프트와 사용자 지시가 상충
-- **Progressive Disclosure**: 상세 내용은 `.claude/plans/`, `docs/domain-knowledge/`, `.claude/agents/`로 분리. 본 문서는 포인터와 계약만 유지.
+- **Progressive Disclosure**: 상세 내용은 `.claude/plans/`, `docs/domain-knowledge/`, `agents/`, `.claude/agents/` 호환 경로로 분리. 본 문서는 포인터와 계약만 유지.
 
 ---
 
@@ -80,9 +81,9 @@ AETHON은 창작자가 스토리/연출 의도에만 집중하고, 반복 프롬
 | 런타임 | Vercel Fluid Compute (Node.js 24 LTS) | 300s 타임아웃, Edge Functions 비권장 |
 | 데스크톱 | Tauri 2.0 + Rust | 경량(~10MB), 네이티브 렌더링, React 코드 95% 재사용 |
 | 모노레포 | Turborepo + pnpm | 공유 패키지 관리, 병렬 빌드 |
-| AI 텍스트 | Claude Sonnet 4.6 + Prompt Caching | 씬 분할, 자동 프롬프트, 모델 라우팅 판단 |
+| AI 텍스트 | Claude Sonnet 4.6 + Prompt Caching | 씬 구성 제안, 프롬프트 후보, 모델 추천 판단 |
 | AI Gateway | Vercel AI Gateway | 모든 AI 프로바이더 통합 + 폴백 + 비용 추적 |
-| 이미지 생성 (5종) | fal.ai FLUX / Nano Banana / Ideogram / DALL-E 3 / SDXL+ControlNet | 씬 특성별 자동 라우팅 |
+| 이미지 생성 (5종) | fal.ai FLUX / Nano Banana / Ideogram / DALL-E 3 / SDXL+ControlNet | 씬 특성별 추천 라우팅 + 사용자 승인 |
 | 인페인팅 | FLUX Fill + Nano Banana Edit | 인라인 핀 부분 재생성 |
 | 영상 변환 (9종) | Runway Gen-3 / Kling 2.0 / Veo 3 / Seedance / Grok / Luma / Pika 2.5 / Hailuo / Sora 2 | 장르/길이/카메라무브 기반 AI 추천 + 수동 오버라이드 |
 | 캔버스/UI | Konva.js + dnd-kit + Framer Motion + shadcn/ui | 인라인 핀, 드래그 타임라인 |
@@ -121,7 +122,7 @@ aethon/
 │  │  └─ comparison-slider/
 │  ├─ core/                       # 도메인 로직 (플랫폼 독립)
 │  │  ├─ scene-engine/           # 씬 분할, 연속성 규칙
-│  │  ├─ prompt-engine/          # 자동 프롬프트 합성
+│  │  ├─ prompt-engine/          # 프롬프트 후보 합성
 │  │  ├─ consistency/            # 고정값 주입 알고리즘
 │  │  └─ types/                  # Scene, Character, Background, Project
 │  ├─ ai/                         # AI 어댑터
@@ -138,8 +139,9 @@ aethon/
 │  └─ db/                         # Supabase 클라이언트 + 스키마
 ├─ docs/
 │  └─ domain-knowledge/           # 에이전트별 인사이트 (Iron Law #2)
+├─ agents/                         # 공용 agent contract SSoT
 ├─ .claude/
-│  ├─ agents/                     # 11 에이전트 정의
+│  ├─ agents/                     # Claude 런타임 호환 에이전트 역할/adapter
 │  ├─ plans/                      # 플랜 문서
 │  └─ rules/                      # 프로젝트 특화 규칙
 ├─ turbo.json
@@ -148,9 +150,15 @@ aethon/
 
 ---
 
-## 에이전트 자동 매핑 (11명)
+## 공용 에이전트 자동 매핑
 
-사용자 요청이 들어오면 아래 키워드 테이블을 참조하여 해당 에이전트를 **자동 매핑** → `Agent` tool로 위임한다. 에이전트 정의는 `.claude/agents/<에이전트명>.md`에 있다.
+`agents/`는 Claude/Codex/OMX가 함께 읽는 **공용 역할 계약 SSoT**다. 상세 계약은 `agents/AGENT_CONTRACT.md`, 전체 23명 매트릭스는 `.claude/rules/agent-matrix.md`를 우선한다. 현재 개별 역할 파일은 `.claude/agents/*.md`에 남아 있으며 Claude 런타임 호환 경로로 취급한다.
+
+사용자 요청이 들어오면 아래 대표 키워드 테이블을 참조하여 해당 에이전트를 **자동 매핑**한다. 런타임별 실행 방식은 다르다.
+
+- Claude: hook 요구 또는 독립 컨텍스트가 필요하면 `Agent` tool로 위임.
+- Codex: 사용자가 명시적으로 에이전트/위임/병렬 작업을 요청했을 때 `spawn_agent` 사용. 그 외에는 역할 파일을 읽고 메인 Codex가 해당 페르소나로 작업.
+- OMX: 연결된 OMX 표면이 있을 때 team/hud를 사용하고, 없으면 역할 파일만 계약으로 사용.
 
 | 에이전트 | 담당 키워드 | 인사이트 파일 |
 |---|---|---|
@@ -160,18 +168,19 @@ aethon/
 | `fe-interactions` | 인라인 핀, 영역 드래그, 비교 슬라이더, 댓글 인터랙션 | `docs/domain-knowledge/fe-interactions-insights.md` |
 | `fe-design` | Claude Design 스타일, Tailwind 토큰, shadcn/ui, 디자인 시스템 | `docs/domain-knowledge/fe-design-insights.md` |
 | `be-orchestrator` | Server Actions, Route Handlers, AI 3-tier 오케스트레이션, 상태 관리 | `docs/domain-knowledge/be-insights.md` |
-| `ai-prompt-engineer` | Claude Sonnet, Prompt Caching, 씬 분할, 자동 프롬프트 합성 | `docs/domain-knowledge/ai-prompt-insights.md` |
+| `ai-prompt-engineer` | Claude Sonnet, Prompt Caching, 씬 구성 제안, 프롬프트 후보 합성 | `docs/domain-knowledge/ai-prompt-insights.md` |
 | `ai-consistency` | IP-Adapter, 고정값 주입, 인페인팅, 이미지 멀티 모델 라우팅(FLUX/Nano Banana/Ideogram/DALL-E/SDXL) | `docs/domain-knowledge/ai-consistency-insights.md` |
-| `ai-video-router` | 영상 멀티 모델 라우팅(Runway/Kling/Veo 3/Seedance/Grok/Luma/Pika/Hailuo/Sora 2), 씬 특성 기반 자동 추천, FFmpeg Export | `docs/domain-knowledge/ai-video-router-insights.md` |
+| `ai-video-router` | 영상 멀티 모델 추천 라우팅(Runway/Kling/Veo 3/Seedance/Grok/Luma/Pika/Hailuo/Sora 2), 씬 특성 기반 후보 제안, FFmpeg Export | `docs/domain-knowledge/ai-video-router-insights.md` |
 | `data-lead` | Supabase 스키마, Storage, Realtime, RLS 정책, 마이그레이션 | `docs/domain-knowledge/data-insights.md` |
 | `desktop-qa-lead` | Tauri 2.0, Playwright QA, Vercel 배포, 네이티브 FS, 멀티 윈도우 | `docs/domain-knowledge/desktop-qa-insights.md` |
 
 ### 에이전트 기본 작업 규칙
 
-1. **자동 매핑**: 사용자 요청 키워드 → 위 테이블의 담당 키워드와 매칭 → 해당 에이전트 호출.
+1. **자동 매핑**: 사용자 요청 키워드 → 위 테이블의 담당 키워드와 매칭 → 해당 역할 계약 로드.
 2. **단일 책임 금지**: 교차 도메인 작업은 Lead 에이전트가 1차 수신 후 하위 에이전트에 재위임.
 3. **인사이트 자동 축적**: 에이전트가 작업 완료 시 본인 인사이트 파일에 발견/결정 사항 기록 (Iron Law #2 자동 충족).
 4. **교차 전파**: 한 에이전트의 발견이 다른 부서에 영향을 주면 관련 인사이트 파일에도 전파.
+5. **도구 발견 우선**: Codex에서 Playwright 등 MCP 도구가 보이지 않으면 설치 문제로 단정하지 말고 `tool_search`로 deferred tool을 먼저 노출한다.
 
 ---
 
@@ -207,7 +216,7 @@ aethon/
 
 ## 핵심 데이터 스키마 (Supabase)
 
-`packages/db/schema.sql`에 정의. 4개 메인 테이블:
+`packages/db/schema.sql`에 정의. 4개 메인 테이블 + AI Control 보조 테이블:
 
 - **projects** — 영상 프로젝트 단위 (art_style, mood_palette, world_bible)
 - **characters** — 캐릭터 바이블 (personality JSONB, appearance, ref_image_url, role)
@@ -215,20 +224,26 @@ aethon/
 - **scenes** — 타임라인의 한 칸. **멀티 모델 라우팅 필드 포함**:
   - `image_model` — `fal-flux` | `nano-banana` | `ideogram` | `dalle3` | `sdxl`
   - `video_model` — `runway` | `kling` | `veo3` | `seedance` | `grok` | `luma` | `pika` | `hailuo` | `sora2`
-  - `model_auto_selected` BOOLEAN — true=AI 추천, false=사용자 오버라이드
+  - `model_auto_selected` BOOLEAN — true=AI 추천/Auto 허용, false=사용자 오버라이드
   - `model_selection_reason` TEXT — 예: "시네마틱 + 긴 영상이라 Kling 추천"
+  - `ai_mode` — `auto` | `adviser` | `off`
   - `inpaint_pins` JSONB — `[{ area, comment, result_url }]`
+- **ai_preferences** — 프로젝트/사용자별 전역 AI 모드, 작업별 상세 모드, 승인 임계값.
+- **ai_suggestions** — 모델/프롬프트/부분수정/비용/권리 제안과 사용자 결정 로그.
+- **generation_runs** — 실제 provider 호출 이력, 비용 추정, 실패 사유, `trigger_mode`.
+- **export_manifests** — export 자산, 모델 실행, 권리 요약, C2PA 상태.
 
 스키마 변경은 반드시 `data-lead` 에이전트 경유. RLS 정책은 프로젝트 오너 기반.
 
 ---
 
-## 멀티 AI 모델 라우팅 원칙
+## 멀티 AI 모델 추천 원칙
 
-- **자동 라우팅**: Claude Sonnet이 씬 특성(duration, emotion, camera_angle, shot_type, budget_priority, is_highlight)을 분석하여 최적 모델 선택 → `packages/ai/router/select-model.ts`.
+- **Adviser-first 라우팅**: Claude Sonnet이 씬 특성(duration, emotion, camera_angle, shot_type, budget_priority, is_highlight)을 분석하여 1순위 모델, 대체 모델, 비용/품질/권리 리스크를 추천 카드로 제시한다 → `packages/ai/router/select-model.ts`.
+- **사용자 승인**: 기본값은 Adviser Mode다. 외부 provider 호출, 비용 발생, 최종 export는 사용자가 승인하거나 작업별 Auto를 명시 허용해야 실행된다.
 - **수동 오버라이드**: 각 씬 카드의 "AI 모델 칩"을 클릭하면 드롭다운으로 수동 선택. `model_auto_selected=false`로 전환.
 - **프로젝트 단위 기본 모델**: 설정 가능, 씬별 예외 유지.
-- **AI 추천 이유 툴팁**: 자동 선택 시 `model_selection_reason`을 UI에 노출.
+- **AI 추천 이유 툴팁**: 추천 시 `model_selection_reason`, 예상 비용, 대체 모델, 리스크를 UI에 노출.
 
 이미지/영상 모델 특성 매트릭스는 `.claude/plans/ai-typed-dusk.md` "멀티 AI 모델 라우팅 전략" 섹션 참조.
 
@@ -335,7 +350,8 @@ CE 사고 여정(설계 근거, 대안 검토)은 커밋 후 `.thoughts/`에 별
 ## 참조
 
 - **플랜 전체**: `.claude/plans/ai-typed-dusk.md`
-- **에이전트 정의**: `.claude/agents/*.md`
+- **공용 에이전트 계약**: `agents/AGENT_CONTRACT.md`
+- **Claude 호환 역할 파일**: `.claude/agents/*.md`
 - **인사이트 축적**: `docs/domain-knowledge/*-insights.md`
 - **전역 Claude 지침**: `~/.claude/CLAUDE.md`
 - **안전/루프/환각 규칙**: `~/.claude/rules/*.md`
