@@ -4,6 +4,50 @@
 
 **Status:** Phase 0.5 — Monorepo bootstrap started · Adviser-first docs sync complete · Professional editor workspace loop verified · Supabase local runtime gates verified · Local render/C2PA-ready artifact proof verified
 
+**Repository:** [`HMWKR/Aethon`](https://github.com/HMWKR/Aethon) (private) · Default branch: `main` · Production readiness: harness 8.8/10 · product 68/100
+
+---
+
+## Repository & Platform Setup
+
+### Clone
+
+```bash
+# Mac / Linux
+cd ~/Desktop && git clone https://github.com/HMWKR/Aethon.git && cd Aethon
+
+# Windows (PowerShell)
+cd $HOME\Desktop; git clone https://github.com/HMWKR/Aethon.git; cd Aethon
+```
+
+### Cross-Platform Development
+
+AETHON is **Windows-first** for the current loop, but the monorepo is platform-neutral. Mac and Linux are supported for the same `pnpm production:check` gate.
+
+| Requirement | Version / Source |
+|---|---|
+| Node.js | 24 LTS (`nvm install 24 && nvm use 24`) |
+| pnpm | 10.10.0 (`corepack enable pnpm`) |
+| Docker Desktop | Required for Supabase local stack |
+| GitHub CLI (`gh`) | Required for repo/CI operations (`gh auth login`) |
+| Rust toolchain | Required only for `apps/desktop` Tauri builds |
+
+### Environment Variables (not in Git)
+
+Secrets are blocked by `.gitignore`. After clone, create these locally:
+
+- `apps/web/.env.local` — Supabase / Clerk / AI provider keys. Move from a previous machine via a secure channel (1Password / Bitwarden) or sync from Vercel Env Vars.
+- All `.env*` files except `.env.example` / `.env.sample` are gitignored.
+
+### Machine-Specific Files (regenerated locally)
+
+- `.codex/`, `.codex-tmp/` — Codex runtime state. Regenerated automatically.
+- `.claude/settings.local.json` — per-machine Claude hook config. Create only if needed.
+- `apps/web/.next/`, `node_modules/` — produced by `pnpm install` and `pnpm dev`.
+- `apps/desktop/src-tauri/target/` — Rust build cache from `pnpm tauri build`.
+
+For full session-handoff context (current loop position, scorecard delta, in-flight risks), read [`session-handoff.md`](./session-handoff.md) — its **"Mac Bootstrap"** section describes the 6-step Mac entry.
+
 ---
 
 ## Overview
@@ -113,13 +157,15 @@ aethon/
 
 ## Getting Started
 
+> Prerequisite: clone the repo and complete the platform setup above. Then:
+
 ```bash
 pnpm install
-pnpm supabase:start
+pnpm supabase:start              # requires Docker Desktop running
 pnpm supabase:db:reset
 pnpm supabase:verify
-pnpm --filter @aethon/web dev # default http://localhost:3000, use next free port if occupied
-pnpm --filter desktop tauri dev
+pnpm --filter @aethon/web dev    # default http://localhost:3000, use next free port if occupied
+pnpm --filter desktop tauri dev  # optional, native Tauri shell
 ```
 
 The first web studio screen now exists under `apps/web/app/page.tsx`. It has moved from an AI Control Center-first scaffold to a professional editor workspace: Project Bin, IDE Context, Source Monitor, Program Monitor, AI/Clip/Export Inspector, Tool Rail, and multitrack Timeline.
