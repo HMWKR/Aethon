@@ -759,6 +759,10 @@ export function evaluateExportReadiness({
     } else if (entry.status === "estimated") {
       warnings.push(`${entry.sceneId} cost is still an estimate.`);
     }
+
+    if (entry.actualCostUsd != null && entry.actualCostUsd > entry.approvedUsd) {
+      blockers.push(`${entry.sceneId} actual spend exceeds its approved generation budget.`);
+    }
   }
 
   if (manifest.previewRenderStatus !== "ready") {

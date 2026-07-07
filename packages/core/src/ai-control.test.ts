@@ -497,7 +497,8 @@ describe("Production readiness contracts", () => {
       model: "Kling image-to-video",
       inputMode: "text-to-video",
       durationSeconds: 14,
-      aspectRatio: "21:9"
+      aspectRatio: "21:9",
+      nowIso: "2026-05-03T00:00:00.000Z"
     });
 
     expect(issues.map((issue) => issue.id)).toEqual([
@@ -984,5 +985,34 @@ describe("Production readiness contracts", () => {
     expect(readiness.blockers.join(" ")).toContain("budget");
     expect(readiness.warnings.join(" ")).toContain("rights review");
     expect(readiness.warnings.join(" ")).toContain("Preview render");
+  });
+
+  it("blocks export when actual spend exceeds the approved budget", () => {
+    const readiness = evaluateExportReadiness({
+      pendingSuggestionCount: 0,
+      reports: [],
+      manifest: {
+        id: "manifest-overspend",
+        projectId: "project-01",
+        previewRenderStatus: "ready",
+        costLedger: [
+          {
+            id: "cost-01",
+            sceneId: "scene-01",
+            provider: "ByteDance",
+            model: "Seedance",
+            estimatedUsd: 0.5,
+            approvedUsd: 0.74,
+            actualCostUsd: 50.0,
+            status: "spent"
+          }
+        ],
+        rights: [],
+        finalDecisionAudit: []
+      }
+    });
+
+    expect(readiness.status).not.toBe("ready");
+    expect(readiness.blockers.join(" ")).toContain("actual spend");
   });
 });

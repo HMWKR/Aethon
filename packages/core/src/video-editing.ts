@@ -276,6 +276,12 @@ export function rippleDeleteClip(workspace: EditingWorkspace, clipId: string): E
     clips: sortClipsByTrackAndStart(
       workspace.clips
         .filter((candidate) => candidate.id !== clipId)
+        // 삭제된 클립을 참조하던 링크 상대의 linkedClipIds에서 dangling id 제거
+        .map((candidate) =>
+          candidate.linkedClipIds.includes(clipId)
+            ? { ...candidate, linkedClipIds: candidate.linkedClipIds.filter((id) => id !== clipId) }
+            : candidate
+        )
         .map((candidate) =>
           candidate.trackId === clip.trackId && candidate.startSeconds >= deletedEndSeconds
             ? {

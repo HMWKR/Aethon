@@ -184,6 +184,22 @@ describe("video editing timeline commands", () => {
     expect(workspace.playheadSeconds).toBe(0);
   });
 
+  it("clears dangling links so a ripple-deleted clip's partner stays editable", () => {
+    const afterDelete = rippleDeleteClip(createWorkspace(), "clip-b");
+
+    // 삭제된 clip-b 참조가 링크 상대 audio-a의 linkedClipIds에서 제거되어야 한다
+    expect(afterDelete.clips.find((clip) => clip.id === "audio-a")?.linkedClipIds).not.toContain(
+      "clip-b"
+    );
+
+    // dangling id가 남아 있으면 moveClipToTime이 "Clip was not found."로 실패했다
+    const moved = moveClipToTime(afterDelete, "audio-a", 16);
+
+    expect(moved.clips.find((clip) => clip.id === "audio-a")).toMatchObject({
+      startSeconds: 16
+    });
+  });
+
   it("blocks edits on locked tracks", () => {
     const workspace = createWorkspace({
       tracks: [
