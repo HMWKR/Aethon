@@ -6,6 +6,8 @@
 
 **Repository:** [`HMWKR/Aethon`](https://github.com/HMWKR/Aethon) (private) · Default branch: `main` · Production readiness: harness 8.8/10 · product 68/100
 
+**실 AI 연동:** DeepSeek V4 Pro 어드바이저(NVIDIA NIM) 완료(2026-07-06). 영상 생성 provider는 시뮬레이션(SiliconFlow Wan2.2 어댑터 준비 중).
+
 ---
 
 ## Repository & Platform Setup
@@ -30,7 +32,7 @@ AETHON is **Windows-first** for the current loop, but the monorepo is platform-n
 | pnpm | 10.10.0 (`corepack enable pnpm`) |
 | Docker Desktop | Required for Supabase local stack |
 | GitHub CLI (`gh`) | Required for repo/CI operations (`gh auth login`) |
-| Rust toolchain | Required only for `apps/desktop` Tauri builds |
+| Rust toolchain | `apps/desktop` Tauri builds용 — 미구현(데스크톱 MVP 제외, post-MVP 예정) |
 
 ### Environment Variables (not in Git)
 
@@ -44,7 +46,7 @@ Secrets are blocked by `.gitignore`. After clone, create these locally:
 - `.codex/`, `.codex-tmp/` — Codex runtime state. Regenerated automatically.
 - `.claude/settings.local.json` — per-machine Claude hook config. Create only if needed.
 - `apps/web/.next/`, `node_modules/` — produced by `pnpm install` and `pnpm dev`.
-- `apps/desktop/src-tauri/target/` — Rust build cache from `pnpm tauri build`.
+- `apps/desktop/src-tauri/target/` — Rust build cache from `pnpm tauri build`. (미구현 — 데스크톱 MVP 제외)
 
 For full session-handoff context (current loop position, scorecard delta, in-flight risks), read [`session-handoff.md`](./session-handoff.md) — its **"Mac Bootstrap"** section describes the 6-step Mac entry.
 
@@ -165,7 +167,7 @@ pnpm supabase:start              # requires Docker Desktop running
 pnpm supabase:db:reset
 pnpm supabase:verify
 pnpm --filter @aethon/web dev    # default http://localhost:3000, use next free port if occupied
-pnpm --filter desktop tauri dev  # optional, native Tauri shell
+pnpm --filter desktop tauri dev  # 미구현 — 데스크톱은 MVP 제외, post-MVP 예정
 ```
 
 The first web studio screen now exists under `apps/web/app/page.tsx`. It has moved from an AI Control Center-first scaffold to a professional editor workspace: Project Bin, IDE Context, Source Monitor, Program Monitor, AI/Clip/Export Inspector, Tool Rail, and multitrack Timeline.
@@ -247,4 +249,4 @@ Development rules, agent roster, and commit conventions live in [`CLAUDE.md`](./
 
 ## License
 
-TBD.
+Proprietary (All rights reserved). 오픈소스 전환 시 별도 결정.

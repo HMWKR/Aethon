@@ -1,16 +1,16 @@
 # AETHON — Claude Code 프로젝트 지침
 
 > **AI-native Video Editing Studio** — AI가 선택지를 제안하고, 사용자가 결정하며, 타임라인이 그 근거를 기억하는 편집 표준.
-> 모든 에이전트/작업은 본 문서를 최상위 계약으로 따른다. 상세 플랜: `.claude/plans/ai-typed-dusk.md`
+> 모든 에이전트/작업은 본 문서를 최상위 계약으로 따른다. (상세 플랜 문서는 미작성 — 참조 금지)
 
 ---
 
-## ⚠️ Iron Law — 하드 차단 규칙 (재량 없음)
+## ⚠️ Iron Law — 권장 프로토콜 (2026-07-06 정직화)
 
-> 아래는 PreToolUse/Stop 훅으로 **exit 2 차단**된다. 하위 모든 "기본값"/"권장" 표현보다 **우선**한다.
+> [수정 2026-07-06] 훅 스크립트 3종(`check-agent-delegation.sh`·`validate-insights.sh`·`record-agent-call.sh`)이 실존하지 않음이 감사로 확인되어, "훅 레벨 하드 차단" 선언을 **권장 프로토콜**로 정정한다. 훅을 실제 구현하기 전까지 아래는 위임-우선 원칙으로 준수한다.
 
-### 1. Agent 위임 필수
-`Edit`/`Write` 호출 전 직전 30분 내 `Agent` 도구 호출 기록이 있어야 한다. 없으면 PreToolUse 훅이 차단한다.
+### 1. Agent 위임 우선
+`Edit`/`Write` 호출 전 직전 30분 내 `Agent` 도구 호출을 선행하는 것을 원칙으로 한다.
 
 **예외 경로 (allowlist)** — Agent 선행 호출 없이 직접 편집 허용:
 - `docs/domain-knowledge/`
@@ -25,17 +25,13 @@
 - `MEMORY.md`
 - `memory/`
 
-**우회 불가**: 프로덕션 코드(`apps/`, `packages/`), 테스트, 위 allowlist 외 문서 편집은 반드시 Agent 선행 호출.
+**원칙**: 프로덕션 코드(`apps/`, `packages/`), 테스트, 위 allowlist 외 문서 편집은 Agent 선행 호출을 우선한다.
 
-### 2. 인사이트 기록 필수
-최근 2시간 내 커밋이 있으면 `docs/domain-knowledge/*-insights.md` 중 하나라도 커밋 이후 갱신되어야 한다. 아니면 Stop 훅이 세션 종료를 차단한다.
-
-**우회**: `FORCE_STOP=1` 환경변수 (의도적 스킵만 허용).
+### 2. ~~인사이트 기록 필수~~ — 폐지 (2026-07-06 사용자 결정)
+`docs/domain-knowledge/`가 사용자 결정("삭제 유지")으로 제거되어 본 조항은 폐지한다. 지속 가치가 있는 발견·결정은 `.thoughts/` 사고여정과 세션 메모리로 기록한다.
 
 ### 3. 우선순위
-본 Iron Law는 **훅 레벨 강제**다. 이하 "기본값"·"자동 매핑"·"자동 축적" 표현은 권장이지만, 상충 시 Iron Law 우선.
-
-**훅 구현**: `~/.claude/scripts/check-agent-delegation.sh` · `~/.claude/scripts/validate-insights.sh` · `~/.claude/scripts/record-agent-call.sh`
+이하 "기본값"·"자동 매핑"·"자동 축적" 표현과 상충 시 본 프로토콜이 우선한다.
 
 ---
 
@@ -45,9 +41,9 @@ AETHON은 AI 영상을 이미 만들어 본 창작자가 기획표, 레퍼런스
 
 **제공 형태**:
 - **웹앱** — Next.js 16 + Vercel Fluid Compute 기반 MVP
-- **데스크톱 IDE** — CapCut 스타일의 Tauri 2.0 네이티브 앱 (React 코어 95% 재사용)
+- **데스크톱 IDE** — Tauri 2.0 네이티브 앱. [수정 2026-07-06] **MVP에서 제외**(post-MVP, 현재 코드 0줄)
 
-**목표 일정**: D+60 웹 MVP / D+75 데스크톱 / D+160 Post-MVP 완성.
+**목표 일정**: [수정 2026-07-06] 날짜 기반 일정(D+N) 폐지 → **scorecard 루프 기반**(증거 기반 반복, `docs/business-plan/aethon-100-percent-production-scorecard.md`)으로 전환. 우선순위: AI adviser 축·실 provider 통합 > 미디어 실체 > NLE 추가 다듬기.
 
 ---
 
@@ -61,7 +57,7 @@ AETHON은 AI 영상을 이미 만들어 본 창작자가 기획표, 레퍼런스
   - Distraction(산만): 무관한 정보가 주의를 분산
   - Confusion(혼동): 모순되는 지시가 병존
   - Clash(충돌): 시스템 프롬프트와 사용자 지시가 상충
-- **Progressive Disclosure**: 상세 내용은 `.claude/plans/`, `docs/domain-knowledge/`, `agents/`, `.claude/agents/` 호환 경로로 분리. 본 문서는 포인터와 계약만 유지.
+- **Progressive Disclosure**: 상세 내용은 `agents/`, `.claude/agents/`, `.thoughts/` 경로로 분리. 본 문서는 포인터와 계약만 유지. (`.claude/plans/`·`docs/domain-knowledge/`는 2026-07-06 기준 비어 있음/삭제됨 — 참조 금지)
 
 ---
 
@@ -74,6 +70,8 @@ AETHON은 AI 영상을 이미 만들어 본 창작자가 기획표, 레퍼런스
 ---
 
 ## 기술 스택 (확정)
+
+> ⚠️ [수정 2026-07-06] 아래는 **목표 스택**이다. 현재 실제 의존성: next / react / @supabase/* 뿐. Konva.js·dnd-kit·Framer Motion·Tailwind·shadcn/ui·Clerk·Turborepo(설정만 존재)는 **미설치** — 존재를 전제로 작업하지 말 것. 실연동 완료된 AI: **DeepSeek V4 Pro (NVIDIA NIM, 어드바이저 티어, 2026-07-06)** — `packages/ai/src/adviser/nim-deepseek.ts`.
 
 | 레이어 | 선택 | 근거 |
 |---|---|---|
@@ -98,6 +96,8 @@ AETHON은 AI 영상을 이미 만들어 본 창작자가 기획표, 레퍼런스
 ---
 
 ## 모노레포 구조
+
+> ⚠️ [수정 2026-07-06] 아래는 **목표 구조**다. 현재 실재: `apps/web`(단일 라우트 `/`) + `packages/core`·`db`·`ai`(어드바이저·비디오 어댑터 계약). `apps/desktop`·`packages/adapters`는 빈 디렉토리, `packages/ui`는 1줄 스텁, `docs/domain-knowledge/`는 삭제됨(2026-07-06 사용자 결정).
 
 ```
 aethon/
@@ -138,7 +138,7 @@ aethon/
 │  │  └─ render-native/          # FFmpeg 네이티브
 │  └─ db/                         # Supabase 클라이언트 + 스키마
 ├─ docs/
-│  └─ domain-knowledge/           # 에이전트별 인사이트 (Iron Law #2)
+│  └─ domain-knowledge/           # (2026-07-06 삭제됨 — 기록은 .thoughts/ 사용)
 ├─ agents/                         # 공용 agent contract SSoT
 ├─ .claude/
 │  ├─ agents/                     # Claude 런타임 호환 에이전트 역할/adapter
@@ -160,7 +160,9 @@ aethon/
 - Codex: 사용자가 명시적으로 에이전트/위임/병렬 작업을 요청했을 때 `spawn_agent` 사용. 그 외에는 역할 파일을 읽고 메인 Codex가 해당 페르소나로 작업.
 - OMX: 연결된 OMX 표면이 있을 때 team/hud를 사용하고, 없으면 역할 파일만 계약으로 사용.
 
-| 에이전트 | 담당 키워드 | 인사이트 파일 |
+> [수정 2026-07-06] 아래 표의 "인사이트 파일" 경로는 폐지됨(`docs/domain-knowledge/` 삭제 — 사용자 결정). 역할 매핑 용도로만 사용하고, 기록은 `.thoughts/`로.
+
+| 에이전트 | 담당 키워드 | 인사이트 파일 (폐지) |
 |---|---|---|
 | `product-lead` | PRD, MVP 스코프, 검수 기준, 기획, 성공 지표 | `docs/domain-knowledge/product-insights.md` |
 | `fe-lead` | Next.js 16, App Router, 전역 FE 아키텍처, 라우팅, 레이아웃 | `docs/domain-knowledge/fe-insights.md` |
@@ -178,13 +180,15 @@ aethon/
 
 1. **자동 매핑**: 사용자 요청 키워드 → 위 테이블의 담당 키워드와 매칭 → 해당 역할 계약 로드.
 2. **단일 책임 금지**: 교차 도메인 작업은 Lead 에이전트가 1차 수신 후 하위 에이전트에 재위임.
-3. **인사이트 자동 축적**: 에이전트가 작업 완료 시 본인 인사이트 파일에 발견/결정 사항 기록 (Iron Law #2 자동 충족).
-4. **교차 전파**: 한 에이전트의 발견이 다른 부서에 영향을 주면 관련 인사이트 파일에도 전파.
+3. **인사이트 자동 축적**: [수정 2026-07-06] 인사이트 파일 폐지 — 지속 가치 발견은 `.thoughts/` 사고여정에 기록.
+4. **교차 전파**: 한 에이전트의 발견이 다른 부서에 영향을 주면 `.thoughts/` 기록과 핸드오프 문서에 명시.
 5. **도구 발견 우선**: Codex에서 Playwright 등 MCP 도구가 보이지 않으면 설치 문제로 단정하지 말고 `tool_search`로 deferred tool을 먼저 노출한다.
 
 ---
 
 ## 인사이트 분배 프로토콜
+
+> [수정 2026-07-06] 기록 대상이 `docs/domain-knowledge/`에서 `.thoughts/`로 대체됨. 아래 트리거·절차는 유지하되 기록 위치만 `.thoughts/`로 읽을 것.
 
 ### 트리거
 - 새로운 기술적 발견 또는 의사결정 발생 시
@@ -239,13 +243,13 @@ aethon/
 
 ## 멀티 AI 모델 추천 원칙
 
-- **Adviser-first 라우팅**: Claude Sonnet이 씬 특성(duration, emotion, camera_angle, shot_type, budget_priority, is_highlight)을 분석하여 1순위 모델, 대체 모델, 비용/품질/권리 리스크를 추천 카드로 제시한다 → `packages/ai/router/select-model.ts`.
+- **Adviser-first 라우팅**: 어드바이저 LLM(현재 실연동: DeepSeek V4 Pro via NIM / 계획: Claude Sonnet)이 씬 특성(duration, emotion, camera_angle, shot_type, budget_priority, is_highlight)을 분석하여 1순위 모델, 대체 모델, 비용/품질/권리 리스크를 추천 카드로 제시한다. (라우터 모듈 `select-model.ts`는 **미구현** — 현재는 시드 추천 + 어드바이저 실호출 `packages/ai/src/adviser/`)
 - **사용자 승인**: 기본값은 Adviser Mode다. 외부 provider 호출, 비용 발생, 최종 export는 사용자가 승인하거나 작업별 Auto를 명시 허용해야 실행된다.
 - **수동 오버라이드**: 각 씬 카드의 "AI 모델 칩"을 클릭하면 드롭다운으로 수동 선택. `model_auto_selected=false`로 전환.
 - **프로젝트 단위 기본 모델**: 설정 가능, 씬별 예외 유지.
 - **AI 추천 이유 툴팁**: 추천 시 `model_selection_reason`, 예상 비용, 대체 모델, 리스크를 UI에 노출.
 
-이미지/영상 모델 특성 매트릭스는 `.claude/plans/ai-typed-dusk.md` "멀티 AI 모델 라우팅 전략" 섹션 참조.
+이미지/영상 모델 특성 매트릭스의 현재 SSoT는 `packages/core/src/production-readiness.ts`의 `PROVIDER_CAPABILITIES` 카탈로그다. (플랜 문서 미작성)
 
 ---
 
@@ -349,9 +353,9 @@ CE 사고 여정(설계 근거, 대안 검토)은 커밋 후 `.thoughts/`에 별
 
 ## 참조
 
-- **플랜 전체**: `.claude/plans/ai-typed-dusk.md`
+- **플랜 전체**: (미작성 — scorecard가 실질 플랜: `docs/business-plan/aethon-100-percent-production-scorecard.md`)
 - **공용 에이전트 계약**: `agents/AGENT_CONTRACT.md`
 - **Claude 호환 역할 파일**: `.claude/agents/*.md`
-- **인사이트 축적**: `docs/domain-knowledge/*-insights.md`
+- **인사이트 축적**: ~~`docs/domain-knowledge/*-insights.md`~~ → `.thoughts/` (2026-07-06 대체)
 - **전역 Claude 지침**: `~/.claude/CLAUDE.md`
 - **안전/루프/환각 규칙**: `~/.claude/rules/*.md`

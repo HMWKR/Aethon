@@ -4,6 +4,15 @@
 > Workspace: `C:\Users\jusan\Desktop\Aethon`  
 > Active goal: AETHON의 모든 축이 경쟁사 대비 객관 체크리스트 100%를 만족할 때까지, 임의 감각이 아니라 검증 가능한 benchmark/gate/test/evidence로 완성도를 측정하고 반복 구현한다.
 
+## 2026-07-06 Claude 세션 갱신
+
+- 8영역 심층 감사 수행(코어/AI/웹/타입체크/스모크/문서/로드맵/provider).
+- 코어 3건 + UI 6건 버그 수정. 전 게이트 green: core 61/61 · ai 17/17 · web 6/6 · typecheck 0 · smoke 38/38.
+- DeepSeek V4 Pro NIM 어드바이저 실통합 — 최초 실 외부 AI 호출(키: `apps/web/.env.local`의 `NVIDIA_NIM_API_KEY`).
+- 플레이헤드 좌표 오차 0.4px 실측 검증.
+- 날짜 기반 로드맵(D+N) 폐지 → scorecard 루프 기반 전환. 데스크톱(Tauri)은 MVP 공식 제외(post-MVP).
+- 다음 타겟: SiliconFlow Wan2.2 실통합($1 무료 크레딧, 어댑터 스캐폴드 진행 중) + 미디어 프리뷰 실체(`createObjectURL` + `loadedmetadata`).
+
 ## Next Session Bootstrap
 
 - 다음 세션은 `NEXT_SESSION_PROMPT.md`의 복붙 프롬프트를 첫 메시지로 사용한다.

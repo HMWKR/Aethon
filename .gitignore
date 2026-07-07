@@ -120,3 +120,5 @@ supabase/.temp/
 .claude/settings.local.json
 .claude/runtime-state/
 .claude/agents/runtime/
+.bkit/
+.serena/

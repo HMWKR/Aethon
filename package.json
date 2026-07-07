@@ -1,6 +1,7 @@
 {
   "name": "aethon",
   "private": true,
+  "license": "UNLICENSED",
   "packageManager": "pnpm@10.10.0",
   "scripts": {
     "build": "turbo build",
