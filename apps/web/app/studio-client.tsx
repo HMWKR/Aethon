@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useMemo, useReducer, useRef, type ChangeEvent } from "react";
+import { useEffect, useMemo, useReducer, useRef, useState, type ChangeEvent } from "react";
+import { requestSceneAdvice, type SceneAdviceResult } from "./actions/ai-adviser";
 import {
   AI_CONTROL_MODES,
   AI_TASK_DEFAULTS,
@@ -996,6 +997,11 @@ export function StudioClient({
         return;
       }
 
+      // 단일 키 도구/줌 단축키가 브라우저 표준 단축키(Ctrl/Cmd/Alt 조합)를 하이잭하지 않도록 차단한다.
+      if (event.ctrlKey || event.metaKey || event.altKey) {
+        return;
+      }
+
       if (event.key.toLowerCase() === "v") {
         dispatch({ type: "set-tool", tool: "select" });
         return;
@@ -1045,7 +1051,13 @@ export function StudioClient({
         </div>
         <div className="workspace-tabs" aria-label="Workspace tabs">
           {["Edit", "AI Assist", "Color", "Audio", "Export"].map((tab) => (
-            <button className={tab === "Edit" ? "active" : ""} key={tab} type="button">
+            <button
+              className={tab === "Edit" ? "active" : ""}
+              disabled={tab !== "Edit"}
+              key={tab}
+              title={tab === "Edit" ? undefined : "준비 중 (미구현)"}
+              type="button"
+            >
               {tab}
             </button>
           ))}
@@ -1061,8 +1073,8 @@ export function StudioClient({
           <PanelTitle eyebrow="Project Bin" title="References and media" />
           <div className="bin-tabs">
             <button className="active" type="button">Media</button>
-            <button type="button">Characters</button>
-            <button type="button">Styles</button>
+            <button disabled title="준비 중 (미구현)" type="button">Characters</button>
+            <button disabled title="준비 중 (미구현)" type="button">Styles</button>
           </div>
           <div className="media-import-strip">
             <label className="media-import-button" htmlFor="media-import-input">
@@ -1199,8 +1211,8 @@ export function StudioClient({
             >
               <div className="program-frame">
                 <div className="frame-safe-area" />
-                <button className="revision-pin" type="button">hand</button>
-                <button className="revision-pin secondary" type="button">face</button>
+                <span aria-hidden="true" className="revision-pin">hand</span>
+                <span aria-hidden="true" className="revision-pin secondary">face</span>
                 <div className="program-caption">
                   <strong>{activePlayheadClip?.label ?? "No active clip"}</strong>
                   <span>{selectedScene?.modelRecommendation.primary ?? "Manual"}</span>
@@ -1219,9 +1231,9 @@ export function StudioClient({
             </Monitor>
           </div>
           <div className="transport-bar">
-            <button type="button">Step Back</button>
-            <button className="primary" type="button">Play</button>
-            <button type="button">Step Forward</button>
+            <button disabled title="준비 중 (미구현)" type="button">Step Back</button>
+            <button className="primary" disabled title="준비 중 (미구현)" type="button">Play</button>
+            <button disabled title="준비 중 (미구현)" type="button">Step Forward</button>
             <span>{formatTimecode(timelineDuration)}</span>
             <div className="meter">
               <span style={{ width: "68%" }} />
@@ -1254,6 +1266,15 @@ export function StudioClient({
               rightsIssueCount={countRightsIssues(state.suggestions)}
               sceneStatus={selectedScene?.status ?? "draft"}
               selectedSceneTitle={selectedScene?.title ?? "Scene"}
+              sceneAdviserContext={
+                selectedScene
+                  ? {
+                      sceneTitle: selectedScene.title,
+                      sceneDescription: `${selectedScene.modelRecommendation.reason} 리스크: ${selectedScene.modelRecommendation.risk}`,
+                      durationSeconds: selectedScene.durationSeconds
+                    }
+                  : undefined
+              }
               suggestion={selectedSuggestion}
               totalCost={sumRecommendedCost(state.suggestions)}
               onAccept={() =>
@@ -1343,8 +1364,8 @@ export function StudioClient({
                 >
                   Snap
                 </button>
-                <button type="button">Markers</button>
-                <button type="button">Render Preview</button>
+                <button disabled title="준비 중 (미구현)" type="button">Markers</button>
+                <button disabled title="준비 중 (미구현)" type="button">Render Preview</button>
                 <button
                   data-testid="timeline-trim-in-button"
                   disabled={!selectedClip || selectedClip.durationSeconds <= TIMELINE_MIN_TRIMMABLE_DURATION_SECONDS}
@@ -1525,7 +1546,11 @@ export function StudioClient({
               <div
                 className="playhead"
                 style={{
-                  left: `${getTimelineViewportPercent(state.workspace.playheadSeconds)}%`
+                  // 클립은 라벨(--track-label-width) 이후 콘텐츠 영역 기준 %로 배치되므로
+                  // 플레이헤드도 라벨 폭만큼 오프셋해 클립과 동일한 좌표계로 맞춘다.
+                  left: `calc(var(--track-label-width) + (100% - var(--track-label-width)) * ${
+                    getTimelineViewportPercent(state.workspace.playheadSeconds) / 100
+                  })`
                 }}
               />
               {state.workspace.tracks.map((track) => (
@@ -1647,6 +1672,7 @@ function AiInspector({
   pendingCount,
   preferences,
   rightsIssueCount,
+  sceneAdviserContext,
   sceneStatus,
   selectedSceneTitle,
   suggestion,
@@ -1663,12 +1689,32 @@ function AiInspector({
   pendingCount: number;
   preferences: AiControlPreferences;
   rightsIssueCount: number;
+  sceneAdviserContext:
+    | { sceneTitle: string; sceneDescription: string; durationSeconds?: number }
+    | undefined;
   sceneStatus: string;
   selectedSceneTitle: string;
   suggestion: AiSuggestion | undefined;
   totalCost: number;
 }) {
   const recommendedOption = suggestion ? getRecommendedOption(suggestion) : undefined;
+  // 라이브 어드바이저(DeepSeek V4 Pro · NVIDIA NIM) 호출 상태 — 요청 중/결과/실패를 구분 표시한다.
+  const [liveAdvice, setLiveAdvice] = useState<SceneAdviceResult | null>(null);
+  const [liveAdviceLoading, setLiveAdviceLoading] = useState(false);
+
+  async function handleGenerateLiveAdvice() {
+    if (!sceneAdviserContext || liveAdviceLoading) {
+      return;
+    }
+    setLiveAdviceLoading(true);
+    try {
+      setLiveAdvice(await requestSceneAdvice(sceneAdviserContext));
+    } catch {
+      setLiveAdvice({ ok: false, error: "AI 어드바이저 호출에 실패했습니다." });
+    } finally {
+      setLiveAdviceLoading(false);
+    }
+  }
 
   return (
     <div className="inspector-body" data-testid="ai-inspector">
@@ -1770,7 +1816,84 @@ function AiInspector({
           <p>The editor can keep cutting. New AI advice appears only when requested or policy allows it.</p>
         </section>
       )}
+
+      {/* 라이브 어드바이저 — 이 프로젝트 최초의 실 외부 AI 호출 경로 (DeepSeek V4 Pro · NVIDIA NIM) */}
+      <section className="live-adviser" data-testid="live-adviser">
+        <div className="live-adviser-head">
+          <PanelTitle eyebrow="Live Adviser" title="DeepSeek V4 Pro" />
+          <span className="live-adviser-chip">NVIDIA NIM</span>
+        </div>
+        <button
+          className="primary"
+          data-testid="adviser-generate"
+          disabled={!sceneAdviserContext || liveAdviceLoading}
+          onClick={handleGenerateLiveAdvice}
+          title={sceneAdviserContext ? undefined : "선택된 씬이 없습니다"}
+          type="button"
+        >
+          {liveAdviceLoading ? "제안 생성 중…" : "이 씬에 대한 제안 생성"}
+        </button>
+        {liveAdvice ? (
+          liveAdvice.ok ? (
+            <div className="live-adviser-result" data-testid="adviser-result">
+              {renderLiveAdvice(liveAdvice.advice.parsed, liveAdvice.advice.rawText)}
+              {liveAdvice.advice.usage ? (
+                <small className="live-adviser-usage">
+                  tokens {liveAdvice.advice.usage.totalTokens} (prompt {liveAdvice.advice.usage.promptTokens} / completion {liveAdvice.advice.usage.completionTokens})
+                </small>
+              ) : null}
+            </div>
+          ) : (
+            <p className="live-adviser-error" data-testid="adviser-error" role="alert">
+              {liveAdvice.error}
+            </p>
+          )
+        ) : null}
+      </section>
     </div>
+  );
+}
+
+// DeepSeek 응답(JSON 스키마 준수 기대)을 방어적으로 렌더링한다 — 스키마 이탈 시 raw 텍스트 폴백.
+function renderLiveAdvice(parsed: unknown, rawText: string) {
+  if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
+    return <pre className="live-adviser-raw">{rawText}</pre>;
+  }
+  const record = parsed as {
+    sceneComposition?: unknown;
+    promptCandidates?: unknown;
+    recommendedModel?: { model?: unknown; reason?: unknown };
+    risks?: Array<{ type?: unknown; detail?: unknown }>;
+  };
+  return (
+    <>
+      {typeof record.sceneComposition === "string" ? <p>{record.sceneComposition}</p> : null}
+      {Array.isArray(record.promptCandidates) && record.promptCandidates.length > 0 ? (
+        <ul className="live-adviser-prompts">
+          {record.promptCandidates.map((candidate, index) =>
+            typeof candidate === "string" ? <li key={index}>{candidate}</li> : null
+          )}
+        </ul>
+      ) : null}
+      {record.recommendedModel && typeof record.recommendedModel.model === "string" ? (
+        <div className="model-choice">
+          <strong>{record.recommendedModel.model}</strong>
+          {typeof record.recommendedModel.reason === "string" ? (
+            <span>{record.recommendedModel.reason}</span>
+          ) : null}
+        </div>
+      ) : null}
+      {Array.isArray(record.risks) && record.risks.length > 0 ? (
+        <div className="risk-stack">
+          {record.risks.map((risk, index) => (
+            <div className="risk-pill medium" key={index}>
+              <strong>{typeof risk.type === "string" ? risk.type : "risk"}</strong>
+              <span>{typeof risk.detail === "string" ? risk.detail : ""}</span>
+            </div>
+          ))}
+        </div>
+      ) : null}
+    </>
   );
 }
 
@@ -1947,6 +2070,11 @@ function ExportInspector({
         className="export-button"
         data-testid="export-master-button"
         disabled={readiness.status !== "ready"}
+        title={
+          readiness.status === "ready"
+            ? undefined
+            : `내보내기 차단: 미해결 항목 ${readiness.blockers.length}건`
+        }
         type="button"
       >
         Export master

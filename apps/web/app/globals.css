@@ -17,6 +17,7 @@
   --red: #f07069;
   --violet: #ad8cff;
   --shadow: rgba(0, 0, 0, 0.32);
+  --track-label-width: 128px;
 }
 
 * {
@@ -284,7 +285,7 @@ button:disabled {
   background: #10100d;
   border: 1px solid var(--line);
   border-radius: 6px;
-  color: var(--text);
+  color: var(--ink);
   font: inherit;
   font-size: 12px;
   min-height: 30px;
@@ -349,7 +350,7 @@ button:disabled {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 6px;
-  color: var(--text);
+  color: var(--ink);
   display: inline-flex;
   font-size: 11px;
   font-style: normal;
@@ -400,6 +401,79 @@ button:disabled {
   min-width: 0;
   overflow: auto;
   padding: 12px;
+}
+
+/* 라이브 어드바이저(DeepSeek · NIM) — adviser-card와 동일 표면 위계, 실호출 상태 표시 포함 */
+.live-adviser {
+  background: var(--panel-strong);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+  padding: 12px;
+}
+
+.live-adviser-head {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+.live-adviser-chip {
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.live-adviser-result {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+}
+
+.live-adviser-result p,
+.live-adviser-prompts li {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.42;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.live-adviser-prompts {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding-left: 16px;
+}
+
+.live-adviser-raw {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.4;
+  margin: 0;
+  max-height: 220px;
+  overflow: auto;
+  white-space: pre-wrap;
+}
+
+.live-adviser-usage {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.live-adviser-error {
+  color: var(--amber);
+  font-size: 12px;
+  margin: 0;
 }
 
 .context-row {
@@ -566,11 +640,17 @@ button:disabled {
 }
 
 .revision-pin {
+  align-items: center;
   background: var(--amber);
-  border-color: var(--amber);
+  border: 1px solid var(--amber);
+  border-radius: 6px;
   color: #17120a;
+  display: inline-flex;
+  font: inherit;
+  justify-content: center;
   left: 58%;
   min-height: 28px;
+  padding: 0 10px;
   position: absolute;
   top: 41%;
 }
@@ -947,13 +1027,14 @@ button:disabled {
 
 .ruler {
   border-bottom: 1px solid var(--line);
-  display: grid;
-  grid-template-columns: repeat(9, 1fr);
+  display: flex;
+  justify-content: space-between;
+  padding-left: var(--track-label-width);
 }
 
 .ruler span {
   border-left: 1px solid rgba(255, 255, 255, 0.05);
-  color: var(--dim);
+  color: var(--muted);
   font-size: 10px;
   font-variant-numeric: tabular-nums;
   padding: 7px 5px;
@@ -1036,7 +1117,7 @@ button:disabled {
 }
 
 .selection-readout span {
-  color: var(--dim);
+  color: var(--muted);
   flex: 0 0 auto;
   font-size: 10px;
   text-transform: uppercase;
@@ -1079,7 +1160,7 @@ button:disabled {
 .track-row {
   border-bottom: 1px solid var(--line);
   display: grid;
-  grid-template-columns: 128px 1fr;
+  grid-template-columns: var(--track-label-width) 1fr;
 }
 
 .track-label {
@@ -1220,7 +1301,7 @@ button:disabled {
 }
 
 .clip-roll-handle::after {
-  background: var(--accent);
+  background: var(--amber);
   border-radius: 999px;
   content: "";
   height: 2px;
@@ -1251,7 +1332,7 @@ button:disabled {
 }
 
 .clip-ripple-handle::after {
-  border-color: transparent transparent transparent var(--accent);
+  border-color: transparent transparent transparent var(--amber);
   border-style: solid;
   border-width: 4px 0 4px 6px;
   content: "";
@@ -1261,11 +1342,11 @@ button:disabled {
 }
 
 .clip-ripple-handle.start::after {
-  border-color: transparent var(--accent) transparent transparent;
+  border-color: transparent var(--amber) transparent transparent;
   border-width: 4px 6px 4px 0;
 }
 
-@media (max-width: 1180px) {
+@media (max-width: 1231px) {
   .editor-shell {
     height: auto;
     overflow: auto;
@@ -1417,8 +1498,12 @@ button:disabled {
     white-space: normal;
   }
 
+  :root {
+    --track-label-width: 84px;
+  }
+
   .track-row {
-    grid-template-columns: 84px minmax(0, 1fr);
+    grid-template-columns: var(--track-label-width) minmax(0, 1fr);
   }
 
   .app-chrome {

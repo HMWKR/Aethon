@@ -358,6 +358,45 @@ export const PROVIDER_CAPABILITIES: ProviderCapability[] = [
     tradeoffs: ["hand pose and face identity need validation"]
   },
   {
+    // SiliconFlow 호스티드 Wan2.2 T2V. 어댑터: packages/ai/src/video/siliconflow-wan.ts
+    id: "siliconflow-wan-video",
+    providerKey: "siliconflow",
+    modelKey: "wan2.2-t2v",
+    provider: "SiliconFlow",
+    model: "Wan-AI/Wan2.2-T2V-A14B",
+    kind: "video",
+    status: "active",
+    sourceUrl: "https://docs.siliconflow.com/en/api-reference/videos/videos_submit",
+    // modelKey가 T2V라 text-to-video만. I2V는 별도 모델(Wan2.2-I2V-A14B).
+    inputModes: ["text-to-video"],
+    // 공식 submit 문서에 duration 파라미터 없음 — Wan2.2는 고정 ~5s 클립 [미확인]
+    durationSeconds: { min: 5, max: 5 },
+    // image_size 허용값 1280x720 / 720x1280 / 960x960 → 16:9 / 9:16 / 1:1 (문서 확인)
+    aspectRatios: ["16:9", "9:16", "1:1"],
+    supportsCameraControl: false,
+    supportsMotionStrength: false,
+    supportsMultiReference: false,
+    supportsRegionEdit: false,
+    // $0.29/video 정액 (siliconflow.com/pricing, 2026-07 확인)
+    estimatedCostUsd: { low: 0.29, high: 0.29 },
+    currency: "USD",
+    pricingVersion: "2026-07-siliconflow",
+    providerTermsUrl: "https://www.siliconflow.com/pricing",
+    // 결과 URL은 1시간, requestId 결과는 10분 후 만료(문서 확인) → 임시 보관
+    dataRetention: "temporary",
+    // Wan2.2 가중치는 Apache-2.0이나 SiliconFlow 호스팅 ToS는 미검증 [미확인]
+    commercialUseAllowed: true,
+    regionAvailability: ["global"],
+    rateLimit: { requestsPerMinute: null, concurrentJobs: null },
+    lastVerifiedAtIso: "2026-07-06T00:00:00.000Z",
+    verificationTtlDays: 30,
+    rightsRisk: "medium",
+    termsRisk: "medium",
+    maxRetries: 2,
+    bestFor: ["cinematic realism", "cost-efficient drafts", "text-to-video"],
+    tradeoffs: ["fixed ~5s clip length", "no camera or motion control exposed via API"]
+  },
+  {
     id: "runway-video",
     providerKey: "runway",
     modelKey: "runway-gen-3",
