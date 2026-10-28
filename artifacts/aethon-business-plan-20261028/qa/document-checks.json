@@ -1,0 +1,17 @@
+{
+  "sections": 16,
+  "architecture_images": 3,
+  "local_link_references": 18,
+  "missing_local_links": 0,
+  "cost_scenarios_usd": [
+    "21.00",
+    "42.00",
+    "63.00"
+  ],
+  "manuscript_sha256": "39830eee2d28e4f374b0fc20a3e0982308d818b274ecf1c80168023e82c46bb6",
+  "architecture_sha256": {
+    "../presentation/assets/architecture-overview-outlined.png": "049320f30b96247b2edbf559d9462e6f2e6cc3212635eb0df5be080af3a5f8e7",
+    "../presentation/assets/architecture-aws-detail-outlined.png": "41b811bbd3dd670c73b2d4e2c516b0f9db5b7f0bbedab86d474dfe74e8b35e08",
+    "../presentation/assets/architecture-lifecycle-outlined.png": "5841d0bd9221704edbdb81e5db72ee3a7736d64d4385155cf0acc4420e51137e"
+  }
+}

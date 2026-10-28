@@ -1,0 +1,71 @@
+{
+  "checkedAt": "2026-10-28T01:07:16.2078100+09:00",
+  "scope": "read-only local evidence and current architecture source snapshot",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "7d8f694020a7b07b46d0b0e6c574c9d862b0a24000b9150f36c4645b9e06dd78",
+      "lastWriteTime": "2026-10-27T17:28:36.1207108+09:00"
+    },
+    {
+      "path": "docs/knowledge/ONTOLOGY-OPERATIONS.md",
+      "sha256": "3eefeed939a1f0391de7581dd044e3458209eb2abd8372b12f446fc4bece7755",
+      "lastWriteTime": "2026-10-27T17:31:10.8820762+09:00"
+    },
+    {
+      "path": "README.md",
+      "sha256": "f44e9a37ac87a9fc3c53f08964c4207c2cc2b3fe9622615255074e590eed3662",
+      "lastWriteTime": "2026-10-27T17:09:12.6829014+09:00"
+    },
+    {
+      "path": "docs/qa/codex-workflow-review-20261027/REPORT-ko.md",
+      "sha256": "cf06bbb1edc9de14cd9ff802f21f3b8e37e1fe176c858d4373ae897714ad0923",
+      "lastWriteTime": "2026-10-27T16:49:50.1582983+09:00"
+    },
+    {
+      "path": "docs/knowledge/business-plan/ontology.json",
+      "sha256": "6ba39202a693a00de49f44005c5d83a70d5ea1d86524e4ec5b2a570f739adb01",
+      "lastWriteTime": "2026-10-27T17:02:45.0823975+09:00"
+    },
+    {
+      "path": "docs/knowledge/presentation/ontology.json",
+      "sha256": "a23123fd45be71b2ee203f3bd1b7e8ae8a85180a17634b70f87ded1c57dbff57",
+      "lastWriteTime": "2026-10-27T17:24:55.0810157+09:00"
+    },
+    {
+      "path": "app.py",
+      "sha256": "fb62dc891770a73806450253bddfec115775a2d63c83bd0aa58940c462ee2584",
+      "lastWriteTime": "2026-10-27T16:49:49.2127707+09:00"
+    },
+    {
+      "path": "index.html",
+      "sha256": "7c7f6f7845a55948e98ad3e8f44f688bbcfcf68d93dca41fb3cd6af11eec0a27",
+      "lastWriteTime": "2026-10-27T16:49:54.3094654+09:00"
+    },
+    {
+      "path": "studio.css",
+      "sha256": "835407b4fdfa325a91927829d7ace4805e1e3336a158f6fd34533da1e6236888",
+      "lastWriteTime": "2026-10-27T16:49:54.3527581+09:00"
+    },
+    {
+      "path": "studio-media.js",
+      "sha256": "a5a1a7a44086640a911829da8a4b4c07b83632bc783640d69920d4bc6c577beb",
+      "lastWriteTime": "2026-10-27T16:49:54.3517622+09:00"
+    },
+    {
+      "path": "chat_runtime.py",
+      "sha256": "ec84dbf02521c67404bc5bbec12f061d19ce7c4f2bdc4b2f5542b52c64b3ed0f",
+      "lastWriteTime": "2026-10-27T16:49:49.2187772+09:00"
+    },
+    {
+      "path": "fal_provider.py",
+      "sha256": "a119c0d67c5d0da99bd31e3bff9a23db5b681f470659681162df94c3e9b7864e",
+      "lastWriteTime": "2026-10-27T16:49:54.3026827+09:00"
+    },
+    {
+      "path": "fal_dispatch.py",
+      "sha256": "2e6ca71ccbc049fb2d34e914832791dcd9a6d859bf2b7b866eaedeb36ca5bb40",
+      "lastWriteTime": "2026-10-27T16:49:54.2996923+09:00"
+    }
+  ]
+}

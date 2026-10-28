@@ -1,0 +1,14 @@
+{"schema":"openai.presentation.layout/v5","unit":"px","slide":{"id":"sl/ggny1k","index":4,"layout":{"id":"ly/nq9o32d8","name":"Blank"},"backgroundColor":"rgba(255,255,255,1)","position":{"left":0,"top":0,"width":1600,"height":900}},
+"elements":[
+{"id":"sh/rm9c36lo","kind":"textbox","position":{"left":80,"top":46,"width":1100,"height":30},"text":"제품 화면","style":{"fontSize":18,"typeface":"Malgun Gothic","color":"#126A9A","bold":true,"alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"sh/cnitwb29","kind":"textbox","position":{"left":1440,"top":46,"width":80,"height":30},"text":"05","style":{"fontSize":18,"typeface":"Malgun Gothic","color":"#566371","alignment":"right"},"geometry":"rect","lineWidth":0},
+{"id":"sh/doru5g3e","kind":"textbox","position":{"left":80,"top":98,"width":1440,"height":100},"text":"장면 선택과 검토를 한 화면에서","style":{"fontSize":50,"typeface":"Malgun Gothic","color":"#151C28","bold":true,"alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"sh/ep0bylkz","kind":"shape","position":{"left":80,"top":829,"width":1440,"height":0},"geometry":"line","lineColor":"#D7E0E8","lineWidth":2},
+{"id":"sh/zq9c7qlk","kind":"textbox","position":{"left":80,"top":845,"width":1400,"height":43},"text":"실제 내부 시험 화면, 2026.10.26 · 합성 시험 미디어 사용 · AI 생성 결과물 또는 고객 작업 사례 아님","style":{"fontSize":17,"typeface":"Malgun Gothic","color":"#566371","alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"im/lkfadwvq","kind":"image","position":{"left":80,"top":215,"width":1065,"height":599},"fit":"contain","alt":"1920-selected-basic.png"},
+{"id":"sh/1sbu903q","kind":"textbox","position":{"left":1215,"top":267,"width":310,"height":55},"text":"장면과 Take","style":{"fontSize":32,"typeface":"Malgun Gothic","color":"#151C28","bold":true,"alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"sh/mtkv25kb","kind":"textbox","position":{"left":1215,"top":333,"width":305,"height":110},"text":"후보를 비교하고\n편집에 쓸 결과를 선택","style":{"fontSize":26,"typeface":"Malgun Gothic","color":"#566371","alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"sh/nutcbqlw","kind":"textbox","position":{"left":1215,"top":483,"width":310,"height":55},"text":"검토와 승인","style":{"fontSize":32,"typeface":"Malgun Gothic","color":"#151C28","bold":true,"alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"sh/7alwnqpo","kind":"textbox","position":{"left":1215,"top":550,"width":305,"height":110},"text":"수정 기록을 남기고\n출력 승인 상태를 관리","style":{"fontSize":26,"typeface":"Malgun Gothic","color":"#566371","alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"sh/69cvelo3","kind":"textbox","position":{"left":1215,"top":728,"width":305,"height":80},"text":"사용자 시연 영상은\n추후 추가 예정","style":{"fontSize":23,"typeface":"Malgun Gothic","color":"#126A9A","alignment":"left"},"geometry":"rect","lineWidth":0}
+]}

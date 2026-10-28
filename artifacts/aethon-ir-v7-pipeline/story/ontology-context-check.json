@@ -1,0 +1,9 @@
+{
+  "valid": true,
+  "errors": [],
+  "graph_errors": [],
+  "limitations": [
+    "URL freshness, external content, and user conversation are not checked.",
+    "Hashes detect changes but do not authenticate the receipt or confirm claims are true."
+  ]
+}

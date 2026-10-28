@@ -1,0 +1,10 @@
+{"schema":"openai.presentation.layout/v5","unit":"px","slide":{"id":"sl/xnyjwe","index":12,"layout":{"id":"ly/nq9o32d8","name":"Blank"},"backgroundColor":"rgba(255,255,255,1)","position":{"left":0,"top":0,"width":1600,"height":900}},
+"elements":[
+{"id":"sh/9c7ydcre","kind":"textbox","position":{"left":80,"top":46,"width":1100,"height":30},"text":"단계별 실행 계획","style":{"fontSize":18,"typeface":"Malgun Gothic","color":"#126A9A","bold":true,"alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"sh/mpwf2xs3","kind":"textbox","position":{"left":1440,"top":46,"width":80,"height":30},"text":"13","style":{"fontSize":18,"typeface":"Malgun Gothic","color":"#566371","alignment":"right"},"geometry":"rect","lineWidth":0},
+{"id":"sh/nqpgb29o","kind":"textbox","position":{"left":80,"top":98,"width":1440,"height":100},"text":"검증 결과에 따라 제품과 팀을 확장","style":{"fontSize":50,"typeface":"Malgun Gothic","color":"#151C28","bold":true,"alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"sh/wfyh87a5","kind":"shape","position":{"left":80,"top":829,"width":1440,"height":0},"geometry":"line","lineColor":"#D7E0E8","lineWidth":2},
+{"id":"sh/hg7yhcrq","kind":"textbox","position":{"left":80,"top":845,"width":1400,"height":43},"text":"단계별 진입 조건과 역할 확보 제안 · 채용 시점·인원·예산 미확정","style":{"fontSize":17,"typeface":"Malgun Gothic","color":"#566371","alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"tb/7i90riho","kind":"table","position":{"left":80,"top":255,"width":1440,"height":475},"text":"단계\t확인할 근거\t우선 확보할 역량\n핵심 흐름 완성\t모델 연결·출력·복구의 전체 작업\t제품·풀스택\n제작자 검증\t실제 작업 완주와 결과 채택 이유\t영상 제작·UX 리서치\n유료 반복 사용\t재사용·결제와 지원 포함 원가\t고객 운영·사업개발\n모델 특화·시장 확장\t권리 데이터·평가셋, 기준 모델 대비 가치\tML·영상 생성·MLOps","rows":5,"cols":3},
+{"id":"sh/vepgf29k","kind":"textbox","position":{"left":80,"top":765,"width":1440,"height":43},"text":"고객 검증과 자금 확보, 실제 병목에 따라 협업·채용 방식을 결정","style":{"fontSize":29,"typeface":"Malgun Gothic","color":"#126A9A","bold":true,"alignment":"left"},"geometry":"rect","lineWidth":0}
+]}

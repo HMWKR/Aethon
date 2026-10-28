@@ -1,0 +1,9 @@
+{"schema":"openai.presentation.layout/v5","unit":"px","slide":{"id":"sl/cuhnwi","index":17,"layout":{"id":"ly/nq9o32d8","name":"Blank"},"backgroundColor":"rgba(255,255,255,1)","position":{"left":0,"top":0,"width":1600,"height":900}},
+"elements":[
+{"id":"sh/k7it03md","kind":"textbox","position":{"left":80,"top":46,"width":1100,"height":30},"text":"부록 3 · 근거","style":{"fontSize":18,"typeface":"Malgun Gothic","color":"#126A9A","bold":true,"alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"sh/j69c7yls","kind":"textbox","position":{"left":1440,"top":46,"width":80,"height":30},"text":"18","style":{"fontSize":18,"typeface":"Malgun Gothic","color":"#566371","alignment":"right"},"geometry":"rect","lineWidth":0},
+{"id":"sh/yl0byt47","kind":"textbox","position":{"left":80,"top":98,"width":1440,"height":100},"text":"수치의 범위와 주요 근거","style":{"fontSize":50,"typeface":"Malgun Gothic","color":"#151C28","bold":true,"alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"sh/tcbud83u","kind":"shape","position":{"left":80,"top":829,"width":1440,"height":0},"geometry":"line","lineColor":"#D7E0E8","lineWidth":2},
+{"id":"sh/8bit43mp","kind":"textbox","position":{"left":80,"top":845,"width":1400,"height":43},"text":"외부 원문 확인: 2026.10.27 · 본문별 상세 링크는 발표자 노트에 수록 · 자사 고객·매출·절감률 수치 없음","style":{"fontSize":17,"typeface":"Malgun Gothic","color":"#566371","alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"tb/m1gjed0b","kind":"table","position":{"left":80,"top":242,"width":1440,"height":555},"text":"항목\t측정 범위·조건\t출처\n150억 회 초과\t2024년 글로벌 300개 가상 크리에이터 표본\n영상·라이브·Shorts 조회 합계\tYouTube, 2025.04.17\n15.8% 증가\t2025년 국내 대중음악산업 매출\n전년 대비 증가율\tKOCCA, 2026.08.18\n200만~400만원\t프리미엄 MV 예상 견적 한 사례\nVAT 별도·상담 후 확정\t밍글스튜디오\n현재 개발 단계\t코드 및 내부 합성 시험 기록\n실제 고객·영상 모델 실호출 검증과 별개\tAethon 저장소·QA\n수상 이력\tRealizeSoft 팀의 과거 관련 이력\n현재 제품의 매출·고객 실적과 별개\t경복대학교 보도","rows":6,"cols":3}
+]}

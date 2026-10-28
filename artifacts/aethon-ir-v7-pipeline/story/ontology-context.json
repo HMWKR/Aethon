@@ -1,0 +1,1382 @@
+{
+  "scope": "business and presentation JSON only",
+  "nodes": [
+    {
+      "id": "BP-DATA-001",
+      "domain": "business",
+      "class": "Evidence",
+      "data": {
+        "id": "BP-DATA-001",
+        "type": "external_quantitative_indicator",
+        "title": "2025 세계 녹음음악 매출",
+        "classification": "evidence",
+        "verification": "source_documented",
+        "value": 31.7,
+        "unit": "billion USD",
+        "period": "2025",
+        "checked_at": "2026-10-27",
+        "description": "IFPI가 보고한 세계 녹음음악 매출. Aethon TAM이나 영상 제작 소프트웨어 시장이 아니다.",
+        "limit": "IFPI가 보고한 세계 녹음음악 매출. Aethon TAM이나 영상 제작 소프트웨어 시장이 아니다."
+      }
+    },
+    {
+      "id": "BP-DATA-002",
+      "domain": "business",
+      "class": "Evidence",
+      "data": {
+        "id": "BP-DATA-002",
+        "type": "external_quantitative_indicator",
+        "title": "2025 세계 녹음음악 매출 증가율",
+        "classification": "evidence",
+        "verification": "source_documented",
+        "value": 6.4,
+        "unit": "percent year-on-year",
+        "period": "2025",
+        "checked_at": "2026-10-27",
+        "description": "2024년 대비 전 세계 녹음음악 매출 증가율. Aethon 성장률이 아니다.",
+        "limit": "2024년 대비 전 세계 녹음음악 매출 증가율. Aethon 성장률이 아니다."
+      }
+    },
+    {
+      "id": "BP-DATA-003",
+      "domain": "business",
+      "class": "Evidence",
+      "data": {
+        "id": "BP-DATA-003",
+        "type": "external_quantitative_indicator",
+        "title": "2025 세계 녹음음악 매출 중 스트리밍 비중",
+        "classification": "evidence",
+        "verification": "source_documented",
+        "value": 69.6,
+        "unit": "percent",
+        "period": "2025",
+        "checked_at": "2026-10-27",
+        "description": "세계 녹음음악 매출 구성비이며 영상 제작 도구 이용률이 아니다.",
+        "limit": "세계 녹음음악 매출 구성비이며 영상 제작 도구 이용률이 아니다."
+      }
+    },
+    {
+      "id": "BP-DATA-004",
+      "domain": "business",
+      "class": "Evidence",
+      "data": {
+        "id": "BP-DATA-004",
+        "type": "external_quantitative_indicator",
+        "title": "2024 버추얼 크리에이터 표본 조회",
+        "classification": "evidence",
+        "verification": "source_documented",
+        "value": 15,
+        "unit": "billion views, greater than",
+        "period": "2024",
+        "checked_at": "2026-10-27",
+        "description": "YouTube가 선택한 크리에이터 300개 표본의 영상·라이브·Shorts 조회수 합계가 150억 회 초과. 순 시청자 또는 전체 시장이 아니다.",
+        "limit": "YouTube가 선택한 크리에이터 300개 표본의 영상·라이브·Shorts 조회수 합계가 150억 회 초과. 순 시청자 또는 전체 시장이 아니다."
+      }
+    },
+    {
+      "id": "BP-DATA-005",
+      "domain": "business",
+      "class": "Evidence",
+      "data": {
+        "id": "BP-DATA-005",
+        "type": "external_quantitative_indicator",
+        "title": "2025 국내 대중음악 매출 증가율",
+        "classification": "evidence",
+        "verification": "source_documented",
+        "value": 15.8,
+        "unit": "percent year-on-year",
+        "period": "2025",
+        "checked_at": "2026-10-27",
+        "description": "KOCCA 보도자료가 인용한 국내 대중음악산업 전체의 성장률. MV 제작 시장이나 자사 성장률이 아니다; 원보고서 방법 미확인.",
+        "limit": "KOCCA 보도자료가 인용한 국내 대중음악산업 전체의 성장률. MV 제작 시장이나 자사 성장률이 아니다; 원보고서 방법 미확인."
+      }
+    },
+    {
+      "id": "BP-DATA-006",
+      "domain": "business",
+      "class": "Evidence",
+      "data": {
+        "id": "BP-DATA-006",
+        "type": "external_quantitative_indicator",
+        "title": "Runway Standard 개인 요금",
+        "classification": "evidence",
+        "verification": "source_documented",
+        "value": 12,
+        "unit": "USD per month equivalent, billed annually",
+        "period": "2026-10-27",
+        "checked_at": "2026-10-27",
+        "description": "연간 결제 기준 월 환산, 월 625크레딧; API와 별도. 세금 여부 미확인.",
+        "limit": "연간 결제 기준 월 환산, 월 625크레딧; API와 별도. 세금 여부 미확인."
+      }
+    },
+    {
+      "id": "BP-DATA-007",
+      "domain": "business",
+      "class": "Evidence",
+      "data": {
+        "id": "BP-DATA-007",
+        "type": "external_quantitative_indicator",
+        "title": "밍글 프리미엄 MV 예상 비용 범위",
+        "classification": "evidence",
+        "verification": "source_documented",
+        "value": [
+          2000000,
+          4000000
+        ],
+        "unit": "KRW per project, excluding VAT",
+        "period": "2026-10-27",
+        "checked_at": "2026-10-27",
+        "description": "기획~납품 안내의 특정 업체 예상 가격; 범위에 따라 별도 상담. 시장 평균·실제 결제액·Aethon의 절감액이 아니다.",
+        "limit": "기획~납품 안내의 특정 업체 예상 가격; 범위에 따라 별도 상담. 시장 평균·실제 결제액·Aethon의 절감액이 아니다."
+      }
+    },
+    {
+      "id": "BP-DATA-008",
+      "domain": "business",
+      "class": "Evidence",
+      "data": {
+        "id": "BP-DATA-008",
+        "type": "external_quantitative_indicator",
+        "title": "Runway Dev gen4.5 공개 단가 산술 예시",
+        "classification": "evidence",
+        "verification": "source_documented",
+        "value": 0.12,
+        "unit": "USD per generated second, excluding additional costs",
+        "period": "2026-10-27",
+        "checked_at": "2026-10-27",
+        "description": "12 credits/초 × 0.01 USD/credit. 세금, 재시도, 기타 단계 제외; 자사 실제 청구나 완성 영상 1초의 원가가 아니다.",
+        "limit": "12 credits/초 × 0.01 USD/credit. 세금, 재시도, 기타 단계 제외; 자사 실제 청구나 완성 영상 1초의 원가가 아니다."
+      }
+    },
+    {
+      "id": "BP-FACT-001",
+      "domain": "business",
+      "class": "Decision",
+      "data": {
+        "id": "BP-FACT-001",
+        "type": "project_identity",
+        "title": "기존 Aethon에서 방향 전환하고 이름 유지",
+        "classification": "decision",
+        "verification": "user_confirmed",
+        "description": "현재 프로젝트는 기존 Aethon에서 피벗된 방향을 따르며 Aethon 이름을 유지한다.",
+        "limit": "기존 사업의 고객·매출·인력·계약·자산·권리·가격이 자동 승계된다는 뜻은 아니다."
+      }
+    },
+    {
+      "id": "BP-FACT-002",
+      "domain": "business",
+      "class": "Decision",
+      "data": {
+        "id": "BP-FACT-002",
+        "type": "product_direction",
+        "title": "IP 음악영상 제작",
+        "classification": "decision",
+        "verification": "source_documented",
+        "description": "Aethon의 현재 제품 목적은 IP 음악영상 제작이다.",
+        "limit": "목적과 구현 완료는 별개이며 AethonSaaS는 별도 프로젝트다."
+      }
+    },
+    {
+      "id": "BP-FACT-003",
+      "domain": "business",
+      "class": "Decision",
+      "data": {
+        "id": "BP-FACT-003",
+        "type": "product_direction",
+        "title": "개인 제작 기본, 협업은 선택",
+        "classification": "decision",
+        "verification": "source_documented",
+        "description": "개인 제작에서 팀 생성이나 타인의 팀 승인이 필수 선행 조건이 아니며 팀 협업은 확장 경로다.",
+        "limit": "팀 인증·접근 제어 또는 개인 전체 흐름이 완성됐다는 주장이 아니다."
+      }
+    },
+    {
+      "id": "BP-FACT-004",
+      "domain": "business",
+      "class": "Evidence",
+      "data": {
+        "id": "BP-FACT-004",
+        "type": "validation_evidence",
+        "title": "제한된 합성 음원 출력 시험",
+        "classification": "evidence",
+        "verification": "reported_isolated_test",
+        "description": "2026-10-27 보고서는 격리 HTTP와 합성 음원으로 3초 MP4 생성·검사·재조회를 기록한다.",
+        "limit": "실사용자 시험, 전체 브라우저 완주, 실제 AI 영상 생성 성공이나 상용 준비의 증거가 아니다."
+      }
+    },
+    {
+      "id": "BP-HYP-001",
+      "domain": "business",
+      "class": "Hypothesis",
+      "data": {
+        "id": "BP-HYP-001",
+        "type": "value_proposition",
+        "title": "반복 제작 시 재작업 절감",
+        "classification": "hypothesis",
+        "verification": "unverified",
+        "description": "같은 IP의 후속 제작에서 설정과 승인 이유를 재사용하면 준비·검토·재작업 부담을 줄일 수 있다.",
+        "limit": "제품 자체의 실제 절감량이나 고객 수요는 아직 입증되지 않았다."
+      }
+    },
+    {
+      "id": "BP-HYP-002",
+      "domain": "business",
+      "class": "Hypothesis",
+      "data": {
+        "id": "BP-HYP-002",
+        "type": "customer_segment",
+        "title": "반복 제작 고객군",
+        "classification": "hypothesis",
+        "verification": "unverified",
+        "description": "소규모 버추얼 레이블·그룹, 반복 수주 제작자 및 개인 VTuber는 조사할 고객 후보이다.",
+        "limit": "실제 구매자·접근 가능한 고객 수나 유료 고객으로 확인된 목록이 아니다."
+      }
+    },
+    {
+      "id": "BP-HYP-003",
+      "domain": "business",
+      "class": "Hypothesis",
+      "data": {
+        "id": "BP-HYP-003",
+        "type": "problem",
+        "title": "반복 설명과 승인 조율의 부담",
+        "classification": "hypothesis",
+        "verification": "unverified",
+        "description": "반복 설명, 설정 오류, 승인 조율이 음악 IP 제작의 시간과 비용을 늘릴 수 있다.",
+        "limit": "구체적인 빈도와 비용은 제작 로그와 고객 조사가 필요하다."
+      }
+    },
+    {
+      "id": "BP-SRC-001",
+      "domain": "business",
+      "class": "Source",
+      "data": {
+        "id": "BP-SRC-001",
+        "kind": "user_confirmation",
+        "title": "현재 대화의 피벗 및 이름 유지 확인",
+        "path": null,
+        "locator": "2026-10-27 사용자 메시지",
+        "limit": "법인·고객·매출·자산이나 권리의 승계 여부를 확인한 것은 아님"
+      }
+    },
+    {
+      "id": "BP-SRC-002",
+      "domain": "business",
+      "class": "Source",
+      "data": {
+        "id": "BP-SRC-002",
+        "kind": "project_document",
+        "title": "제품 정체성·개인 기본 경로 보충문",
+        "path": "docs/design/PRODUCT-IDENTITY-AMENDMENT-20261027.md",
+        "locator": "1~3절",
+        "limit": "채택된 제품 방향이며 전체 구현이나 검증 완료를 뜻하지 않음"
+      }
+    },
+    {
+      "id": "BP-SRC-003",
+      "domain": "business",
+      "class": "Source",
+      "data": {
+        "id": "BP-SRC-003",
+        "kind": "project_document",
+        "title": "기존 사업계획과 검증 가설",
+        "path": "docs/specification/IP_Music_Video_Platform/chapters/01_business.md",
+        "locator": "1.1~1.5절",
+        "limit": "피벗 전후 명칭 충돌은 정체성 보충문에 따르며 가격·고객·시장 수치는 별도 검증 필요"
+      }
+    },
+    {
+      "id": "BP-SRC-004",
+      "domain": "business",
+      "class": "Source",
+      "data": {
+        "id": "BP-SRC-004",
+        "kind": "verification_report",
+        "title": "제작·디자인 검증 보고",
+        "path": "docs/qa/codex-workflow-review-20261027/REPORT-ko.md",
+        "locator": "후속 실제 흐름·장애 경계 검증",
+        "limit": "2026-10-27 당시 격리 표본과 자동검사 기록이며 실사용자 수용 및 제품 완성의 증거가 아님"
+      }
+    },
+    {
+      "id": "BP-SRC-006",
+      "domain": "business",
+      "class": "Source",
+      "data": {
+        "id": "BP-SRC-006",
+        "kind": "external_primary_source",
+        "title": "IFPI Global Music Report 2026 보도자료",
+        "url": "https://www.ifpi.org/global-music-report-2026-global-recorded-music-revenues-grow-6-4-as-record-companies-drive-innovation/",
+        "published_at": "2026-03-18",
+        "checked_at": "2026-10-27",
+        "limit": "전 세계 녹음음악 산업 지표이며 음악영상 제작 소프트웨어 시장이 아니다."
+      }
+    },
+    {
+      "id": "BP-SRC-007",
+      "domain": "business",
+      "class": "Source",
+      "data": {
+        "id": "BP-SRC-007",
+        "kind": "external_primary_source",
+        "title": "YouTube Culture & Trends: virtual creators",
+        "url": "https://blog.youtube/culture-and-trends/youtube-culture-trends-report-virtual-creators/",
+        "published_at": "2025-04-17",
+        "checked_at": "2026-10-27",
+        "limit": "선택된 300개 표본의 조회수이며 전체 창작자, 순 시청자, 국내 수요가 아니다."
+      }
+    },
+    {
+      "id": "BP-SRC-008",
+      "domain": "business",
+      "class": "Source",
+      "data": {
+        "id": "BP-SRC-008",
+        "kind": "external_primary_source",
+        "title": "한국콘텐츠진흥원 대중음악산업 간담회 보도자료",
+        "url": "https://welcon.kocca.kr/ko/info/business/1958572",
+        "published_at": "2026-08-18",
+        "checked_at": "2026-10-27",
+        "limit": "동향분석 보고서를 인용한 산업 전체 성장률; 원보고서의 조사 방법은 미확인."
+      }
+    },
+    {
+      "id": "BP-SRC-009",
+      "domain": "business",
+      "class": "Source",
+      "data": {
+        "id": "BP-SRC-009",
+        "kind": "external_primary_source",
+        "title": "Runway 개인 요금",
+        "url": "https://runway.com/pricing",
+        "published_at": null,
+        "checked_at": "2026-10-27",
+        "limit": "개인 Standard 연간 청구 조건의 월 환산, 세금과 API 별도."
+      }
+    },
+    {
+      "id": "BP-SRC-010",
+      "domain": "business",
+      "class": "Source",
+      "data": {
+        "id": "BP-SRC-010",
+        "kind": "external_primary_source",
+        "title": "밍글스튜디오 서비스 및 요금",
+        "url": "https://minglestudio.co.kr/services",
+        "published_at": null,
+        "checked_at": "2026-10-27",
+        "limit": "특정 공급자의 예상 견적이며 실제 거래액이나 평균 시세가 아니다."
+      }
+    },
+    {
+      "id": "BP-SRC-011",
+      "domain": "business",
+      "class": "Source",
+      "data": {
+        "id": "BP-SRC-011",
+        "kind": "external_primary_source",
+        "title": "Runway Dev API 가격",
+        "url": "https://docs.dev.runwayml.com/guides/pricing/",
+        "published_at": null,
+        "checked_at": "2026-10-27",
+        "limit": "공개 단가이며 실제 Aethon 청구나 완성 영상 원가가 아니다."
+      }
+    },
+    {
+      "id": "BP-UNKNOWN-001",
+      "domain": "business",
+      "class": "Unknown",
+      "data": {
+        "id": "BP-UNKNOWN-001",
+        "type": "business_metric",
+        "title": "고객·매출·반복 결제",
+        "classification": "unknown",
+        "verification": "unverified",
+        "description": "피벗된 제품의 실제 고객 수, 매출, 반복 결제와 과거 사업 실적의 관련성은 확인되지 않았다.",
+        "limit": "확인 전 실적으로 기재하지 않는다."
+      }
+    },
+    {
+      "id": "BP-UNKNOWN-002",
+      "domain": "business",
+      "class": "Unknown",
+      "data": {
+        "id": "BP-UNKNOWN-002",
+        "type": "market_metric",
+        "title": "시장 규모와 접근 가능 고객",
+        "classification": "unknown",
+        "verification": "unverified",
+        "description": "접근 가능한 고객 수와 제작 빈도 분포 및 본 제품의 유효 시장 규모는 확인되지 않았다.",
+        "limit": "근거와 산식을 확보하기 전 TAM·성공률을 숫자로 쓰지 않는다."
+      }
+    },
+    {
+      "id": "BP-UNKNOWN-003",
+      "domain": "business",
+      "class": "Unknown",
+      "data": {
+        "id": "BP-UNKNOWN-003",
+        "type": "financial_assumption",
+        "title": "현재 가격·원가·단위경제성",
+        "classification": "unknown",
+        "verification": "unverified",
+        "description": "현재 제품의 확정 요금, 실제 제공 원가, 획득 비용과 수익성은 확인되지 않았다.",
+        "limit": "과거 설계 가격이나 공급자 요금을 실제 거래 또는 현재 가격으로 취급하지 않는다."
+      }
+    },
+    {
+      "id": "BP-UNKNOWN-004",
+      "domain": "business",
+      "class": "Unknown",
+      "data": {
+        "id": "BP-UNKNOWN-004",
+        "type": "validation_gap",
+        "title": "실사용과 실제 모델 검증",
+        "classification": "unknown",
+        "verification": "unverified",
+        "description": "실무자 수용, 일반 사용자용 실제 모델 연결과 실제 AI 영상 생성의 전체 검증은 보고서 기준 미완료다.",
+        "limit": "시점 이후 새 증거가 있는지 작성 전 확인한다."
+      }
+    },
+    {
+      "id": "BP-UNKNOWN-005",
+      "domain": "business",
+      "class": "Unknown",
+      "data": {
+        "id": "BP-UNKNOWN-005",
+        "type": "business_resource",
+        "title": "법인·권리·조직·자금",
+        "classification": "unknown",
+        "verification": "unverified",
+        "description": "법적 주체, IP와 자료 권리, 팀 구성 및 가용 자금은 별도 확인이 필요하다.",
+        "limit": "이름을 유지한다는 결정만으로 승계·확보를 주장하지 않는다."
+      }
+    },
+    {
+      "id": "PPT-AUDIENCE-001",
+      "domain": "presentation",
+      "class": "Audience",
+      "data": {
+        "id": "PPT-AUDIENCE-001",
+        "type": "Audience",
+        "title": "발표 청중",
+        "status": "unknown",
+        "note": "투자자, 지원사업 심사자, 고객 등 구체 대상 미정"
+      }
+    },
+    {
+      "id": "PPT-CLAIM-001",
+      "domain": "presentation",
+      "class": "Claim",
+      "data": {
+        "id": "PPT-CLAIM-001",
+        "type": "Claim",
+        "title": "기존 Aethon에서 피벗하며 Aethon 이름을 유지한다",
+        "status": "documented_decision",
+        "qualification": "과거 고객·법인·자산·성과의 승계를 뜻하지 않는다."
+      }
+    },
+    {
+      "id": "PPT-CLAIM-002",
+      "domain": "presentation",
+      "class": "Claim",
+      "data": {
+        "id": "PPT-CLAIM-002",
+        "type": "Claim",
+        "title": "현재 제품 방향은 IP 음악영상 제작이다",
+        "status": "documented_decision",
+        "qualification": "제품 방향이며 완성이나 상용화를 뜻하지 않는다."
+      }
+    },
+    {
+      "id": "PPT-CLAIM-003",
+      "domain": "presentation",
+      "class": "Claim",
+      "data": {
+        "id": "PPT-CLAIM-003",
+        "type": "Claim",
+        "title": "개인 제작이 기본이며 팀 협업은 선택 방향이다",
+        "status": "documented_decision",
+        "qualification": "팀 인증과 서버 권한 기능의 완성 주장으로 확장하지 않는다."
+      }
+    },
+    {
+      "id": "PPT-CLAIM-004",
+      "domain": "presentation",
+      "class": "Claim",
+      "data": {
+        "id": "PPT-CLAIM-004",
+        "type": "Claim",
+        "title": "합성 음원과 격리 HTTP를 사용한 3초 MP4 제작 표본이 보고됐다",
+        "status": "reported_test",
+        "qualification": "특정 표본의 제한된 검증이며 실제 사용자 수용 또는 전체 워크플로 완성이 아니다."
+      }
+    },
+    {
+      "id": "PPT-CLAIM-005",
+      "domain": "presentation",
+      "class": "Claim",
+      "data": {
+        "id": "PPT-CLAIM-005",
+        "type": "Claim",
+        "title": "설정과 승인 근거의 재사용이 반복 제작의 재작업을 줄일 수 있다",
+        "status": "hypothesis",
+        "qualification": "효과와 비용 절감은 비교 실험 및 실제 제작 기록이 필요하다."
+      }
+    },
+    {
+      "id": "PPT-CLAIM-006",
+      "domain": "presentation",
+      "class": "Claim",
+      "data": {
+        "id": "PPT-CLAIM-006",
+        "type": "Claim",
+        "title": "소규모 레이블과 제작팀, 개인 VTuber는 검토할 고객군이다",
+        "status": "hypothesis",
+        "qualification": "실제 고객 확보, 구매 의향 또는 지불을 의미하지 않는다."
+      }
+    },
+    {
+      "id": "PPT-DATA-001",
+      "domain": "presentation",
+      "class": "Claim",
+      "data": {
+        "id": "PPT-DATA-001",
+        "type": "Claim",
+        "title": "2025년 세계 녹음음악 매출 317억 달러",
+        "status": "reported_external",
+        "qualification": "IFPI 산업 통계이며 음악영상 제작 도구 지출이나 Aethon TAM이 아니다.",
+        "metric_snapshot": {
+          "value": 31.7,
+          "unit": "billion USD",
+          "period": "2025"
+        }
+      }
+    },
+    {
+      "id": "PPT-DATA-002",
+      "domain": "presentation",
+      "class": "Claim",
+      "data": {
+        "id": "PPT-DATA-002",
+        "type": "Claim",
+        "title": "2025년 세계 녹음음악 매출 전년 대비 6.4% 증가",
+        "status": "reported_external",
+        "qualification": "IFPI의 녹음음악 전체 기준이며 Aethon의 성장률이나 수요가 아니다.",
+        "metric_snapshot": {
+          "value": 6.4,
+          "unit": "percent year-on-year",
+          "period": "2025"
+        }
+      }
+    },
+    {
+      "id": "PPT-DATA-003",
+      "domain": "presentation",
+      "class": "Claim",
+      "data": {
+        "id": "PPT-DATA-003",
+        "type": "Claim",
+        "title": "2025년 세계 녹음음악 매출의 69.6%는 스트리밍",
+        "status": "reported_external",
+        "qualification": "IFPI 녹음음악 전체 매출 기준이며 한국 음악영상 시장 규모가 아니다.",
+        "metric_snapshot": {
+          "value": 69.6,
+          "unit": "percent",
+          "period": "2025"
+        }
+      }
+    },
+    {
+      "id": "PPT-DATA-004",
+      "domain": "presentation",
+      "class": "Claim",
+      "data": {
+        "id": "PPT-DATA-004",
+        "type": "Claim",
+        "title": "2024년 버추얼 크리에이터 300개 표본의 YouTube 조회 150억 회 초과",
+        "status": "reported_external",
+        "qualification": "영상·라이브·Shorts 누적 조회의 표본으로 한국 인구, 유일 시청자나 유료 수요를 나타내지 않는다.",
+        "metric_snapshot": {
+          "value": 15,
+          "unit": "billion views, greater than",
+          "period": "2024"
+        }
+      }
+    },
+    {
+      "id": "PPT-DATA-005",
+      "domain": "presentation",
+      "class": "Claim",
+      "data": {
+        "id": "PPT-DATA-005",
+        "type": "Claim",
+        "title": "2025년 국내 대중음악산업 매출 전년 대비 15.8% 증가",
+        "status": "reported_external",
+        "qualification": "KOCCA 보도자료의 산업 매출 증가율이며 음악영상 제작비나 Aethon 매출이 아니다.",
+        "metric_snapshot": {
+          "value": 15.8,
+          "unit": "percent year-on-year",
+          "period": "2025"
+        }
+      }
+    },
+    {
+      "id": "PPT-DATA-006",
+      "domain": "presentation",
+      "class": "Claim",
+      "data": {
+        "id": "PPT-DATA-006",
+        "type": "Claim",
+        "title": "Runway Standard 연간 결제 기준 월 환산 12달러",
+        "status": "reported_external",
+        "qualification": "2026-10-27 기준 공개 구독 상품 가격이며 연간 결제 조건, 크레딧과 제공 범위가 적용된다. API 사용료나 Aethon의 가격이 아니다.",
+        "metric_snapshot": {
+          "value": 12,
+          "unit": "USD per month equivalent, billed annually",
+          "period": "2026-10-27"
+        }
+      }
+    },
+    {
+      "id": "PPT-DATA-007",
+      "domain": "presentation",
+      "class": "Claim",
+      "data": {
+        "id": "PPT-DATA-007",
+        "type": "Claim",
+        "title": "밍글 프리미엄 MV 예상 200만~400만 원",
+        "status": "reported_external",
+        "qualification": "특정 제작사의 부가세 별도 안내 견적이며 의뢰 범위에 따라 달라지고 국내 평균이나 실결제액이 아니다.",
+        "metric_snapshot": {
+          "value": [
+            2000000,
+            4000000
+          ],
+          "unit": "KRW per project, excluding VAT",
+          "period": "2026-10-27"
+        }
+      }
+    },
+    {
+      "id": "PPT-DATA-008",
+      "domain": "presentation",
+      "class": "Claim",
+      "data": {
+        "id": "PPT-DATA-008",
+        "type": "Claim",
+        "title": "Runway Gen-4.5 API 산술 단가 0.12달러/생성초",
+        "status": "reported_external",
+        "qualification": "공개 단가 1크레딧 0.01달러와 12크레딧/초로 계산; 실패·재시도·세금·기타 작업을 제외한 이론값이며 Aethon 실청구나 완성 영상 초당 원가가 아니다.",
+        "metric_snapshot": {
+          "value": 0.12,
+          "unit": "USD per generated second, excluding additional costs",
+          "period": "2026-10-27"
+        }
+      }
+    },
+    {
+      "id": "PPT-MSG-001",
+      "domain": "presentation",
+      "class": "Message",
+      "data": {
+        "id": "PPT-MSG-001",
+        "type": "Message",
+        "title": "Aethon은 IP 음악영상 제작에 집중하는 피벗 프로젝트",
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "PPT-MSG-002",
+      "domain": "presentation",
+      "class": "Message",
+      "data": {
+        "id": "PPT-MSG-002",
+        "type": "Message",
+        "title": "개인 제작을 기본으로 하고 협업을 선택적으로 확장",
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "PPT-MSG-003",
+      "domain": "presentation",
+      "class": "Message",
+      "data": {
+        "id": "PPT-MSG-003",
+        "type": "Message",
+        "title": "반복 제작의 설정 재사용 가치와 검증 필요성",
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "PPT-MSG-004",
+      "domain": "presentation",
+      "class": "Message",
+      "data": {
+        "id": "PPT-MSG-004",
+        "type": "Message",
+        "title": "제한된 구현·시험과 남은 검증을 분리해 설명",
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "PPT-PURPOSE-001",
+      "domain": "presentation",
+      "class": "Purpose",
+      "data": {
+        "id": "PPT-PURPOSE-001",
+        "type": "Purpose",
+        "title": "프로젝트 설명 및 의사결정 지원",
+        "status": "proposed",
+        "note": "실제 발표 목적은 사용자 확인 필요"
+      }
+    },
+    {
+      "id": "PPT-SLIDE-001",
+      "domain": "presentation",
+      "class": "Slide",
+      "data": {
+        "id": "PPT-SLIDE-001",
+        "type": "Slide",
+        "title": "프로젝트 소개와 피벗",
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "PPT-SLIDE-002",
+      "domain": "presentation",
+      "class": "Slide",
+      "data": {
+        "id": "PPT-SLIDE-002",
+        "type": "Slide",
+        "title": "문제와 고객 가설",
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "PPT-SLIDE-003",
+      "domain": "presentation",
+      "class": "Slide",
+      "data": {
+        "id": "PPT-SLIDE-003",
+        "type": "Slide",
+        "title": "제작 방향과 사용자 흐름",
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "PPT-SLIDE-004",
+      "domain": "presentation",
+      "class": "Slide",
+      "data": {
+        "id": "PPT-SLIDE-004",
+        "type": "Slide",
+        "title": "현재 구현과 검증 범위",
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "PPT-SLIDE-005",
+      "domain": "presentation",
+      "class": "Slide",
+      "data": {
+        "id": "PPT-SLIDE-005",
+        "type": "Slide",
+        "title": "남은 검증과 다음 판단",
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "PPT-SLIDE-006",
+      "domain": "presentation",
+      "class": "Slide",
+      "data": {
+        "id": "PPT-SLIDE-006",
+        "type": "Slide",
+        "title": "시장 배경과 대상 고객",
+        "status": "proposed",
+        "constraint": "산업 전체 통계와 접근 가능한 세부 고객 시장을 구분한다."
+      }
+    },
+    {
+      "id": "PPT-SLIDE-007",
+      "domain": "presentation",
+      "class": "Slide",
+      "data": {
+        "id": "PPT-SLIDE-007",
+        "type": "Slide",
+        "title": "경쟁과 대안",
+        "status": "proposed",
+        "constraint": "구독 도구와 제작사 견적의 범위가 달라 직접 동등 비교하지 않는다."
+      }
+    },
+    {
+      "id": "PPT-SLIDE-008",
+      "domain": "presentation",
+      "class": "Slide",
+      "data": {
+        "id": "PPT-SLIDE-008",
+        "type": "Slide",
+        "title": "수익모델 및 비용 가설",
+        "status": "proposed",
+        "constraint": "자사 가격·고객 수·비용은 입력 확인 전 미정이며 별도 가정 시나리오는 표시한다."
+      }
+    },
+    {
+      "id": "PPT-SLIDE-009",
+      "domain": "presentation",
+      "class": "Slide",
+      "data": {
+        "id": "PPT-SLIDE-009",
+        "type": "Slide",
+        "title": "실행 일정과 요청사항",
+        "status": "proposed",
+        "constraint": "자원, 일정과 요청은 사용자 확인 전 미정이다."
+      }
+    },
+    {
+      "id": "PPT-SRC-001",
+      "domain": "presentation",
+      "class": "Source",
+      "data": {
+        "id": "PPT-SRC-001",
+        "type": "Source",
+        "title": "Aethon 제품 정체성·개인 기본 경로 보충문",
+        "path": "docs/design/PRODUCT-IDENTITY-AMENDMENT-20261027.md",
+        "locator": "§1–3 및 상단 후속 안내",
+        "limitation": "제품 방향과 채택 결정의 문서이며 모든 기능의 구현·운영 준비를 입증하지 않는다."
+      }
+    },
+    {
+      "id": "PPT-SRC-002",
+      "domain": "presentation",
+      "class": "Source",
+      "data": {
+        "id": "PPT-SRC-002",
+        "type": "Source",
+        "title": "Aethon 플랫폼 제작·디자인 검증",
+        "path": "docs/qa/codex-workflow-review-20261027/REPORT-ko.md",
+        "locator": "후속 실제 흐름·장애 경계 검증",
+        "limitation": "합성 데이터와 격리 환경의 표본 및 시점에 한정되며 실사용자 수용이나 외부 AI 영상 모델 검증을 뜻하지 않는다."
+      }
+    },
+    {
+      "id": "PPT-SRC-003",
+      "domain": "presentation",
+      "class": "Source",
+      "data": {
+        "id": "PPT-SRC-003",
+        "type": "Source",
+        "title": "사업계획: 신규 IP 음악영상 제작 플랫폼",
+        "path": "docs/specification/IP_Music_Video_Platform/chapters/01_business.md",
+        "locator": "§1.1–1.2 및 §1.4",
+        "limitation": "사업 가설과 역사적 명칭이 포함되어 있다. 정체성은 PPT-SRC-001 및 사용자 확인을 우선하며 수치와 고객 수요는 별도 검증이 필요하다."
+      }
+    },
+    {
+      "id": "PPT-SRC-004",
+      "domain": "presentation",
+      "class": "Source",
+      "data": {
+        "id": "PPT-SRC-004",
+        "type": "Source",
+        "title": "사용자의 피벗 및 이름 유지 설명",
+        "kind": "user_conversation",
+        "locator": "2026-10-27 현재 대화: 기존 Aethon에서 피벗했으며 이름은 그대로 사용",
+        "limitation": "브랜드와 방향에 관한 사용자 확인이며 이전 고객·매출·법인·자산 승계를 증명하지 않는다."
+      }
+    },
+    {
+      "id": "PPT-UNKNOWN-001",
+      "domain": "presentation",
+      "class": "Unknown",
+      "data": {
+        "id": "PPT-UNKNOWN-001",
+        "type": "Unknown",
+        "title": "발표 청중·목적·요청 또는 의사결정",
+        "status": "unknown"
+      }
+    },
+    {
+      "id": "PPT-UNKNOWN-003",
+      "domain": "presentation",
+      "class": "Unknown",
+      "data": {
+        "id": "PPT-UNKNOWN-003",
+        "type": "Unknown",
+        "title": "검증된 고객 수·매출·시장 규모·가격·원가",
+        "status": "unknown"
+      }
+    },
+    {
+      "id": "PPT-UNKNOWN-004",
+      "domain": "presentation",
+      "class": "Unknown",
+      "data": {
+        "id": "PPT-UNKNOWN-004",
+        "type": "Unknown",
+        "title": "실사용자 수용과 제품 전반의 실무 완성",
+        "status": "unknown"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "domain": "presentation",
+      "type": "conveys",
+      "from": "PPT-SLIDE-001",
+      "to": "PPT-MSG-001"
+    },
+    {
+      "domain": "presentation",
+      "type": "conveys",
+      "from": "PPT-SLIDE-002",
+      "to": "PPT-MSG-003"
+    },
+    {
+      "domain": "presentation",
+      "type": "uses_claim",
+      "from": "PPT-SLIDE-002",
+      "to": "PPT-CLAIM-006"
+    },
+    {
+      "domain": "presentation",
+      "type": "conveys",
+      "from": "PPT-SLIDE-003",
+      "to": "PPT-MSG-002"
+    },
+    {
+      "domain": "presentation",
+      "type": "conveys",
+      "from": "PPT-SLIDE-004",
+      "to": "PPT-MSG-004"
+    },
+    {
+      "domain": "presentation",
+      "type": "requires",
+      "from": "PPT-SLIDE-005",
+      "to": "PPT-UNKNOWN-004"
+    },
+    {
+      "domain": "presentation",
+      "type": "uses_claim",
+      "from": "PPT-SLIDE-006",
+      "to": "PPT-DATA-001"
+    },
+    {
+      "domain": "presentation",
+      "type": "uses_claim",
+      "from": "PPT-SLIDE-006",
+      "to": "PPT-DATA-002"
+    },
+    {
+      "domain": "presentation",
+      "type": "uses_claim",
+      "from": "PPT-SLIDE-006",
+      "to": "PPT-DATA-003"
+    },
+    {
+      "domain": "presentation",
+      "type": "uses_claim",
+      "from": "PPT-SLIDE-006",
+      "to": "PPT-DATA-004"
+    },
+    {
+      "domain": "presentation",
+      "type": "uses_claim",
+      "from": "PPT-SLIDE-006",
+      "to": "PPT-DATA-005"
+    },
+    {
+      "domain": "presentation",
+      "type": "uses_claim",
+      "from": "PPT-SLIDE-007",
+      "to": "PPT-DATA-006"
+    },
+    {
+      "domain": "presentation",
+      "type": "uses_claim",
+      "from": "PPT-SLIDE-007",
+      "to": "PPT-DATA-007"
+    },
+    {
+      "domain": "presentation",
+      "type": "uses_claim",
+      "from": "PPT-SLIDE-008",
+      "to": "PPT-DATA-008"
+    },
+    {
+      "domain": "presentation",
+      "type": "requires",
+      "from": "PPT-SLIDE-008",
+      "to": "PPT-UNKNOWN-003"
+    },
+    {
+      "domain": "presentation",
+      "type": "requires",
+      "from": "PPT-SLIDE-009",
+      "to": "PPT-UNKNOWN-001"
+    },
+    {
+      "domain": "presentation",
+      "type": "serves",
+      "from": "PPT-MSG-001",
+      "to": "PPT-PURPOSE-001"
+    },
+    {
+      "domain": "presentation",
+      "type": "addresses",
+      "from": "PPT-MSG-001",
+      "to": "PPT-AUDIENCE-001"
+    },
+    {
+      "domain": "presentation",
+      "type": "uses_claim",
+      "from": "PPT-MSG-001",
+      "to": "PPT-CLAIM-001"
+    },
+    {
+      "domain": "presentation",
+      "type": "uses_claim",
+      "from": "PPT-MSG-001",
+      "to": "PPT-CLAIM-002"
+    },
+    {
+      "domain": "presentation",
+      "type": "uses_claim",
+      "from": "PPT-MSG-003",
+      "to": "PPT-CLAIM-005"
+    },
+    {
+      "domain": "presentation",
+      "type": "supported_by",
+      "from": "PPT-CLAIM-006",
+      "to": "PPT-SRC-003"
+    },
+    {
+      "domain": "cross",
+      "type": "same_topic",
+      "from": "PPT-CLAIM-006",
+      "to": "BP-HYP-002"
+    },
+    {
+      "domain": "presentation",
+      "type": "uses_claim",
+      "from": "PPT-MSG-002",
+      "to": "PPT-CLAIM-003"
+    },
+    {
+      "domain": "presentation",
+      "type": "uses_claim",
+      "from": "PPT-MSG-004",
+      "to": "PPT-CLAIM-004"
+    },
+    {
+      "domain": "cross",
+      "type": "related_unknown",
+      "from": "PPT-UNKNOWN-004",
+      "to": "BP-UNKNOWN-004"
+    },
+    {
+      "domain": "cross",
+      "type": "same_topic",
+      "from": "PPT-DATA-001",
+      "to": "BP-DATA-001"
+    },
+    {
+      "domain": "cross",
+      "type": "same_topic",
+      "from": "PPT-DATA-002",
+      "to": "BP-DATA-002"
+    },
+    {
+      "domain": "cross",
+      "type": "same_topic",
+      "from": "PPT-DATA-003",
+      "to": "BP-DATA-003"
+    },
+    {
+      "domain": "cross",
+      "type": "same_topic",
+      "from": "PPT-DATA-004",
+      "to": "BP-DATA-004"
+    },
+    {
+      "domain": "cross",
+      "type": "same_topic",
+      "from": "PPT-DATA-005",
+      "to": "BP-DATA-005"
+    },
+    {
+      "domain": "cross",
+      "type": "same_topic",
+      "from": "PPT-DATA-006",
+      "to": "BP-DATA-006"
+    },
+    {
+      "domain": "cross",
+      "type": "same_topic",
+      "from": "PPT-DATA-007",
+      "to": "BP-DATA-007"
+    },
+    {
+      "domain": "cross",
+      "type": "same_topic",
+      "from": "PPT-DATA-008",
+      "to": "BP-DATA-008"
+    },
+    {
+      "domain": "cross",
+      "type": "related_unknown",
+      "from": "PPT-UNKNOWN-003",
+      "to": "BP-UNKNOWN-001"
+    },
+    {
+      "domain": "cross",
+      "type": "related_unknown",
+      "from": "PPT-UNKNOWN-003",
+      "to": "BP-UNKNOWN-002"
+    },
+    {
+      "domain": "cross",
+      "type": "related_unknown",
+      "from": "PPT-UNKNOWN-003",
+      "to": "BP-UNKNOWN-003"
+    },
+    {
+      "domain": "presentation",
+      "type": "addresses",
+      "from": "PPT-PURPOSE-001",
+      "to": "PPT-AUDIENCE-001"
+    },
+    {
+      "domain": "presentation",
+      "type": "requires",
+      "from": "PPT-PURPOSE-001",
+      "to": "PPT-UNKNOWN-001"
+    },
+    {
+      "domain": "presentation",
+      "type": "supported_by",
+      "from": "PPT-CLAIM-001",
+      "to": "PPT-SRC-004"
+    },
+    {
+      "domain": "cross",
+      "type": "same_topic",
+      "from": "PPT-CLAIM-001",
+      "to": "BP-FACT-001"
+    },
+    {
+      "domain": "presentation",
+      "type": "supported_by",
+      "from": "PPT-CLAIM-002",
+      "to": "PPT-SRC-001"
+    },
+    {
+      "domain": "cross",
+      "type": "same_topic",
+      "from": "PPT-CLAIM-002",
+      "to": "BP-FACT-002"
+    },
+    {
+      "domain": "presentation",
+      "type": "supported_by",
+      "from": "PPT-CLAIM-005",
+      "to": "PPT-SRC-003"
+    },
+    {
+      "domain": "cross",
+      "type": "same_topic",
+      "from": "PPT-CLAIM-005",
+      "to": "BP-HYP-001"
+    },
+    {
+      "domain": "business",
+      "type": "supported_by",
+      "from": "BP-HYP-002",
+      "to": "BP-SRC-003"
+    },
+    {
+      "domain": "business",
+      "type": "constrained_by",
+      "from": "BP-HYP-002",
+      "to": "BP-UNKNOWN-001"
+    },
+    {
+      "domain": "business",
+      "type": "constrained_by",
+      "from": "BP-HYP-002",
+      "to": "BP-UNKNOWN-002"
+    },
+    {
+      "domain": "presentation",
+      "type": "supported_by",
+      "from": "PPT-CLAIM-003",
+      "to": "PPT-SRC-001"
+    },
+    {
+      "domain": "cross",
+      "type": "same_topic",
+      "from": "PPT-CLAIM-003",
+      "to": "BP-FACT-003"
+    },
+    {
+      "domain": "presentation",
+      "type": "supported_by",
+      "from": "PPT-CLAIM-004",
+      "to": "PPT-SRC-002"
+    },
+    {
+      "domain": "cross",
+      "type": "related_scope",
+      "from": "PPT-CLAIM-004",
+      "to": "BP-FACT-004"
+    },
+    {
+      "domain": "business",
+      "type": "supported_by",
+      "from": "BP-UNKNOWN-004",
+      "to": "BP-SRC-004"
+    },
+    {
+      "domain": "business",
+      "type": "supported_by",
+      "from": "BP-DATA-001",
+      "to": "BP-SRC-006"
+    },
+    {
+      "domain": "business",
+      "type": "supported_by",
+      "from": "BP-DATA-002",
+      "to": "BP-SRC-006"
+    },
+    {
+      "domain": "business",
+      "type": "supported_by",
+      "from": "BP-DATA-003",
+      "to": "BP-SRC-006"
+    },
+    {
+      "domain": "business",
+      "type": "supported_by",
+      "from": "BP-DATA-004",
+      "to": "BP-SRC-007"
+    },
+    {
+      "domain": "business",
+      "type": "supported_by",
+      "from": "BP-DATA-005",
+      "to": "BP-SRC-008"
+    },
+    {
+      "domain": "business",
+      "type": "supported_by",
+      "from": "BP-DATA-006",
+      "to": "BP-SRC-009"
+    },
+    {
+      "domain": "business",
+      "type": "supported_by",
+      "from": "BP-DATA-007",
+      "to": "BP-SRC-010"
+    },
+    {
+      "domain": "business",
+      "type": "supported_by",
+      "from": "BP-DATA-008",
+      "to": "BP-SRC-011"
+    },
+    {
+      "domain": "business",
+      "type": "supported_by",
+      "from": "BP-FACT-001",
+      "to": "BP-SRC-001"
+    },
+    {
+      "domain": "business",
+      "type": "supported_by",
+      "from": "BP-FACT-001",
+      "to": "BP-SRC-002"
+    },
+    {
+      "domain": "business",
+      "type": "constrained_by",
+      "from": "BP-FACT-001",
+      "to": "BP-UNKNOWN-005"
+    },
+    {
+      "domain": "business",
+      "type": "supported_by",
+      "from": "BP-FACT-002",
+      "to": "BP-SRC-002"
+    },
+    {
+      "domain": "business",
+      "type": "supported_by",
+      "from": "BP-HYP-001",
+      "to": "BP-SRC-003"
+    },
+    {
+      "domain": "business",
+      "type": "depends_on",
+      "from": "BP-HYP-001",
+      "to": "BP-HYP-003"
+    },
+    {
+      "domain": "business",
+      "type": "supported_by",
+      "from": "BP-FACT-003",
+      "to": "BP-SRC-002"
+    },
+    {
+      "domain": "business",
+      "type": "supported_by",
+      "from": "BP-FACT-004",
+      "to": "BP-SRC-004"
+    },
+    {
+      "domain": "business",
+      "type": "constrained_by",
+      "from": "BP-FACT-004",
+      "to": "BP-UNKNOWN-004"
+    },
+    {
+      "domain": "business",
+      "type": "supported_by",
+      "from": "BP-HYP-003",
+      "to": "BP-SRC-003"
+    }
+  ],
+  "limitations": [
+    "No external source refresh, semantic proof, project_kit integration, or automatic document regeneration.",
+    "Free-text claims, Markdown and exported PPT numbers are not compared with metric snapshots."
+  ],
+  "task": "pitch",
+  "deck_outline": [
+    "PPT-SLIDE-001",
+    "PPT-SLIDE-002",
+    "PPT-SLIDE-003",
+    "PPT-SLIDE-006",
+    "PPT-SLIDE-007",
+    "PPT-SLIDE-004",
+    "PPT-SLIDE-008",
+    "PPT-SLIDE-005",
+    "PPT-SLIDE-009"
+  ],
+  "receipt": {
+    "schema_version": 1,
+    "files": {
+      "docs/design/PRODUCT-IDENTITY-AMENDMENT-20261027.md": "7dd712a4fa47261c0236e8e2c0af1d84bfba045c938815cc2e19ca9bcf37a835",
+      "docs/knowledge/business-plan/ontology.json": "6ba39202a693a00de49f44005c5d83a70d5ea1d86524e4ec5b2a570f739adb01",
+      "docs/knowledge/presentation/ontology.json": "a23123fd45be71b2ee203f3bd1b7e8ae8a85180a17634b70f87ded1c57dbff57",
+      "docs/qa/codex-workflow-review-20261027/REPORT-ko.md": "cf06bbb1edc9de14cd9ff802f21f3b8e37e1fe176c858d4373ae897714ad0923",
+      "docs/specification/IP_Music_Video_Platform/chapters/01_business.md": "7fca4d54d068a9080f3928225075e164015dd712860080e905e228e57785501a"
+    },
+    "context_sha256": "f478f0d4b4f9923bf2e78b79a75728e133d98d0654ef8ed02f444987a1c95d39",
+    "limitations": [
+      "Byte hashes detect local changes only; URL freshness, source truth, and user conversation cannot be verified.",
+      "This receipt is not a digital signature; it cannot authenticate a document or its author."
+    ]
+  }
+}

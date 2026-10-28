@@ -1,0 +1,11 @@
+import fs from 'node:fs/promises';
+import {Presentation,PresentationFile} from '@oai/artifact-tool';
+const p=Presentation.create({slideSize:{width:1600,height:900}});
+const s=p.slides.add();s.background.fill='#FFFFFF';
+const t=s.shapes.add({geometry:'textbox',position:{left:80,top:100,width:1400,height:200},fill:'none',line:{fill:'none',width:0}});
+t.text='Aethon 음악영상 제작 플랫폼';
+t.text.style={typeface:'Malgun Gothic',fontSize:56,bold:true,color:'#131B26',insets:0,autoFit:'none'};
+s.speakerNotes.text='한국어 글꼴 확인';
+await fs.writeFile(new URL('./probe.png',import.meta.url),new Uint8Array(await (await p.export({slide:s,format:'png',scale:1})).arrayBuffer()));
+await(await PresentationFile.exportPptx(p)).save(new URL('./probe.pptx',import.meta.url).pathname.replace(/^\//,''));
+console.log('probe render exported');

@@ -1,0 +1,11 @@
+{"kind":"deck","id":"pr/orniyh","name":"Deck"}
+{"kind":"layout","id":"ly/ipwfi1kf","editable":false,"name":"Master","type":"master"}
+{"kind":"layout","id":"ly/kbi98vm9","editable":false,"name":"Title Slide","type":"title","placeholders":[{"name":"title","type":"title"},{"name":"subtitle","type":"subtitle"}]}
+{"kind":"layout","id":"ly/etgr65sz","editable":false,"name":"Section Header","type":"sectionHeader","placeholders":[{"name":"title","type":"title"}]}
+{"kind":"layout","id":"ly/j2x8vqt4","editable":false,"name":"Title and Body","type":"tx","placeholders":[{"name":"title","type":"title"},{"name":"body","type":"body"}]}
+{"kind":"layout","id":"ly/9grixw7e","editable":false,"name":"Title and Two Column","type":"twoColTx","placeholders":[{"name":"title","type":"title"},{"name":"Left column","type":"body"},{"name":"Right column","type":"body"}]}
+{"kind":"layout","id":"ly/mhczux07","editable":false,"name":"Title and One Column","type":"tx","placeholders":[{"name":"title","type":"title"},{"name":"body","type":"body"}]}
+{"kind":"layout","id":"ly/a5c7yl0v","editable":false,"name":"Blank","type":"blank"}
+{"kind":"slide","id":"sl/w5wd52","slideIndex":0,"layout":{"id":"ly/a5c7yl0v","name":"Blank"},"title":"Aethon 음악영상 제작 플랫폼","textShapes":1,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"textbox","id":"sh/e9svi9g3","slideIndex":0,"position":{"left":80,"top":100,"width":1400,"height":200},"text":"Aethon 음악영상 제작 플랫폼","geometry":"rect","lineWidth":0,"style":{"fontSize":56,"typeface":"Malgun Gothic","color":"#131B26","bold":true,"alignment":"left"}}
+{"kind":"notes","id":"nt/w5wd52","slideIndex":0,"text":"한국어 글꼴 확인"}

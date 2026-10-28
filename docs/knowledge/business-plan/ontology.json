@@ -1,0 +1,1557 @@
+{
+  "schema_version": "1.0.0",
+  "ontology_id": "aethon-business-plan",
+  "title": "피벗 이후 Aethon 사업계획 온톨로지",
+  "created_at": "2026-10-27",
+  "status": "draft",
+  "path_basis": "repository_root",
+  "source_scope_note": "대표의 피벗 확인과 프로젝트 문서에 기록된 범위만 반영한다. 작성 시점의 출처 재확인이 필요하다.",
+  "sources": [
+    {
+      "id": "BP-SRC-001",
+      "kind": "user_confirmation",
+      "title": "대표의 피벗 및 이름 유지 확인",
+      "path": null,
+      "locator": "2026-10-27 대표 확인",
+      "limit": "법인·고객·매출·자산이나 권리의 승계 여부를 확인한 것은 아님"
+    },
+    {
+      "id": "BP-SRC-002",
+      "kind": "project_document",
+      "title": "제품 정체성·개인 기본 경로 보충문",
+      "path": "docs/design/PRODUCT-IDENTITY-AMENDMENT-20261027.md",
+      "locator": "1~3절",
+      "limit": "채택된 제품 방향이며 전체 구현이나 검증 완료를 뜻하지 않음"
+    },
+    {
+      "id": "BP-SRC-003",
+      "kind": "project_document",
+      "title": "기존 사업계획과 검증 가설",
+      "path": "docs/specification/IP_Music_Video_Platform/chapters/01_business.md",
+      "locator": "1.1~1.5절",
+      "limit": "피벗 전후 명칭 충돌은 정체성 보충문에 따르며 가격·고객·시장 수치는 별도 검증 필요"
+    },
+    {
+      "id": "BP-SRC-004",
+      "kind": "verification_report",
+      "title": "제작·디자인 검증 보고",
+      "path": "docs/qa/codex-workflow-review-20261027/REPORT-ko.md",
+      "locator": "후속 실제 흐름·장애 경계 검증",
+      "limit": "2026-10-27 당시 격리 표본과 자동검사 기록이며 실사용자 수용 및 제품 완성의 증거가 아니다. 경로 이름은 내부 작업 기록용이며 외부에 공유하는 자료에는 이 경로를 싣지 않는다."
+    },
+    {
+      "id": "BP-SRC-005",
+      "kind": "project_document",
+      "title": "Aethon README",
+      "path": "README.md",
+      "locator": "현재 작업 인계 및 실제 지원 흐름",
+      "limit": "문서의 지원 설명과 이력은 개별 버전·검증 범위를 확인해야 함"
+    },
+    {
+      "id": "BP-SRC-006",
+      "kind": "external_primary_source",
+      "title": "IFPI Global Music Report 2026 보도자료",
+      "url": "https://www.ifpi.org/global-music-report-2026-global-recorded-music-revenues-grow-6-4-as-record-companies-drive-innovation/",
+      "published_at": "2026-03-18",
+      "checked_at": "2026-10-28",
+      "limit": "전 세계 녹음음악 산업 지표이며 음악영상 제작 소프트웨어 시장이 아니다. 2026-10-28 재확인에서 일본 2위·2025년 +8.9%(BP-DATA-018) 문장을 함께 확인했다."
+    },
+    {
+      "id": "BP-SRC-007",
+      "kind": "external_primary_source",
+      "title": "YouTube Culture & Trends: virtual creators",
+      "url": "https://blog.youtube/culture-and-trends/youtube-culture-trends-report-virtual-creators/",
+      "published_at": "2025-04-17",
+      "checked_at": "2026-10-27",
+      "limit": "선택된 300개 표본의 조회수이며 전체 창작자, 순 시청자, 국내 수요가 아니다."
+    },
+    {
+      "id": "BP-SRC-008",
+      "kind": "external_primary_source",
+      "title": "한국콘텐츠진흥원 대중음악산업 간담회 보도자료",
+      "url": "https://welcon.kocca.kr/ko/info/business/1958572",
+      "published_at": "2026-08-18",
+      "checked_at": "2026-10-27",
+      "limit": "동향분석 보고서를 인용한 산업 전체 성장률; 원보고서의 조사 방법은 미확인."
+    },
+    {
+      "id": "BP-SRC-009",
+      "kind": "external_primary_source",
+      "title": "Runway 개인 요금",
+      "url": "https://runway.com/pricing",
+      "published_at": null,
+      "checked_at": "2026-10-27",
+      "limit": "개인 Standard 연간 청구 조건의 월 환산, 세금과 API 별도."
+    },
+    {
+      "id": "BP-SRC-010",
+      "kind": "external_primary_source",
+      "title": "밍글스튜디오 서비스 및 요금",
+      "url": "https://minglestudio.co.kr/services",
+      "published_at": null,
+      "checked_at": "2026-10-27",
+      "limit": "특정 공급자의 예상 견적이며 실제 거래액이나 평균 시세가 아니다."
+    },
+    {
+      "id": "BP-SRC-011",
+      "kind": "external_primary_source",
+      "title": "Runway Dev API 가격",
+      "url": "https://docs.dev.runwayml.com/guides/pricing/",
+      "published_at": null,
+      "checked_at": "2026-10-27",
+      "limit": "공개 단가이며 실제 Aethon 청구나 완성 영상 원가가 아니다."
+    },
+    {
+      "id": "BP-SRC-012",
+      "kind": "user_confirmation",
+      "title": "대표 경력·자격·1인 진행·초기 타깃·LAM·사업 단계 확인",
+      "path": null,
+      "locator": "대표 확인: 현직 데이터 엔지니어, 프로페셔널 자격 정정, 1인 진행, 아이돌 MV 타깃 및 LAM 답변; 2026-10-28 정리",
+      "limit": "대표 본인 확인 기록이며 증명서 대조·외부 고객 검증을 뜻하지 않는다."
+    },
+    {
+      "id": "BP-SRC-013",
+      "kind": "project_document",
+      "title": "대표자·팀 정보",
+      "path": "docs/knowledge/business-plan/FOUNDER-PROFILE.md",
+      "locator": "전체; 기준일 2026-10-28",
+      "limit": "본인 확인·문서화된 조사·향후 제안을 구분하며 운영 완성이나 외부 검증을 보증하지 않는다."
+    },
+    {
+      "id": "BP-SRC-014",
+      "kind": "project_document",
+      "title": "TAM·SAM·SOM·LAM 시장 범위",
+      "path": "docs/knowledge/business-plan/MARKET-SCOPE.md",
+      "locator": "전체; 기준일 2026-10-28",
+      "limit": "본인 확인·문서화된 조사·향후 제안을 구분하며 운영 완성이나 외부 검증을 보증하지 않는다."
+    },
+    {
+      "id": "BP-SRC-015",
+      "kind": "project_document",
+      "title": "현재·향후 아키텍처와 보존 그림",
+      "path": "docs/knowledge/presentation/ARCHITECTURE.md",
+      "locator": "전체; 기준일 2026-10-28",
+      "limit": "본인 확인·문서화된 조사·향후 제안을 구분하며 운영 완성이나 외부 검증을 보증하지 않는다."
+    },
+    {
+      "id": "BP-SRC-016",
+      "kind": "external_primary_source",
+      "title": "fal Kling v2.5 Turbo Pro 이미지→영상 공개 단가",
+      "url": "https://fal.ai/models/fal-ai/kling-video/v2.5-turbo/pro/image-to-video",
+      "checked_at": "2026-10-28",
+      "locator": "Pricing: 5 seconds $0.35; additional second $0.07",
+      "limit": "공개 API 단가이며 실제 Aethon 청구·전체 MV 원가·동등 품질을 보증하지 않는다."
+    },
+    {
+      "id": "BP-SRC-017",
+      "kind": "project_document",
+      "title": "사업계획 비용 근거·단위경제 검토",
+      "path": "artifacts/aethon-business-plan-20261028/research/cost-check.md",
+      "locator": "2026-10-28 공식 단가 및 계산 조건 재확인",
+      "limit": "공개 단가와 계산 가정을 기록하며 실제 원가나 절감률 시험은 아니다."
+    },
+    {
+      "id": "BP-SRC-018",
+      "kind": "external_primary_source",
+      "title": "NEKIRU 공식 아티스트 소개",
+      "url": "https://www.nekiru.net/en",
+      "checked_at": "2026-10-28",
+      "locator": "About: released over 17 singles since November 2020",
+      "limit": "단일 아티스트의 누적 싱글 발매 사례이며 MV 수·연간 빈도·전체 고객군 평균이 아니다."
+    },
+    {
+      "id": "BP-SRC-019",
+      "kind": "project_document",
+      "title": "초기 타깃 시장 근거 재확인",
+      "path": "artifacts/aethon-business-plan-20261028/research/market-check.md",
+      "locator": "2026-10-28 공식 자료 4건 재확인",
+      "limit": "공개 사례와 통계의 범위를 확인한 자료이며 Aethon 구매 의향·시장 금액·고객 실적의 증거가 아니다."
+    },
+    {
+      "id": "BP-SRC-020",
+      "kind": "user_confirmation",
+      "title": "HWP 8칸 양식·수치 처리·제출처·수상 이력 사용 확인",
+      "path": null,
+      "locator": "대표 확인 2026-10-28: 01_hwp_8.md 구조·문체 사용과 현재 사업계획 내용 적용, 검증 계획형 수치 처리, 같은 2026 창업아이디어 경진대회 일정 기준, 수상·선정 4건 사용, 이번 작업을 지식 문서의 기준으로 갱신하라는 지시",
+      "limit": "본인 확인 기록이며 수상 증빙·대회 일정·공고 원문을 대조한 것이 아니다."
+    },
+    {
+      "id": "BP-SRC-021",
+      "kind": "project_document",
+      "title": "10월 16일 HWP 본 전문가 의견 원문과 반영 기록",
+      "path": "docs/knowledge/business-plan/REVIEW-FEEDBACK-20261016.md",
+      "locator": "의견 원문 01~03; 반영 내용 표",
+      "limit": "피벗 이전 본문에 대한 심사 의견이며 평가 기관·평가자·점수는 제공되지 않았다. 현재 사업의 고객 검증이나 사업성 보증이 아니다."
+    },
+    {
+      "id": "BP-SRC-022",
+      "kind": "project_document",
+      "title": "10월 16일 HWP 8칸 양식 본문",
+      "path": "01_hwp_8.md",
+      "locator": "1-1~4-2",
+      "limit": "피벗 이전 방향(광고·숏폼 인수인계 작업실)의 본문이다. 서술 구조와 문체만 양식으로 사용하며 수치·실적·타깃·기술 스택은 현재 사업에 승계하지 않는다."
+    },
+    {
+      "id": "BP-SRC-023",
+      "kind": "verification_report",
+      "title": "실제 Claude 모션·편집 저작 제한 시험",
+      "path": "docs/qa/native-motion-20261026/REPORT-ko.md",
+      "locator": "현행 결과 — 실제 Claude와 로컬 웹 UI 후속 검증",
+      "limit": "격리 시험 실행기의 실제 Claude 요청으로 만든 실행 표본 3건이다. fal 유료 생성 0회, 승인 상태 설명의 잔여 문제가 있으며 일반 사용자 연결·브라우저 신규 응답·전체 품질 통과가 아니다."
+    },
+    {
+      "id": "BP-SRC-024",
+      "kind": "project_document",
+      "title": "상세 사업계획서의 실행 단계와 장기 모델 고도화",
+      "path": "docs/knowledge/business-plan/BUSINESS-PLAN.md",
+      "locator": "12 개발과 사업화 실행 단계; 14 장기 모델 고도화와 확장",
+      "limit": "검토용 초안의 실행 제안과 장기 연구 방향이며 확정 일정·예산·성과가 아니다."
+    },
+    {
+      "id": "BP-SRC-025",
+      "kind": "project_document",
+      "title": "타깃·경쟁·권리·시장 규모 조사(2026-10-28)",
+      "path": "docs/knowledge/business-plan/RESEARCH-20261028.md",
+      "locator": "1~8절(7절 외부 보고서 검토, 8절 3단계 일본 근거는 2026-10-28 후속 결정 기록)",
+      "limit": "공개 자료 조사이며 고객 인터뷰나 법률 자문이 아니다. 외부 가격·통계는 사용 전 원문을 다시 확인한다."
+    },
+    {
+      "id": "BP-SRC-026",
+      "kind": "external_primary_source",
+      "title": "Fortune Business Insights AI Video Generator Market",
+      "url": "https://www.fortunebusinessinsights.com/ai-video-generator-market-110060",
+      "checked_at": "2026-10-28",
+      "limit": "민간 리서치 추정치다. 음악영상만 분리한 값과 한국 값이 없고, 기관마다 시장 정의와 금액이 다르다."
+    },
+    {
+      "id": "BP-SRC-027",
+      "kind": "external_primary_source",
+      "title": "2025년 콘텐츠산업조사(2024년 기준) 승인통계용 원문",
+      "url": "https://www.index.go.kr/unity/potal/FileDown.do?seq=16826&id=2752&div=1",
+      "checked_at": "2026-10-28",
+      "limit": "업종별 사업체 수이며 AI·음악영상 스튜디오나 MV 제작 조직을 따로 식별하지 않는다. 2021년 기준부터 표본틀이 바뀌었다."
+    },
+    {
+      "id": "BP-SRC-028",
+      "kind": "external_primary_source",
+      "title": "Runway Team Plan 출시 공지",
+      "url": "https://runway.com/news/company-news/introducing-team-plan",
+      "checked_at": "2026-10-28",
+      "limit": "공급자 공지이며 가격과 기능은 바뀔 수 있다. 도움말의 댓글 기능 설명과 일부 충돌한다."
+    },
+    {
+      "id": "BP-SRC-029",
+      "kind": "external_primary_source",
+      "title": "Neural Frames 가격 안내",
+      "url": "https://www.neuralframes.com/pricing",
+      "checked_at": "2026-10-28",
+      "limit": "공급자 공개가다. 사용자 수·ARR은 별도 회사 발표 보도이며 감사받지 않았다."
+    },
+    {
+      "id": "BP-SRC-030",
+      "kind": "external_primary_source",
+      "title": "인공지능 발전과 신뢰 기반 조성 등에 관한 기본법(법률 제20676호)",
+      "url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=268543&efYd=20260122&chrClsCd=010202",
+      "checked_at": "2026-10-28",
+      "limit": "2026-10-28 대표 결정(BP-FACT-016)으로 사업계획 근거에서 제외한 조사 이력이며 사업계획 작성 입력으로 쓰지 않는다. 조문 원문이다. Aethon이 이용사업자에 해당하는지와 B2B 작업대의 직접 제공 기준은 공식 해석을 확인하지 못했다. 법률 자문이 아니다."
+    },
+    {
+      "id": "BP-SRC-031",
+      "kind": "external_primary_source",
+      "title": "한국저작권위원회 생성형 AI 활용 저작물 등록 안내서 등",
+      "url": "https://www.copyright.or.kr/notify/notice/view.do?brdctsno=55402",
+      "checked_at": "2026-10-28",
+      "limit": "행정 안내서이며 개별 등록 결과를 보장하지 않는다."
+    },
+    {
+      "id": "BP-SRC-032",
+      "kind": "user_confirmation",
+      "title": "대표의 2026-10-28 초기 타깃·시장 단위 선택",
+      "locator": "2026-10-28 대표 결정: 초기 타깃 '스튜디오+콘텐츠팀', 시장 단위 '소프트웨어 지출' 선택",
+      "limit": "사업 방향 결정이며 고객 수요나 지불 의사를 확인한 것이 아니다."
+    },
+    {
+      "id": "BP-SRC-033",
+      "kind": "external_primary_source",
+      "title": "NEKIRU 공식 채널 To Hermitage RSS",
+      "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCmCiWgHfTAfQUbhRv01dpXA",
+      "checked_at": "2026-10-28",
+      "limit": "RSS는 최근 15개 영상만 보여 준다. 2025-03 이후 다른 채널 업로드는 확인하지 못했다."
+    },
+    {
+      "id": "BP-SRC-034",
+      "kind": "project_document",
+      "title": "원래 제품 명세의 가격 가설",
+      "path": "docs/specification/IP_Music_Video_Platform/chapters/01_business.md",
+      "locator": "가격 가설 표(Team·Studio·초기 정리)",
+      "limit": "판매한 적 없는 설계안이며 고객 지불 의사로 검증되지 않았다. 과거 검토 문서다."
+    },
+    {
+      "id": "BP-SRC-035",
+      "kind": "user_confirmation",
+      "title": "대표의 2026-10-28 후속 결정(웹툰 IP 추가·AI 생성 표시 서술 폐기·3단계 글로벌 진출 일본 우선)",
+      "locator": "2026-10-28 대표 결정: 외부 보고서(PDF) 검토 후 '웹툰 IP 추가' 결정; AI 생성 표시 관련 서술 '그냥 폐기' 지시; 글로벌 설명 틀 '3단계 보강만'과 첫 해외 시장 '일본 우선' 선택",
+      "limit": "사업 방향과 원고 범위에 대한 결정이며 고객 수요·지불 의사·법적 판단을 확인한 것이 아니다. 폐기 사유는 따로 밝히지 않았다."
+    },
+    {
+      "id": "BP-SRC-036",
+      "kind": "user_conversation",
+      "title": "대표 제공 외부 보고서 「소규모 팬덤 음원 영상화 시장 분석 및 B2B 수익화 전략 보고서」(PDF, 4쪽)",
+      "locator": "2026-10-28 대표가 제공한 PDF. 검토 결과는 RESEARCH-20261028.md 7절",
+      "limit": "작성자·작성일 미상이고 참고문헌에 URL이 없다. 다수 수치가 미확인이거나 근거가 없어 원고 근거로 직접 쓰지 않는다."
+    },
+    {
+      "id": "BP-SRC-037",
+      "kind": "external_secondary_source",
+      "title": "웹툰가이드: 네이버웹툰·뮤직앤뉴 웹툰 OST 협력(2023-09)",
+      "url": "https://www.webtoonguide.com/ko/board/news-column/18596",
+      "checked_at": "2026-10-28",
+      "limit": "2차 기사이며 협력 계획 보도다. 실제 리릭 비디오 제작 편수와 예산은 확인하지 않았다."
+    },
+    {
+      "id": "BP-SRC-038",
+      "kind": "external_secondary_source",
+      "title": "웹툰가이드 2022-10-20: 『세기말 풋사과 보습학원』 세 번째 OST 황민현 ‘예뻐 보여’",
+      "url": "https://www.webtoonguide.com/ko/board/news-column/17419",
+      "checked_at": "2026-10-28",
+      "limit": "2차 기사다. OST 발매 사실이며 음악영상 발주 빈도·단가의 근거가 아니다."
+    },
+    {
+      "id": "BP-SRC-039",
+      "kind": "external_secondary_source",
+      "title": "EDM.com: Ditto Music 조사 독립 아티스트 74% 연 음악 수익 1,000달러 미만",
+      "url": "https://edm.com/industry/74-percent-independent-artists-earned-less-than-1000-from-music/",
+      "checked_at": "2026-10-28",
+      "limit": "Ditto Music 보고서 원문이 아닌 보도다. 응답자 표본(5,039명·112개국)은 자가 응답이며 조사 시점은 원문으로 대조하지 않았다. 2026-10-28 재열람 시 403으로 열리지 않아 원문 출처 BP-SRC-041로 대체했다."
+    },
+    {
+      "id": "BP-SRC-040",
+      "kind": "external_secondary_source",
+      "title": "gamebiz: 일본동화협회 「アニメ産業レポート2025」 시장 규모 속보치",
+      "url": "https://gamebiz.jp/news/415289",
+      "checked_at": "2026-10-28",
+      "limit": "보고서 발간 전 속보치 보도(2025-10-31)다. 애니메이션 산업 전체이며 음악영상 시장이나 Aethon 수요가 아니다."
+    },
+    {
+      "id": "BP-SRC-041",
+      "kind": "external_primary_source",
+      "title": "Ditto Music 「The Independent Music Report 2026」 원문",
+      "url": "https://dittomusic.com/en/independent-music-report-2026",
+      "checked_at": "2026-10-28",
+      "limit": "Ditto로 음원을 낸 아티스트를 Ditto 채널로 모집한 자가 응답 표본(5,039명·112개국)이며 원문에 조사 기간 표기가 없다. 헤드라인 값은 보도자료(2026-09-29, Barchart 재게재)와도 대조했다. 한국 아티스트만의 값이 아니다."
+    },
+    {
+      "id": "BP-SRC-042",
+      "kind": "external_secondary_source",
+      "title": "웹툰가이드 2022-08-04: 『세기말 풋사과 보습학원』 두 번째 OST 기현 ‘IS THIS LOVE’",
+      "url": "https://www.webtoonguide.com/ko/board/news-column/17104",
+      "checked_at": "2026-10-28",
+      "limit": "2차 기사다. OST 발매 사실이며 음악영상 발주 빈도·단가의 근거가 아니다."
+    }
+  ],
+  "concepts": [
+    {
+      "id": "BP-FACT-001",
+      "type": "project_identity",
+      "title": "기존 Aethon에서 방향 전환하고 이름 유지",
+      "classification": "decision",
+      "verification": "user_confirmed",
+      "description": "현재 프로젝트는 기존 Aethon에서 피벗된 방향을 따르며 Aethon 이름을 유지한다.",
+      "limit": "기존 사업의 고객·매출·인력·계약·자산·권리·가격이 자동 승계된다는 뜻은 아니다."
+    },
+    {
+      "id": "BP-FACT-002",
+      "type": "product_direction",
+      "title": "IP 음악영상 제작",
+      "classification": "decision",
+      "verification": "source_documented",
+      "description": "Aethon의 현재 제품 목적은 IP 음악영상 제작이다.",
+      "limit": "목적과 구현 완료는 별개이며 AethonSaaS는 별도 프로젝트다."
+    },
+    {
+      "id": "BP-FACT-003",
+      "type": "product_direction",
+      "title": "개인 제작 기본, 협업은 선택",
+      "classification": "decision",
+      "verification": "source_documented",
+      "description": "개인 제작에서 팀 생성이나 타인의 팀 승인이 필수 선행 조건이 아니며 팀 협업은 확장 경로다.",
+      "limit": "팀 인증·접근 제어 또는 개인 전체 흐름이 완성됐다는 주장이 아니다."
+    },
+    {
+      "id": "BP-FACT-004",
+      "type": "validation_evidence",
+      "title": "제한된 합성 음원 출력 시험",
+      "classification": "evidence",
+      "verification": "reported_isolated_test",
+      "description": "2026-10-27 보고서는 격리 HTTP와 합성 음원으로 3초 MP4 생성·검사·재조회를 기록한다.",
+      "limit": "실사용자 시험, 전체 브라우저 완주, 실제 AI 영상 생성 성공이나 상용 준비의 증거가 아니다."
+    },
+    {
+      "id": "BP-FACT-005",
+      "type": "product_scope",
+      "title": "권리·비용·승인·복구를 포함한 제작 경로",
+      "classification": "decision",
+      "verification": "source_documented",
+      "description": "개인 제작 방향은 자료 선택, 계획, 권리·비용·실행 범위 확인, 실행·복구, 검토·편집과 승인된 출력·재개를 포함한다.",
+      "limit": "목표와 계약의 설명이며 모든 단계가 실제 사용자에게 완성됐다고 말할 수 없다."
+    },
+    {
+      "id": "BP-HYP-001",
+      "type": "value_proposition",
+      "title": "반복 제작 시 재작업 절감",
+      "classification": "hypothesis",
+      "verification": "unverified",
+      "description": "같은 IP의 후속 제작에서 설정과 승인 이유를 재사용하면 준비·검토·재작업 부담을 줄일 수 있다.",
+      "limit": "제품 자체의 실제 절감량이나 고객 수요는 아직 입증되지 않았다."
+    },
+    {
+      "id": "BP-HYP-002",
+      "type": "customer_segment",
+      "title": "이전 검토한 반복 제작 고객군",
+      "classification": "hypothesis",
+      "verification": "unverified",
+      "description": "소규모 버추얼 레이블·그룹, 반복 수주 제작자 및 개인 VTuber는 조사할 고객 후보이다.",
+      "limit": "과거 후보 기록. 2026-10-28 최신 타깃 결정은 BP-FACT-007, 수요 가설은 BP-HYP-006을 따른다. 개인 VTuber 일반은 현재 LAM이 아니다."
+    },
+    {
+      "id": "BP-HYP-003",
+      "type": "problem",
+      "title": "반복 설명과 승인 조율의 부담",
+      "classification": "hypothesis",
+      "verification": "unverified",
+      "description": "반복 설명, 설정 오류, 승인 조율이 음악 IP 제작의 시간과 비용을 늘릴 수 있다.",
+      "limit": "구체적인 빈도와 비용은 제작 로그와 고객 조사가 필요하다."
+    },
+    {
+      "id": "BP-HYP-004",
+      "type": "differentiation",
+      "title": "맥락과 승인 근거의 재사용",
+      "classification": "hypothesis",
+      "verification": "unverified",
+      "description": "IP·곡·시점에 맞는 자료 적용과 승인 근거 추적은 반복 제작에 유용할 수 있다.",
+      "limit": "온톨로지 자체의 독점성이나 경쟁사 대비 우위가 증명된 것은 아니다."
+    },
+    {
+      "id": "BP-UNKNOWN-001",
+      "type": "business_metric",
+      "title": "고객·매출·반복 결제",
+      "classification": "unknown",
+      "verification": "unverified",
+      "description": "BP-FACT-008에 본인 확인한 고객 인터뷰·시험 고객·매출 없음 상태를 기록했다. 고객 모집단, 반복 결제 검증, 과거 사업 실적의 관련성은 별도 확인 대상이다.",
+      "limit": "확인 전 실적으로 기재하지 않는다."
+    },
+    {
+      "id": "BP-UNKNOWN-002",
+      "type": "market_metric",
+      "title": "시장 규모와 접근 가능 고객",
+      "classification": "unknown",
+      "verification": "unverified",
+      "description": "접근 가능한 고객 수와 제작 빈도 분포 및 본 제품의 유효 시장 규모는 확인되지 않았다.",
+      "limit": "근거와 산식을 확보하기 전 TAM·성공률을 숫자로 쓰지 않는다."
+    },
+    {
+      "id": "BP-UNKNOWN-003",
+      "type": "financial_assumption",
+      "title": "현재 가격·원가·단위경제성",
+      "classification": "unknown",
+      "verification": "unverified",
+      "description": "현재 제품의 확정 요금, 실제 제공 원가, 획득 비용과 수익성은 확인되지 않았다.",
+      "limit": "과거 설계 가격이나 공급자 요금을 실제 거래 또는 현재 가격으로 취급하지 않는다."
+    },
+    {
+      "id": "BP-UNKNOWN-004",
+      "type": "validation_gap",
+      "title": "실사용과 실제 모델 검증",
+      "classification": "unknown",
+      "verification": "unverified",
+      "description": "실무자 수용, 일반 사용자용 실제 모델 연결과 실제 AI 영상 생성의 전체 검증은 보고서 기준 미완료다.",
+      "limit": "시점 이후 새 증거가 있는지 작성 전 확인한다."
+    },
+    {
+      "id": "BP-UNKNOWN-005",
+      "type": "business_resource",
+      "title": "법인·권리·조직·자금",
+      "classification": "unknown",
+      "verification": "unverified",
+      "description": "대표 신원과 1인 진행은 BP-FACT-006/008에 본인 확인으로 기록했다. 법적 주체·등록, IP와 자료 권리, 투입 시간, 채용 조건 및 가용 자금은 별도 확인이 필요하다.",
+      "limit": "이름을 유지한다는 결정만으로 승계·확보를 주장하지 않는다."
+    },
+    {
+      "id": "BP-EXP-001",
+      "type": "experiment",
+      "title": "반복 제작 시간과 수정 비교",
+      "classification": "experiment",
+      "verification": "not_run",
+      "description": "동일 IP의 반복 제작에서 기준 작업과 Aethon 사용 작업의 준비·검토·수정 시간과 오류를 비교하는 시험을 설계한다.",
+      "limit": "표본, 대조군, 예산, 측정 정의, 사전 동의와 성공 기준은 실행 전에 정한다."
+    },
+    {
+      "id": "BP-EXP-002",
+      "type": "experiment",
+      "title": "고객 문제와 유료 의향 확인",
+      "classification": "experiment",
+      "verification": "not_run",
+      "description": "고객 후보에게 현재 제작 방식과 반복 문제를 조사하고 실제 구매·반복 결제 근거를 별도로 확인한다.",
+      "limit": "인터뷰 관심이나 가상 지불 의향을 실제 반복 결제와 동일시하지 않는다."
+    },
+    {
+      "id": "BP-DATA-001",
+      "type": "external_quantitative_indicator",
+      "title": "2025 세계 녹음음악 매출",
+      "classification": "evidence",
+      "verification": "source_documented",
+      "value": 31.7,
+      "unit": "billion USD",
+      "period": "2025",
+      "checked_at": "2026-10-27",
+      "description": "IFPI가 보고한 세계 녹음음악 매출. Aethon TAM이나 영상 제작 소프트웨어 시장이 아니다.",
+      "limit": "IFPI가 보고한 세계 녹음음악 매출. Aethon TAM이나 영상 제작 소프트웨어 시장이 아니다."
+    },
+    {
+      "id": "BP-DATA-002",
+      "type": "external_quantitative_indicator",
+      "title": "2025 세계 녹음음악 매출 증가율",
+      "classification": "evidence",
+      "verification": "source_documented",
+      "value": 6.4,
+      "unit": "percent year-on-year",
+      "period": "2025",
+      "checked_at": "2026-10-27",
+      "description": "2024년 대비 전 세계 녹음음악 매출 증가율. Aethon 성장률이 아니다.",
+      "limit": "2024년 대비 전 세계 녹음음악 매출 증가율. Aethon 성장률이 아니다."
+    },
+    {
+      "id": "BP-DATA-003",
+      "type": "external_quantitative_indicator",
+      "title": "2025 세계 녹음음악 매출 중 스트리밍 비중",
+      "classification": "evidence",
+      "verification": "source_documented",
+      "value": 69.6,
+      "unit": "percent",
+      "period": "2025",
+      "checked_at": "2026-10-27",
+      "description": "세계 녹음음악 매출 구성비이며 영상 제작 도구 이용률이 아니다.",
+      "limit": "세계 녹음음악 매출 구성비이며 영상 제작 도구 이용률이 아니다."
+    },
+    {
+      "id": "BP-DATA-004",
+      "type": "external_quantitative_indicator",
+      "title": "2024 버추얼 크리에이터 표본 조회",
+      "classification": "evidence",
+      "verification": "source_documented",
+      "value": 15,
+      "unit": "billion views, greater than",
+      "period": "2024",
+      "checked_at": "2026-10-27",
+      "description": "YouTube가 선택한 크리에이터 300개 표본의 영상·라이브·Shorts 조회수 합계가 150억 회 초과. 순 시청자 또는 전체 시장이 아니다.",
+      "limit": "YouTube가 선택한 크리에이터 300개 표본의 영상·라이브·Shorts 조회수 합계가 150억 회 초과. 순 시청자 또는 전체 시장이 아니다."
+    },
+    {
+      "id": "BP-DATA-005",
+      "type": "external_quantitative_indicator",
+      "title": "2025 국내 대중음악 매출 증가율",
+      "classification": "evidence",
+      "verification": "source_documented",
+      "value": 15.8,
+      "unit": "percent year-on-year",
+      "period": "2025",
+      "checked_at": "2026-10-27",
+      "description": "KOCCA 보도자료가 인용한 국내 대중음악산업 전체의 성장률. MV 제작 시장이나 자사 성장률이 아니다; 원보고서 방법 미확인.",
+      "limit": "KOCCA 보도자료가 인용한 국내 대중음악산업 전체의 성장률. MV 제작 시장이나 자사 성장률이 아니다; 원보고서 방법 미확인."
+    },
+    {
+      "id": "BP-DATA-006",
+      "type": "external_quantitative_indicator",
+      "title": "Runway Standard 개인 요금",
+      "classification": "evidence",
+      "verification": "source_documented",
+      "value": 12,
+      "unit": "USD per month equivalent, billed annually",
+      "period": "2026-10-27",
+      "checked_at": "2026-10-27",
+      "description": "연간 결제 기준 월 환산, 월 625크레딧; API와 별도. 세금 여부 미확인.",
+      "limit": "연간 결제 기준 월 환산, 월 625크레딧; API와 별도. 세금 여부 미확인."
+    },
+    {
+      "id": "BP-DATA-007",
+      "type": "external_quantitative_indicator",
+      "title": "밍글 프리미엄 MV 예상 비용 범위",
+      "classification": "evidence",
+      "verification": "source_documented",
+      "value": [
+        2000000,
+        4000000
+      ],
+      "unit": "KRW per project, excluding VAT",
+      "period": "2026-10-27",
+      "checked_at": "2026-10-27",
+      "description": "기획~납품 안내의 특정 업체 예상 가격; 범위에 따라 별도 상담. 시장 평균·실제 결제액·Aethon의 절감액이 아니다.",
+      "limit": "기획~납품 안내의 특정 업체 예상 가격; 범위에 따라 별도 상담. 시장 평균·실제 결제액·Aethon의 절감액이 아니다."
+    },
+    {
+      "id": "BP-DATA-008",
+      "type": "external_quantitative_indicator",
+      "title": "Runway Dev gen4.5 공개 단가 산술 예시",
+      "classification": "evidence",
+      "verification": "source_documented",
+      "value": 0.12,
+      "unit": "USD per generated second, excluding additional costs",
+      "period": "2026-10-27",
+      "checked_at": "2026-10-27",
+      "description": "12 credits/초 × 0.01 USD/credit. 세금, 재시도, 기타 단계 제외; 자사 실제 청구나 완성 영상 1초의 원가가 아니다.",
+      "limit": "12 credits/초 × 0.01 USD/credit. 세금, 재시도, 기타 단계 제외; 자사 실제 청구나 완성 영상 1초의 원가가 아니다."
+    },
+    {
+      "id": "BP-FACT-006",
+      "type": "founder_profile",
+      "title": "본인 확인에 따른 대표자 소개 기준",
+      "classification": "decision",
+      "verification": "user_confirmed",
+      "description": "이성민, RealizeSoft(현실화하는소프트) 대표, 경복대학교 소프트웨어융합학과. 현직 데이터 엔지니어이며 한화 포탈 데이터 엔지니어링 경험이 있다. Databricks 데이터 엔지니어 프로페셔널, 국가공인 네트워크관리사 2급, AI프러덕션 기획자 1급 보유라는 본인 표기로 소개한다. 현재 프로젝트는 대표 1인이 진행한다.",
+      "limit": "증명서 대조 전 본인 확인 정보. 재학·졸업 여부, 현 고용 회사, 한화 직접 고용, 법인 설립, 자격 공식 영문명·발급기관·유효기간을 추정하지 않는다. 수상은 별도 과거 팀 이력이다."
+    },
+    {
+      "id": "BP-FACT-007",
+      "type": "launch_market_definition",
+      "title": "아이돌 MV 제작팀을 LAM으로 정한 초기 공략 범위",
+      "classification": "decision",
+      "verification": "user_confirmed",
+      "description": "TAM은 글로벌 MV 제작 소프트웨어, SAM은 국내 제공 가능 영역, SOM은 접근·판매·지원 가능한 국내 제작 조직, LAM은 출시 초기 소규모 아이돌 기획사·지하/라이브·버추얼 아이돌 MV 제작팀으로 정의한다. LAM은 Launch Addressable Market이다. 개인 VTuber 일반은 초기 타깃에서 제외한다.",
+      "limit": "타깃 선택과 수요 검증은 다르다. 네 단계 금액·조직 수·지출 및 기간은 미산정이며 LAM을 보편 표준 약어로 주장하지 않는다. 2026-10-28 BP-FACT-014로 초기 타깃이 대체됐다."
+    },
+    {
+      "id": "BP-FACT-008",
+      "type": "reported_business_stage",
+      "title": "본인 확인된 1인 개발 및 고객 검증 전 상태",
+      "classification": "decision",
+      "verification": "user_confirmed",
+      "description": "현재 대표 1인이 개발하며 고객 인터뷰·시험 고객·매출은 없다는 본인 확인을 발표 기준으로 사용한다. 채용 시점·인원·확보 예산은 미정이다.",
+      "limit": "외부 회계 검증이 아니며 가입자 수 등 미제공 지표까지 0으로 확장하지 않는다. 내부 출력 시험은 고객 성과가 아니다."
+    },
+    {
+      "id": "BP-FACT-009",
+      "type": "documented_architecture",
+      "title": "기존 코드 조사와 제한 시험의 현재 구성",
+      "classification": "evidence",
+      "verification": "source_documented",
+      "description": "2026-10-27 코드 조사와 10월 28일 발표 정리에서 HTML/CSS/JavaScript, Python HTTP, SQLite·로컬 파일, FFmpeg/FFprobe 및 자체 작업 조율 경로를 확인했다. Claude 대화 어댑터는 별도 주입 제한 시험, fal 영상 어댑터는 기본 미연결·실제 생성 미검증으로 구분한다.",
+      "limit": "이번 문서 갱신에서 코드를 다시 실행하거나 외부 모델 운영을 입증하지 않았다. 현재 코드 변동 여부는 제품 작업 시 재확인한다."
+    },
+    {
+      "id": "BP-HYP-005",
+      "type": "architecture_proposal",
+      "title": "AWS·PostgreSQL·Databricks와 모델 고도화 후보",
+      "classification": "hypothesis",
+      "verification": "unverified",
+      "description": "Next.js·FastAPI, PostgreSQL, AWS S3·CloudFront·SQS·ECS/Fargate, RunPod/Wan 추론 및 Databricks 분석을 후보로 검토한다. 대화·이미지·영상 모델은 허용된 데이터와 조건에서 미세조정·증류 및 평가를 연구하는 방향이다.",
+      "limit": "현재 도입·학습·상용 운영 성과가 아니다. 모든 서비스의 동시 도입, 특정 교사 모델의 사용 권리, 비용·품질 효과는 미확정이다."
+    },
+    {
+      "id": "BP-HYP-006",
+      "type": "customer_segment",
+      "title": "초기 아이돌 MV 제작팀의 구매·사용 가설",
+      "classification": "hypothesis",
+      "verification": "unverified",
+      "description": "소규모 아이돌 기획사·지하/라이브·버추얼 아이돌 제작 운영팀의 기획·자료 전달·수정·승인과 반복 작업이 초기 조사 대상이다. 구매자는 기획사 대표나 제작 책임자, 사용자는 콘텐츠 담당자나 외부 제작자일 수 있다.",
+      "limit": "역할, 반복 빈도, 문제 크기, 예산과 지불 의향은 인터뷰 전 가설이다. 초기 타깃 선택은 BP-FACT-007, 시장 금액은 BP-UNKNOWN-002와 구분한다. 2026-10-28 타깃 개정(BP-FACT-014) 이후 구매·사용 주체 가설은 MARKET-SCOPE를 따른다."
+    },
+    {
+      "id": "BP-DATA-009",
+      "type": "external_quantitative_indicator",
+      "title": "fal Kling v2.5 Turbo Pro 5초 생성 공개 단가",
+      "classification": "evidence",
+      "verification": "source_documented",
+      "value": 0.35,
+      "unit": "USD per 5-second generation request, excluding additional costs",
+      "period": "2026-10-28",
+      "checked_at": "2026-10-28",
+      "description": "이미지→영상 API 5초 요청 0.35달러. 60컷 × 총 유료 요청 배수 1/2/3의 API 소계는 21/42/63달러라는 가정 계산에 사용한다.",
+      "limit": "입력 이미지·대화 모델·편집·저장·전송·인건비·권리·세금 등 제외. 실제 채택·실패 과금·납품·완성 MV 원가·실측 절감률이 아니다."
+    },
+    {
+      "id": "BP-DATA-010",
+      "type": "external_quantitative_indicator",
+      "title": "NEKIRU 누적 싱글 발매 공개 사례",
+      "classification": "evidence",
+      "verification": "source_documented",
+      "value": 17,
+      "unit": "singles, greater than",
+      "period": "since November 2020; observed 2026-10-28",
+      "checked_at": "2026-10-28",
+      "description": "공식 소개의 싱글 17곡 초과 누적 발매. 한 아티스트에서 반복 음원 발매가 관찰되는 사례다.",
+      "limit": "MV 편수·연간 발매량·전체 시장 평균이 아니며 Aethon의 고객·구매 의향이나 반복 사용을 입증하지 않는다."
+    },
+    {
+      "id": "BP-FACT-010",
+      "type": "team_track_record",
+      "title": "피벗 이전 아이템의 RealizeSoft 팀 수상·선정 이력",
+      "classification": "decision",
+      "verification": "user_confirmed",
+      "description": "2026년 7월 제3회 대한민국 학생창업주간 U300 Academy 트랙 대상(한국연구재단 이사장상), 2026년 9월 경기북동부 청년창업챌린지 IR 데모데이 기술상(경기도경제과학진흥원장상), 2025년 경복대학교 교내 창업캠프 대상, 서울시립대학교·라쿠텐심포니 오디세이 최종 선정팀을 과거 팀 이력으로 소개한다.",
+      "limit": "현재 아이돌 MV 작업대의 고객 검증·매출·투자 실적이 아니며 개인 단독 수상으로 바꾸지 않는다. 교내 창업캠프 대상·오디세이 선정과 U300 세부 명칭·참가 규모는 2026-10-28 본인 확인이며 증빙 원문 미대조."
+    },
+    {
+      "id": "BP-FACT-011",
+      "type": "submission_policy",
+      "title": "HWP 8칸 제출본의 작성 기준",
+      "classification": "decision",
+      "verification": "user_confirmed",
+      "description": "2026 창업아이디어 경진대회 서류용 HWP 8칸은 10월 16일 본의 구조·문체를 따르고 내용은 현재 사업계획서를 사용한다. 미정 요금·예산·목표값은 숫자를 만들지 않고 산식과 판단 기준으로 쓰며, 추진 일정은 발표평가 직후 11월 첫째 주부터 2027년 1월 말까지 13주로 둔다.",
+      "limit": "대회 일정과 분량 제한은 공고 원문으로 재확인해야 한다. 13주 단계 구분은 실행 제안이며 확정 계약이나 달성 실적이 아니다."
+    },
+    {
+      "id": "BP-FACT-012",
+      "type": "external_review_feedback",
+      "title": "10월 16일 본에 대한 전문가 의견 3건",
+      "classification": "evidence",
+      "verification": "source_documented",
+      "description": "문제 정의·정직한 수치 표시를 강점으로, 실연동 근거를 가장 큰 근거로 평가했다. 사업화 계획은 중장기 확장 전략과 단계별 성장 목표, 경쟁력은 자체 기술 고도화 계획의 보강을 요청했다.",
+      "limit": "피벗 이전 본문에 대한 의견이다. 현재 사업의 시장성·고객 수요·선정 가능성을 판단한 근거로 쓰지 않는다."
+    },
+    {
+      "id": "BP-FACT-013",
+      "type": "validation_evidence",
+      "title": "실제 Claude 모션·편집 저작 실행 표본",
+      "classification": "evidence",
+      "verification": "reported_isolated_test",
+      "description": "2026-10-26 격리 시험에서 실제 Claude(claude-haiku-5-5)가 합성 과제의 모션 구성과 편집 제안을 작성하고 서버 검증과 시험 제어기의 사람 역할 승인을 거쳐 1920×1080 24fps 로컬 영상으로 출력한 실행 표본 3건을 기록한다.",
+      "limit": "실제 AI 영상 생성, 일반 사용자 대화 연결, 브라우저에서의 신규 응답, 실제 사람의 승인, 실사용자 수용의 증거가 아니다. 모델의 승인 상태 설명은 일부 미흡으로 판정됐다."
+    },
+    {
+      "id": "BP-HYP-007",
+      "type": "technology_strategy",
+      "title": "자체 플랫폼과 업무별 모델 고도화로 외부 모델 의존 완화",
+      "classification": "hypothesis",
+      "verification": "unverified",
+      "description": "AI 모델 연결만 외부에 두고 제작·편집·저장·미리보기·렌더·출력·복구는 자체 플랫폼에서 수행하며, 공급자별 어댑터로 교체 가능성을 두고, 허용된 평가 기록 축적 → 공급자 API와 자체 호스팅 비교 → 권리가 확인된 자료로 업무별 미세조정의 순서로 외부 의존을 줄인다.",
+      "limit": "자체 플랫폼 원칙은 구현 완료를 뜻하지 않는다. 어댑터 간 실제 교체, 학습 데이터 권리, 교사 모델 조건, GPU·연구 인력·예산, 외부 API 대체 시점은 미확정이다."
+    },
+    {
+      "id": "BP-HYP-008",
+      "type": "growth_strategy",
+      "title": "통과 조건형 3단계 성장 경로",
+      "classification": "hypothesis",
+      "verification": "unverified",
+      "description": "1단계 초기 시장 검증(같은 IP 제작 묶음 완주·다음 제작물 재사용·반복 결제), 2단계 운영 확장(선택적 협업·다중 조직 권한·클라우드 운영·게임 IP 등 인접 음악영상), 3단계 기술 고도화와 글로벌 진출(첫 해외 시장 일본, 이후 다른 해외 시장과 넓은 AI 협업 영상 제작 시장, 음원 유통사 대량 영상화는 후보)로, 앞 단계의 통과 조건을 채운 경우에만 다음 단계를 연다.",
+      "limit": "연차 구분은 제안이며 단계별 고객 수·매출 목표는 미설정이다. 앞 단계의 실제 결제·이탈·원가 기록으로 설정한다."
+    },
+    {
+      "id": "BP-FACT-014",
+      "type": "launch_market_definition",
+      "title": "AI·음악영상 스튜디오와 기획사 콘텐츠팀으로 초기 타깃 개정",
+      "classification": "decision",
+      "verification": "user_confirmed",
+      "description": "출시 초기 공략 대상을 AI·음악영상 제작 스튜디오와 레이블·기획사 콘텐츠팀(내부에 영상 제작 인력을 둔 레이블·기획사)으로 하고 기획사는 검수·승인 주체로도 참여한다. 반복 단위는 같은 IP의 제작 묶음(티저·리릭·숏폼·라이브 MV·MV)이다. 지하·라이브 아이돌은 공연 영상 기반 숏폼·라이브 MV의 하위 사례, 개인 VTuber 일반과 실존 아티스트 얼굴·목소리 합성은 초기 제외. SAM~LAM은 조직 수 × 연간 음악영상 제작 소프트웨어 지출로 산정하고 TAM은 참고 범주로 둔다. BP-FACT-007을 대체한다.",
+      "limit": "타깃 선택은 수요 확인과 다르다. 스튜디오 수와 실제 도구 지출, 구매 주체는 인터뷰로 확인해야 한다. 2026-10-28 BP-FACT-015로 웹툰·서브컬처 IP 스튜디오가 1단계 표적에 추가됐다(대체 아님). 반복 단위의 OST 영상 추가, 원작 이용 허락, 2단계 인접 시장 조정, 개인 인디 뮤지션·개인 VTuber용 초저가 도구 제외는 BP-FACT-015에 있다."
+    },
+    {
+      "id": "BP-DATA-011",
+      "type": "external_quantitative_indicator",
+      "title": "글로벌 AI 영상 생성 시장 2026년 추정",
+      "classification": "evidence",
+      "verification": "source_documented",
+      "value": 847.0,
+      "unit": "million USD",
+      "period": "2026 estimate",
+      "checked_at": "2026-10-28",
+      "description": "Fortune Business Insights의 2026년 AI 영상 생성 시장 추정치. 2025년 716.8, 2034년 3,350.0, CAGR 18.8%.",
+      "limit": "음악영상만의 값이나 한국 값이 아니다. Grand View Research는 같은 해 946.4로 추정한다."
+    },
+    {
+      "id": "BP-DATA-012",
+      "type": "external_quantitative_indicator",
+      "title": "AI 영상 생성 시장 중 미디어·엔터테인먼트 비중",
+      "classification": "evidence",
+      "verification": "source_documented",
+      "value": 23.87,
+      "unit": "percent",
+      "period": "2026 estimate",
+      "checked_at": "2026-10-28",
+      "description": "Fortune Business Insights의 2026년 산업별 비중 중 Media & Entertainment.",
+      "limit": "음악 외 방송·영화 등을 포함한다."
+    },
+    {
+      "id": "BP-DATA-013",
+      "type": "external_quantitative_indicator",
+      "title": "국내 음악 기획 및 제작업 사업체 수",
+      "classification": "evidence",
+      "verification": "source_documented",
+      "value": 1385,
+      "unit": "establishments",
+      "period": "2024 (survey published 2026)",
+      "checked_at": "2026-10-28",
+      "description": "「2025년 콘텐츠산업조사(2024년 기준)」 음악 기획 및 제작업 사업체 1,385개, 종사자 5,159명, 매출 3조 7,871억 원.",
+      "limit": "AI·음악영상 스튜디오는 포함하지 않으며, 모든 사업체가 음악영상을 반복 제작한다는 뜻이 아니다."
+    },
+    {
+      "id": "BP-DATA-014",
+      "type": "external_quantitative_indicator",
+      "title": "Runway Team 좌석당 월 요금",
+      "classification": "evidence",
+      "verification": "source_documented",
+      "value": 69,
+      "unit": "USD per seat per month",
+      "period": "monthly billing, launched 2026-09-04",
+      "checked_at": "2026-10-28",
+      "description": "협업형 범용 생성 도구의 공개 가격 비교값. 연간 결제 시 55달러, 2~9석.",
+      "limit": "제공 범위가 Aethon과 달라 절감액이나 Aethon 가격 근거로 쓰지 않는다."
+    },
+    {
+      "id": "BP-DATA-015",
+      "type": "external_quantitative_indicator",
+      "title": "NEKIRU 최근 15개 영상 중 정식 MV 수",
+      "classification": "evidence",
+      "verification": "source_documented",
+      "value": 0,
+      "unit": "official music videos among 15 latest uploads",
+      "period": "uploads through 2025-03-07; observed 2026-10-28",
+      "checked_at": "2026-10-28",
+      "description": "최근 15개 영상은 LIVE MUSIC VIDEO 4편, 리릭 비디오 1편, 커버·브이로그 등으로 구성됐다.",
+      "limit": "한 팀의 최근 영상 표본이며 라이브 아이돌 전체의 MV 제작 비율이 아니다."
+    },
+    {
+      "id": "BP-HYP-009",
+      "type": "financial_assumption",
+      "title": "소프트웨어 지출 단위 TAM~LAM 추정",
+      "classification": "hypothesis",
+      "verification": "unverified",
+      "description": "TAM(참고 범주) 약 2억 220만 달러(847.0M USD × 23.87%). SAM-a 음악 기획사 전체(상위 모집단) 약 41억 4,000만 원(1,385개 × Team 가설 연 298만 8,000원, 도입률 100% 이론값), SAM-b 스튜디오 쪽 미산정, SAM-c 웹툰 제작 및 제공(CP) 약 9억 1,433만 원(306개 × 같은 Team 가설, 도입률 100% 이론값). SOM 약 8,964만 원(30개 조직 가정: 첫 13주에 LAM 상한 3곳을 모두 채우고 이후 세 분기 9곳 안팎씩, 합계 30곳 안팎, 금액은 30곳 기준), LAM 약 896만 원(13주 유료 검증 최대 3개 조직). SOM·LAM은 Team 가설 적용.",
+      "limit": "조직당 지출은 미판매 가격 가설이고 SOM 30개는 가정이다. 스튜디오 수·실측 지출·결제가 확인되면 다시 계산한다. 접촉 수와 지원 수는 따로 기록하고, 첫 시험의 조직당 지원 시간을 확인한 뒤 다시 산정한다. 지원 시간이 대표의 투입 한도를 넘으면 첫 팀원 확보 조건(상세 사업계획서 13장)을 따른다."
+    },
+    {
+      "id": "BP-HYP-010",
+      "type": "value_proposition",
+      "title": "[폐기 2026-10-28] AI 생성 표시와 과정 기록을 담은 납품 패키지 가치",
+      "classification": "hypothesis",
+      "verification": "unverified",
+      "description": "Aethon이 AI 기본법상 이용사업자일 가능성이 높아 생성 장면 결과물의 AI 생성 표시가 제품 요구사항이 되고, 저작권 등록 안내서가 권고하는 선택·배열·편집 과정 기록이 스튜디오의 기획사 납품과 분쟁 대비에 가치를 준다는 가설.",
+      "limit": "법은 기록 자체를 의무로 두지 않는다. B2B 작업대 적용 해석과 고객 지불 의사는 미확인이며 법률 자문이 아니다. 납품 패키지는 미구현이다. 2026-10-28 대표 결정(BP-FACT-016)으로 폐기했으며 사업계획 작성 입력으로 쓰지 않는다."
+    },
+    {
+      "id": "BP-FACT-015",
+      "type": "launch_market_definition",
+      "title": "웹툰·서브컬처 IP 스튜디오를 더한 1단계 세 집단 표적",
+      "classification": "decision",
+      "verification": "user_confirmed",
+      "description": "1단계 표적을 세 집단으로 한다. ① AI·음악영상 제작 스튜디오(아이돌·버추얼·서브컬처 음악영상을 맡는 외주 스튜디오·프리랜서 팀), ② 레이블·기획사 콘텐츠팀, ③ 웹툰·서브컬처 IP 스튜디오(신규). 기획사와 IP 권리자는 검수·승인 주체로 참여하고, 세 집단의 1순위는 인터뷰로 정한다. 음원 유통사의 대량 영상화 수요는 3단계 후보, 개인 인디 뮤지션과 개인 VTuber를 위한 초저가 도구는 제외한다. 시장 산정에는 SAM-c(웹툰 제작 및 제공 사업체)를 더한다. 반복 단위에 OST 영상을 더한다(티저·리릭 비디오·숏폼·라이브 MV·MV·OST 영상). 웹툰 같은 원작 IP를 쓰면 권리 확인에 원작 권리자의 이용 허락을 포함한다. 2단계 인접 시장의 '게임·웹툰 IP'는 웹툰을 1단계로 옮겨 '게임 IP'로 줄인다. 개인 VTuber 일반과 실존 아티스트 얼굴·목소리 합성 제외(BP-FACT-014)는 유지한다.",
+      "limit": "타깃 선택은 수요 확인과 다르다. 웹툰 IP 음악영상의 발주 빈도·단가·구매 주체는 확인하지 않았다. BP-FACT-014를 대체하지 않고 확장한다."
+    },
+    {
+      "id": "BP-FACT-016",
+      "type": "submission_policy",
+      "title": "AI 생성 표시 관련 서술 폐기",
+      "classification": "decision",
+      "verification": "user_confirmed",
+      "description": "사업계획 문서에서 AI 기본법 제31조를 근거로 한 서술, AI 생성 표시를 제품 요구사항으로 둔 서술, 13주 기능 추가 예외의 'AI 생성 표시·최소 납품 기록', B구간(10~11주차)의 AI 생성 표시와 최소 납품 기록 구현, 생성 장면 비공개 규칙, 권리·계약 자문 산출물의 AI 생성 표시 방식, YouTube의 AI 공개·C2PA 자동 라벨 서술을 뺀다. 13주 동안 기능 추가의 예외는 유료 검증에 필요한 최소 결제 연결만 남긴다. BP-HYP-010은 폐기한다. 제작 과정 기록(음원 버전·설정·후보·채택 이유·승인·사용권과 동의 근거)과 납품 시 기록 출력, 한국저작권위원회 등록 안내서(2025-06)의 과정 기록 권고, 경쟁 도구의 C2PA·Content Credentials 사실(경쟁 비교용), 권리 확인 정의, 4대 중단 기준은 유지한다.",
+      "limit": "원고 서술 범위에 대한 결정이며 법적 의무의 존재나 적용 여부를 판단한 것이 아니다. AI 기본법 조사 내용은 RESEARCH-20261028.md에 조사 이력으로 남는다."
+    },
+    {
+      "id": "BP-FACT-017",
+      "type": "growth_strategy",
+      "title": "3단계 글로벌 진출과 첫 해외 시장 일본",
+      "classification": "decision",
+      "verification": "user_confirmed",
+      "description": "성장 단계 가운데 3단계만 보강해 '기술 고도화와 글로벌 진출'로 한다. 국내에서 검증한 같은 IP 반복 제작 구조로 해외에 진출하며 첫 해외 시장은 일본이다. 일본어 화면·현지 결제·현지 권리·동의 관행 확인을 진입 조건으로 두고, 이후 다른 해외 시장과 넓은 AI 협업 영상 제작 시장(글로벌 TAM)으로 넓힌다. 1·2단계 서술에는 글로벌을 넣지 않는다(1단계 대상 확장과 2단계 인접 시장 조정은 BP-FACT-015를 따른다).",
+      "limit": "진출 방향의 결정이며 일본 고객 수요·지불 의사·현지 경쟁·규제는 확인하지 않았다. 해외 고객·매출 목표와 진출 시점은 설정하지 않는다."
+    },
+    {
+      "id": "BP-DATA-016",
+      "type": "external_quantitative_indicator",
+      "title": "국내 웹툰 제작 및 제공(CP) 사업체 수",
+      "classification": "evidence",
+      "verification": "source_documented",
+      "value": 306,
+      "unit": "establishments",
+      "period": "2024 (survey published 2026)",
+      "checked_at": "2026-10-28",
+      "description": "「2025년 콘텐츠산업조사(2024년 기준)」 웹툰 제작 및 제공(CP) 사업체 306개, 종사자 3,699명. SAM-c 산식(306 × 연 298만 8,000원 ≈ 9억 1,433만 원, 도입률 100% 이론값)에 쓴다.",
+      "limit": "모든 사업체가 음악영상을 만든다는 뜻이 아니며 게임·애니메이션 IP 사업체는 포함하지 않는다. 종사자 3,699명은 2024년 기준조사부터 출판산업과 중복 업종을 영위하는 사업체의 종사자를 분리하지 않고 중복 집계한 값이라(원문 각주 125·126) 다른 업종·연도와 직접 비교하지 않는다."
+    },
+    {
+      "id": "BP-DATA-017",
+      "type": "external_quantitative_indicator",
+      "title": "독립 아티스트 중 연 음악 수익 1,000달러 미만 비율(Ditto Music 조사)",
+      "classification": "evidence",
+      "verification": "source_documented",
+      "value": 74,
+      "unit": "percent of surveyed independent artists",
+      "period": "past year as stated in the report; survey dates not stated in the original",
+      "checked_at": "2026-10-28",
+      "description": "독립 아티스트 5,039명(112개국) 응답 중 74%가 지난 한 해 음악 수익 1,000달러 미만, 64%가 다른 일을 겸업한다고 답했다(원문 기준). 개인 인디 뮤지션을 위한 초저가 도구를 제외하는 근거로 쓴다. 개인 VTuber 제외는 BP-FACT-014의 기존 결정이며 이 값의 근거 범위가 아니다.",
+      "limit": "Ditto로 음원을 낸 아티스트를 Ditto 채널로 모집한 자가 응답 표본이며 원문에 조사 기간 표기가 없다(보도자료는 2025년 수익으로 표기). VTuber를 따로 잰 값이 아니고 한국 아티스트만의 값도 아니다."
+    },
+    {
+      "id": "BP-DATA-018",
+      "type": "external_quantitative_indicator",
+      "title": "일본의 세계 녹음음악 시장 순위",
+      "classification": "evidence",
+      "verification": "source_documented",
+      "value": 2,
+      "unit": "global rank among recorded music markets",
+      "period": "2025 (IFPI Global Music Report 2026)",
+      "checked_at": "2026-10-28",
+      "description": "IFPI 발표(2026-03-18)는 일본을 세계 2위 시장으로 적고 2025년 8.9% 성장했다고 밝혔다. 3단계 첫 해외 시장 선택의 배경으로 쓴다.",
+      "limit": "녹음음악 매출 순위이며 음악영상 제작 시장이나 Aethon 수요가 아니다."
+    },
+    {
+      "id": "BP-DATA-019",
+      "type": "external_quantitative_indicator",
+      "title": "일본 애니메이션 산업 시장 규모(2024, 속보치)",
+      "classification": "evidence",
+      "verification": "source_documented",
+      "value": 38407,
+      "unit": "100 million JPY (broad industry market)",
+      "period": "2024 preliminary",
+      "checked_at": "2026-10-28",
+      "description": "일본동화협회 속보치로 2024년 애니메이션 산업 시장 3조 8,407억 엔(전년 대비 114.8%), 그중 해외 2조 1,702억 엔(126.0%), 국내 1조 6,705억 엔. 해외가 절반을 넘는 IP 산업이라는 3단계 일본 선택의 배경으로 쓴다.",
+      "limit": "속보치 보도 기준이며 애니메이션 산업 전체다. 음악영상 제작 시장이나 Aethon 수요가 아니다."
+    }
+  ],
+  "relation_types": {
+    "supported_by": "주장 또는 관찰에서 근거 출처로 연결",
+    "depends_on": "소비하는 지식 항목에서 전제 또는 근거 항목으로 연결",
+    "tests": "실험 설계에서 검증할 가설로 연결",
+    "constrained_by": "주장이나 결정에서 확인해야 할 제한으로 연결"
+  },
+  "relations": [
+    {
+      "from": "BP-FACT-001",
+      "type": "supported_by",
+      "to": "BP-SRC-001"
+    },
+    {
+      "from": "BP-FACT-001",
+      "type": "supported_by",
+      "to": "BP-SRC-002"
+    },
+    {
+      "from": "BP-FACT-002",
+      "type": "supported_by",
+      "to": "BP-SRC-002"
+    },
+    {
+      "from": "BP-FACT-003",
+      "type": "supported_by",
+      "to": "BP-SRC-002"
+    },
+    {
+      "from": "BP-FACT-004",
+      "type": "supported_by",
+      "to": "BP-SRC-004"
+    },
+    {
+      "from": "BP-FACT-005",
+      "type": "supported_by",
+      "to": "BP-SRC-002"
+    },
+    {
+      "from": "BP-HYP-001",
+      "type": "supported_by",
+      "to": "BP-SRC-003"
+    },
+    {
+      "from": "BP-HYP-002",
+      "type": "supported_by",
+      "to": "BP-SRC-003"
+    },
+    {
+      "from": "BP-HYP-003",
+      "type": "supported_by",
+      "to": "BP-SRC-003"
+    },
+    {
+      "from": "BP-HYP-004",
+      "type": "supported_by",
+      "to": "BP-SRC-003"
+    },
+    {
+      "from": "BP-UNKNOWN-004",
+      "type": "supported_by",
+      "to": "BP-SRC-004"
+    },
+    {
+      "from": "BP-HYP-001",
+      "type": "depends_on",
+      "to": "BP-HYP-003"
+    },
+    {
+      "from": "BP-HYP-004",
+      "type": "depends_on",
+      "to": "BP-HYP-001"
+    },
+    {
+      "from": "BP-HYP-002",
+      "type": "constrained_by",
+      "to": "BP-UNKNOWN-001"
+    },
+    {
+      "from": "BP-HYP-002",
+      "type": "constrained_by",
+      "to": "BP-UNKNOWN-002"
+    },
+    {
+      "from": "BP-FACT-001",
+      "type": "constrained_by",
+      "to": "BP-UNKNOWN-005"
+    },
+    {
+      "from": "BP-FACT-004",
+      "type": "constrained_by",
+      "to": "BP-UNKNOWN-004"
+    },
+    {
+      "from": "BP-EXP-001",
+      "type": "tests",
+      "to": "BP-HYP-001"
+    },
+    {
+      "from": "BP-EXP-001",
+      "type": "tests",
+      "to": "BP-HYP-004"
+    },
+    {
+      "from": "BP-EXP-002",
+      "type": "tests",
+      "to": "BP-HYP-006"
+    },
+    {
+      "from": "BP-EXP-002",
+      "type": "tests",
+      "to": "BP-HYP-003"
+    },
+    {
+      "from": "BP-DATA-001",
+      "type": "supported_by",
+      "to": "BP-SRC-006"
+    },
+    {
+      "from": "BP-DATA-002",
+      "type": "supported_by",
+      "to": "BP-SRC-006"
+    },
+    {
+      "from": "BP-DATA-003",
+      "type": "supported_by",
+      "to": "BP-SRC-006"
+    },
+    {
+      "from": "BP-DATA-004",
+      "type": "supported_by",
+      "to": "BP-SRC-007"
+    },
+    {
+      "from": "BP-DATA-005",
+      "type": "supported_by",
+      "to": "BP-SRC-008"
+    },
+    {
+      "from": "BP-DATA-006",
+      "type": "supported_by",
+      "to": "BP-SRC-009"
+    },
+    {
+      "from": "BP-DATA-007",
+      "type": "supported_by",
+      "to": "BP-SRC-010"
+    },
+    {
+      "from": "BP-DATA-008",
+      "type": "supported_by",
+      "to": "BP-SRC-011"
+    },
+    {
+      "from": "BP-FACT-006",
+      "type": "supported_by",
+      "to": "BP-SRC-012"
+    },
+    {
+      "from": "BP-FACT-006",
+      "type": "supported_by",
+      "to": "BP-SRC-013"
+    },
+    {
+      "from": "BP-FACT-007",
+      "type": "supported_by",
+      "to": "BP-SRC-012"
+    },
+    {
+      "from": "BP-FACT-007",
+      "type": "supported_by",
+      "to": "BP-SRC-014"
+    },
+    {
+      "from": "BP-FACT-008",
+      "type": "supported_by",
+      "to": "BP-SRC-012"
+    },
+    {
+      "from": "BP-FACT-008",
+      "type": "supported_by",
+      "to": "BP-SRC-013"
+    },
+    {
+      "from": "BP-FACT-009",
+      "type": "supported_by",
+      "to": "BP-SRC-015"
+    },
+    {
+      "from": "BP-HYP-005",
+      "type": "supported_by",
+      "to": "BP-SRC-015"
+    },
+    {
+      "from": "BP-HYP-006",
+      "type": "supported_by",
+      "to": "BP-SRC-014"
+    },
+    {
+      "from": "BP-HYP-006",
+      "type": "depends_on",
+      "to": "BP-FACT-007"
+    },
+    {
+      "from": "BP-DATA-009",
+      "type": "supported_by",
+      "to": "BP-SRC-016"
+    },
+    {
+      "from": "BP-DATA-009",
+      "type": "supported_by",
+      "to": "BP-SRC-017"
+    },
+    {
+      "from": "BP-DATA-010",
+      "type": "supported_by",
+      "to": "BP-SRC-018"
+    },
+    {
+      "from": "BP-DATA-010",
+      "type": "supported_by",
+      "to": "BP-SRC-019"
+    },
+    {
+      "from": "BP-FACT-010",
+      "type": "supported_by",
+      "to": "BP-SRC-020"
+    },
+    {
+      "from": "BP-FACT-010",
+      "type": "supported_by",
+      "to": "BP-SRC-013"
+    },
+    {
+      "from": "BP-FACT-011",
+      "type": "supported_by",
+      "to": "BP-SRC-020"
+    },
+    {
+      "from": "BP-FACT-011",
+      "type": "supported_by",
+      "to": "BP-SRC-022"
+    },
+    {
+      "from": "BP-FACT-012",
+      "type": "supported_by",
+      "to": "BP-SRC-021"
+    },
+    {
+      "from": "BP-FACT-013",
+      "type": "supported_by",
+      "to": "BP-SRC-023"
+    },
+    {
+      "from": "BP-FACT-013",
+      "type": "constrained_by",
+      "to": "BP-UNKNOWN-004"
+    },
+    {
+      "from": "BP-HYP-007",
+      "type": "supported_by",
+      "to": "BP-SRC-004"
+    },
+    {
+      "from": "BP-HYP-007",
+      "type": "supported_by",
+      "to": "BP-SRC-015"
+    },
+    {
+      "from": "BP-HYP-007",
+      "type": "supported_by",
+      "to": "BP-SRC-024"
+    },
+    {
+      "from": "BP-HYP-007",
+      "type": "depends_on",
+      "to": "BP-HYP-005"
+    },
+    {
+      "from": "BP-HYP-007",
+      "type": "depends_on",
+      "to": "BP-FACT-012"
+    },
+    {
+      "from": "BP-HYP-007",
+      "type": "constrained_by",
+      "to": "BP-UNKNOWN-005"
+    },
+    {
+      "from": "BP-HYP-008",
+      "type": "supported_by",
+      "to": "BP-SRC-024"
+    },
+    {
+      "from": "BP-HYP-008",
+      "type": "depends_on",
+      "to": "BP-HYP-006"
+    },
+    {
+      "from": "BP-HYP-008",
+      "type": "depends_on",
+      "to": "BP-FACT-012"
+    },
+    {
+      "from": "BP-HYP-008",
+      "type": "constrained_by",
+      "to": "BP-UNKNOWN-001"
+    },
+    {
+      "from": "BP-HYP-008",
+      "type": "constrained_by",
+      "to": "BP-UNKNOWN-003"
+    },
+    {
+      "from": "BP-FACT-014",
+      "type": "supported_by",
+      "to": "BP-SRC-032"
+    },
+    {
+      "from": "BP-FACT-014",
+      "type": "supported_by",
+      "to": "BP-SRC-025"
+    },
+    {
+      "from": "BP-DATA-011",
+      "type": "supported_by",
+      "to": "BP-SRC-026"
+    },
+    {
+      "from": "BP-DATA-012",
+      "type": "supported_by",
+      "to": "BP-SRC-026"
+    },
+    {
+      "from": "BP-DATA-013",
+      "type": "supported_by",
+      "to": "BP-SRC-027"
+    },
+    {
+      "from": "BP-DATA-014",
+      "type": "supported_by",
+      "to": "BP-SRC-028"
+    },
+    {
+      "from": "BP-DATA-015",
+      "type": "supported_by",
+      "to": "BP-SRC-033"
+    },
+    {
+      "from": "BP-HYP-009",
+      "type": "supported_by",
+      "to": "BP-SRC-034"
+    },
+    {
+      "from": "BP-HYP-009",
+      "type": "supported_by",
+      "to": "BP-SRC-025"
+    },
+    {
+      "from": "BP-HYP-009",
+      "type": "depends_on",
+      "to": "BP-FACT-014"
+    },
+    {
+      "from": "BP-HYP-009",
+      "type": "depends_on",
+      "to": "BP-DATA-011"
+    },
+    {
+      "from": "BP-HYP-009",
+      "type": "depends_on",
+      "to": "BP-DATA-012"
+    },
+    {
+      "from": "BP-HYP-009",
+      "type": "depends_on",
+      "to": "BP-DATA-013"
+    },
+    {
+      "from": "BP-HYP-009",
+      "type": "constrained_by",
+      "to": "BP-UNKNOWN-002"
+    },
+    {
+      "from": "BP-HYP-010",
+      "type": "supported_by",
+      "to": "BP-SRC-030"
+    },
+    {
+      "from": "BP-HYP-010",
+      "type": "supported_by",
+      "to": "BP-SRC-031"
+    },
+    {
+      "from": "BP-HYP-010",
+      "type": "depends_on",
+      "to": "BP-FACT-014"
+    },
+    {
+      "from": "BP-FACT-014",
+      "type": "depends_on",
+      "to": "BP-DATA-015"
+    },
+    {
+      "from": "BP-FACT-015",
+      "type": "supported_by",
+      "to": "BP-SRC-035"
+    },
+    {
+      "from": "BP-FACT-015",
+      "type": "supported_by",
+      "to": "BP-SRC-036"
+    },
+    {
+      "from": "BP-FACT-015",
+      "type": "supported_by",
+      "to": "BP-SRC-037"
+    },
+    {
+      "from": "BP-FACT-015",
+      "type": "supported_by",
+      "to": "BP-SRC-038"
+    },
+    {
+      "from": "BP-FACT-015",
+      "type": "depends_on",
+      "to": "BP-FACT-014"
+    },
+    {
+      "from": "BP-FACT-015",
+      "type": "depends_on",
+      "to": "BP-DATA-016"
+    },
+    {
+      "from": "BP-FACT-015",
+      "type": "depends_on",
+      "to": "BP-DATA-017"
+    },
+    {
+      "from": "BP-FACT-015",
+      "type": "constrained_by",
+      "to": "BP-UNKNOWN-002"
+    },
+    {
+      "from": "BP-FACT-016",
+      "type": "supported_by",
+      "to": "BP-SRC-035"
+    },
+    {
+      "from": "BP-FACT-017",
+      "type": "supported_by",
+      "to": "BP-SRC-035"
+    },
+    {
+      "from": "BP-FACT-017",
+      "type": "depends_on",
+      "to": "BP-HYP-008"
+    },
+    {
+      "from": "BP-FACT-017",
+      "type": "depends_on",
+      "to": "BP-DATA-018"
+    },
+    {
+      "from": "BP-FACT-017",
+      "type": "depends_on",
+      "to": "BP-DATA-019"
+    },
+    {
+      "from": "BP-DATA-016",
+      "type": "supported_by",
+      "to": "BP-SRC-027"
+    },
+    {
+      "from": "BP-DATA-017",
+      "type": "supported_by",
+      "to": "BP-SRC-041"
+    },
+    {
+      "from": "BP-DATA-018",
+      "type": "supported_by",
+      "to": "BP-SRC-006"
+    },
+    {
+      "from": "BP-DATA-019",
+      "type": "supported_by",
+      "to": "BP-SRC-040"
+    },
+    {
+      "from": "BP-HYP-009",
+      "type": "depends_on",
+      "to": "BP-DATA-016"
+    },
+    {
+      "from": "BP-HYP-009",
+      "type": "depends_on",
+      "to": "BP-FACT-015"
+    },
+    {
+      "from": "BP-FACT-015",
+      "type": "supported_by",
+      "to": "BP-SRC-042"
+    }
+  ],
+  "plan_sections": [
+    {
+      "id": "BP-SEC-001",
+      "title": "사업 개요와 피벗",
+      "inputs": [
+        "BP-FACT-001",
+        "BP-FACT-002",
+        "BP-UNKNOWN-005",
+        "BP-FACT-014",
+        "BP-HYP-009",
+        "BP-FACT-015",
+        "BP-FACT-016"
+      ],
+      "writing_goal": "현재 방향과 이전 사업의 관계를 설명하고 승계 범위는 확인 전 비워 둔다."
+    },
+    {
+      "id": "BP-SEC-002",
+      "title": "고객과 문제",
+      "inputs": [
+        "BP-HYP-006",
+        "BP-HYP-003",
+        "BP-UNKNOWN-001",
+        "BP-UNKNOWN-002",
+        "BP-FACT-007",
+        "BP-FACT-008",
+        "BP-FACT-014",
+        "BP-DATA-015",
+        "BP-FACT-015",
+        "BP-DATA-017"
+      ],
+      "writing_goal": "고객 후보와 문제를 가설로 설명하고 시장 규모·실적의 공백을 밝힌다."
+    },
+    {
+      "id": "BP-SEC-003",
+      "title": "제품과 가치 제안",
+      "inputs": [
+        "BP-FACT-002",
+        "BP-FACT-003",
+        "BP-FACT-005",
+        "BP-HYP-001",
+        "BP-HYP-004",
+        "BP-FACT-016"
+      ],
+      "writing_goal": "개인 기본 경로와 기대 효과를 구분하고 기대 효과는 가설로 명시한다."
+    },
+    {
+      "id": "BP-SEC-004",
+      "title": "구현 및 검증 현황",
+      "inputs": [
+        "BP-FACT-004",
+        "BP-UNKNOWN-004",
+        "BP-FACT-009",
+        "BP-HYP-005",
+        "BP-FACT-013",
+        "BP-HYP-007"
+      ],
+      "writing_goal": "시험 표본과 미완료 범위를 함께 제시한다."
+    },
+    {
+      "id": "BP-SEC-005",
+      "title": "시장·경쟁 및 판매",
+      "inputs": [
+        "BP-HYP-006",
+        "BP-HYP-004",
+        "BP-UNKNOWN-001",
+        "BP-UNKNOWN-002",
+        "BP-DATA-001",
+        "BP-DATA-002",
+        "BP-DATA-003",
+        "BP-DATA-004",
+        "BP-DATA-005",
+        "BP-DATA-006",
+        "BP-DATA-007",
+        "BP-FACT-007",
+        "BP-FACT-008",
+        "BP-DATA-010",
+        "BP-FACT-014",
+        "BP-DATA-011",
+        "BP-DATA-012",
+        "BP-DATA-013",
+        "BP-DATA-014",
+        "BP-DATA-015",
+        "BP-HYP-009",
+        "BP-FACT-015",
+        "BP-DATA-016",
+        "BP-DATA-017",
+        "BP-FACT-016"
+      ],
+      "writing_goal": "최신 외부 근거와 실제 고객 조사 후 비교·채널을 작성한다."
+    },
+    {
+      "id": "BP-SEC-006",
+      "title": "수익모델과 재무",
+      "inputs": [
+        "BP-UNKNOWN-001",
+        "BP-UNKNOWN-003",
+        "BP-UNKNOWN-005",
+        "BP-DATA-008",
+        "BP-DATA-009",
+        "BP-HYP-009",
+        "BP-DATA-014"
+      ],
+      "writing_goal": "가격, 비용, 자금의 근거와 산식이 확보될 때까지 수치를 미정으로 둔다."
+    },
+    {
+      "id": "BP-SEC-007",
+      "title": "검증 계획과 다음 단계",
+      "inputs": [
+        "BP-EXP-001",
+        "BP-EXP-002",
+        "BP-UNKNOWN-004",
+        "BP-HYP-008",
+        "BP-FACT-011",
+        "BP-FACT-017",
+        "BP-DATA-018",
+        "BP-DATA-019",
+        "BP-FACT-015",
+        "BP-FACT-016"
+      ],
+      "writing_goal": "실험의 대조군, 측정 기준, 필요한 자원과 실행 여부를 구분한다."
+    },
+    {
+      "id": "BP-SEC-008",
+      "title": "대표자·팀과 자원",
+      "inputs": [
+        "BP-FACT-006",
+        "BP-FACT-008",
+        "BP-UNKNOWN-005",
+        "BP-FACT-010",
+        "BP-FACT-015",
+        "BP-FACT-016"
+      ],
+      "writing_goal": "본인이 확인한 대표 경력·자격·1인 진행과 과거 팀 수상을 구분하고 법인·권리·채용·자금의 남은 공백을 명시한다."
+    }
+  ],
+  "research_documents": [
+    "docs/knowledge/business-plan/RESEARCH-20261027.md",
+    "docs/knowledge/business-plan/COMPETITIVE-PRICES-20261027.md",
+    "docs/knowledge/business-plan/WRITING-GUIDE.md",
+    "artifacts/aethon-business-plan-20261028/research/cost-check.md",
+    "artifacts/aethon-business-plan-20261028/research/market-check.md",
+    "docs/knowledge/business-plan/RESEARCH-20261028.md"
+  ],
+  "updated_at": "2026-10-28"
+}

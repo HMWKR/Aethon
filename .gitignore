@@ -10,3 +10,8 @@ data/
 .playwright-mcp/
 .vscode/
 .DS_Store
+# 로컬 도구 상태와 외부 런타임 링크
+.bkit/
+.omc/
+.serena/
+node_modules

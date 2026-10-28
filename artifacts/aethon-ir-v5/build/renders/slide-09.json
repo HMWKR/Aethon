@@ -1,0 +1,19 @@
+{"schema":"openai.presentation.layout/v5","unit":"px","slide":{"id":"sl/fzfyty","index":8,"layout":{"id":"ly/nq9o32d8","name":"Blank"},"backgroundColor":"rgba(255,255,255,1)","position":{"left":0,"top":0,"width":1600,"height":900}},
+"elements":[
+{"id":"sh/8nutcvul","kind":"textbox","position":{"left":80,"top":46,"width":1100,"height":30},"text":"수익 구조 가설","style":{"fontSize":18,"typeface":"Malgun Gothic","color":"#126A9A","bold":true,"alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"sh/7mls3at0","kind":"textbox","position":{"left":1440,"top":46,"width":80,"height":30},"text":"09","style":{"fontSize":18,"typeface":"Malgun Gothic","color":"#566371","alignment":"right"},"geometry":"rect","lineWidth":0},
+{"id":"sh/6lcba5cf","kind":"textbox","position":{"left":80,"top":98,"width":1440,"height":100},"text":"작업대 구독 + 생성 사용량 과금","style":{"fontSize":50,"typeface":"Malgun Gothic","color":"#151C28","bold":true,"alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"sh/lk3a10bu","kind":"shape","position":{"left":80,"top":829,"width":1440,"height":0},"geometry":"line","lineColor":"#D7E0E8","lineWidth":2},
+{"id":"sh/kjut8vu9","kind":"textbox","position":{"left":80,"top":845,"width":1400,"height":43},"text":"가격·과금 단위·마진 미확정 · 실제 사용과 청구 내역을 바탕으로 검증할 사업 가설","style":{"fontSize":17,"typeface":"Malgun Gothic","color":"#566371","alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"sh/zilszqto","kind":"textbox","position":{"left":80,"top":257,"width":600,"height":65},"text":"작업대 구독","style":{"fontSize":43,"typeface":"Malgun Gothic","color":"#151C28","bold":true,"alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"sh/yhcb6lcj","kind":"textbox","position":{"left":80,"top":361,"width":610,"height":120},"text":"프로젝트·IP·버전·승인 기록\n반복 제작에 필요한 작업 관리","style":{"fontSize":31,"typeface":"Malgun Gothic","color":"#151C28","alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"sh/xwjaxgby","kind":"textbox","position":{"left":748,"top":325,"width":90,"height":90},"text":"+","style":{"fontSize":65,"typeface":"Malgun Gothic","color":"#126A9A","alignment":"center"},"geometry":"rect","lineWidth":0},
+{"id":"sh/cvat4bud","kind":"textbox","position":{"left":920,"top":257,"width":600,"height":65},"text":"생성 사용량","style":{"fontSize":43,"typeface":"Malgun Gothic","color":"#151C28","bold":true,"alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"sh/ulsrq1sr","kind":"textbox","position":{"left":920,"top":361,"width":600,"height":120},"text":"모델 호출과 영상 처리량\n실제 발생 비용을 반영","style":{"fontSize":31,"typeface":"Malgun Gothic","color":"#151C28","alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"sh/vm1sjmtc","kind":"shape","position":{"left":80,"top":565,"width":1440,"height":0},"geometry":"line","lineColor":"#D7E0E8","lineWidth":2},
+{"id":"sh/wnu9srax","kind":"textbox","position":{"left":80,"top":607,"width":520,"height":55},"text":"승인 결과물당 비용","style":{"fontSize":31,"typeface":"Malgun Gothic","color":"#126A9A","bold":true,"alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"sh/ho3alwb2","kind":"textbox","position":{"left":630,"top":610,"width":890,"height":60},"text":"생성·재시도 + 편집·처리 + 저장·전송 + 지원 비용","style":{"fontSize":26,"typeface":"Malgun Gothic","color":"#243D50","bold":true,"alignment":"center"},"geometry":"rect","lineWidth":0},
+{"id":"sh/mxsrmhsf","kind":"shape","position":{"left":625,"top":677,"width":895,"height":0},"geometry":"line","lineColor":"#151C28","lineWidth":2},
+{"id":"sh/7y1sfmt0","kind":"textbox","position":{"left":630,"top":696,"width":890,"height":55},"text":"같은 기간의 승인 결과물 수","style":{"fontSize":27,"typeface":"Malgun Gothic","color":"#151C28","bold":true,"alignment":"center"},"geometry":"rect","lineWidth":0},
+{"id":"sh/8za9oral","kind":"textbox","position":{"left":80,"top":774,"width":1440,"height":40},"text":"실제 청구 초수와 최종 채택 영상 길이를 구분해 측정","style":{"fontSize":25,"typeface":"Malgun Gothic","color":"#566371","alignment":"left"},"geometry":"rect","lineWidth":0}
+]}

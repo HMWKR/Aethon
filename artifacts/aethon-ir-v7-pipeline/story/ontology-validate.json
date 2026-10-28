@@ -1,0 +1,10 @@
+{
+  "valid": true,
+  "node_count": 86,
+  "edge_count": 119,
+  "scope": "business and presentation JSON only",
+  "errors": [],
+  "limitations": [
+    "Validation checks declared structural constraints, not source truth or current external data."
+  ]
+}

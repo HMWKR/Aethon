@@ -1,0 +1,27 @@
+{
+  "checkedAt": "2026-10-28T01:06:06.8947381+09:00",
+  "exitCode": 1,
+  "registryRevision": 26,
+  "objects": 1827,
+  "scope": "Project registry validation only; not platform or model validation",
+  "issuesByCode": [
+    {
+      "Name": "HASH_CHANGED",
+      "Count": 143
+    },
+    {
+      "Name": "UPSTREAM_STALE",
+      "Count": 926
+    }
+  ],
+  "issuesBySeverity": [
+    {
+      "Name": "error",
+      "Count": 143
+    },
+    {
+      "Name": "warning",
+      "Count": 926
+    }
+  ]
+}

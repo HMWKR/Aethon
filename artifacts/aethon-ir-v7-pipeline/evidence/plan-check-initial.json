@@ -1,0 +1,424 @@
+{
+  "valid": false,
+  "planRef": "p-c1d1b69149941e90ab9de180",
+  "findings": [
+    {
+      "severity": "error",
+      "code": "expose",
+      "message": "교체도 keep 선언도 안 된 슬롯 1개의 원본 텍스트를 빈값으로 지웠습니다 — 이대로 저장하면 그 자리가 전부 빈칸으로 렌더됩니다. 채우려면 replacements, 남길 범용 라벨이면 keep, 페이지째 필요 없으면 delete 하세요.",
+      "detail": {
+        "count": 1,
+        "byPage": {
+          "3": [
+            "3n16:0"
+          ]
+        }
+      }
+    },
+    {
+      "severity": "error",
+      "code": "hole",
+      "message": "page 6(최종 5쪽): 6n10 가 지워진 394×328 영역(left 971, top 604)이 0%만 채워져 있습니다 — 이대로 저장하면 빈 영역이 남습니다. 새 표·차트를 넣을 자리면 table_create·chart_create 의 box 를 이 영역에 맞춰 덮으면 해결됩니다. 그 밖에는 실제 데이터로 채우거나(chart_set_data·add_nodes), 남은 요소를 재배치하거나(move_nodes·set_group_count·align_nodes), 페이지를 delete 하세요."
+    },
+    {
+      "severity": "error",
+      "code": "hole",
+      "message": "page 6(최종 5쪽): 6n18 가 지워진 394×328 영역(left 1394, top 604)이 0%만 채워져 있습니다 — 이대로 저장하면 빈 영역이 남습니다. 새 표·차트를 넣을 자리면 table_create·chart_create 의 box 를 이 영역에 맞춰 덮으면 해결됩니다. 그 밖에는 실제 데이터로 채우거나(chart_set_data·add_nodes), 남은 요소를 재배치하거나(move_nodes·set_group_count·align_nodes), 페이지를 delete 하세요."
+    },
+    {
+      "severity": "error",
+      "code": "hole",
+      "message": "page 6(최종 5쪽): 6n27 가 지워진 394×246 영역(left 1394, top 414)이 0%만 채워져 있습니다 — 이대로 저장하면 빈 영역이 남습니다. 새 표·차트를 넣을 자리면 table_create·chart_create 의 box 를 이 영역에 맞춰 덮으면 해결됩니다. 그 밖에는 실제 데이터로 채우거나(chart_set_data·add_nodes), 남은 요소를 재배치하거나(move_nodes·set_group_count·align_nodes), 페이지를 delete 하세요."
+    },
+    {
+      "severity": "error",
+      "code": "hole",
+      "message": "page 6(최종 5쪽): 6n29 가 지워진 394×328 영역(left 124, top 604)이 0%만 채워져 있습니다 — 이대로 저장하면 빈 영역이 남습니다. 새 표·차트를 넣을 자리면 table_create·chart_create 의 box 를 이 영역에 맞춰 덮으면 해결됩니다. 그 밖에는 실제 데이터로 채우거나(chart_set_data·add_nodes), 남은 요소를 재배치하거나(move_nodes·set_group_count·align_nodes), 페이지를 delete 하세요."
+    },
+    {
+      "severity": "error",
+      "code": "hole",
+      "message": "page 6(최종 5쪽): 6n31 가 지워진 394×328 영역(left 548, top 604)이 0%만 채워져 있습니다 — 이대로 저장하면 빈 영역이 남습니다. 새 표·차트를 넣을 자리면 table_create·chart_create 의 box 를 이 영역에 맞춰 덮으면 해결됩니다. 그 밖에는 실제 데이터로 채우거나(chart_set_data·add_nodes), 남은 요소를 재배치하거나(move_nodes·set_group_count·align_nodes), 페이지를 delete 하세요."
+    },
+    {
+      "severity": "error",
+      "code": "hole",
+      "message": "page 6(최종 5쪽): 6n48 가 지워진 394×246 영역(left 971, top 414)이 0%만 채워져 있습니다 — 이대로 저장하면 빈 영역이 남습니다. 새 표·차트를 넣을 자리면 table_create·chart_create 의 box 를 이 영역에 맞춰 덮으면 해결됩니다. 그 밖에는 실제 데이터로 채우거나(chart_set_data·add_nodes), 남은 요소를 재배치하거나(move_nodes·set_group_count·align_nodes), 페이지를 delete 하세요."
+    },
+    {
+      "severity": "error",
+      "code": "hole",
+      "message": "page 6(최종 5쪽): 6n51 가 지워진 394×246 영역(left 548, top 414)이 0%만 채워져 있습니다 — 이대로 저장하면 빈 영역이 남습니다. 새 표·차트를 넣을 자리면 table_create·chart_create 의 box 를 이 영역에 맞춰 덮으면 해결됩니다. 그 밖에는 실제 데이터로 채우거나(chart_set_data·add_nodes), 남은 요소를 재배치하거나(move_nodes·set_group_count·align_nodes), 페이지를 delete 하세요."
+    },
+    {
+      "severity": "error",
+      "code": "hole",
+      "message": "page 6(최종 5쪽): 6n53 가 지워진 394×246 영역(left 124, top 414)이 0%만 채워져 있습니다 — 이대로 저장하면 빈 영역이 남습니다. 새 표·차트를 넣을 자리면 table_create·chart_create 의 box 를 이 영역에 맞춰 덮으면 해결됩니다. 그 밖에는 실제 데이터로 채우거나(chart_set_data·add_nodes), 남은 요소를 재배치하거나(move_nodes·set_group_count·align_nodes), 페이지를 delete 하세요."
+    },
+    {
+      "severity": "error",
+      "code": "hole",
+      "message": "page 6#2(최종 11쪽): 6n10#2 가 지워진 394×328 영역(left 971, top 604)이 0%만 채워져 있습니다 — 이대로 저장하면 빈 영역이 남습니다. 새 표·차트를 넣을 자리면 table_create·chart_create 의 box 를 이 영역에 맞춰 덮으면 해결됩니다. 그 밖에는 실제 데이터로 채우거나(chart_set_data·add_nodes), 남은 요소를 재배치하거나(move_nodes·set_group_count·align_nodes), 페이지를 delete 하세요."
+    },
+    {
+      "severity": "error",
+      "code": "hole",
+      "message": "page 6#2(최종 11쪽): 6n18#2 가 지워진 394×328 영역(left 1394, top 604)이 0%만 채워져 있습니다 — 이대로 저장하면 빈 영역이 남습니다. 새 표·차트를 넣을 자리면 table_create·chart_create 의 box 를 이 영역에 맞춰 덮으면 해결됩니다. 그 밖에는 실제 데이터로 채우거나(chart_set_data·add_nodes), 남은 요소를 재배치하거나(move_nodes·set_group_count·align_nodes), 페이지를 delete 하세요."
+    },
+    {
+      "severity": "error",
+      "code": "hole",
+      "message": "page 6#2(최종 11쪽): 6n27#2 가 지워진 394×246 영역(left 1394, top 414)이 0%만 채워져 있습니다 — 이대로 저장하면 빈 영역이 남습니다. 새 표·차트를 넣을 자리면 table_create·chart_create 의 box 를 이 영역에 맞춰 덮으면 해결됩니다. 그 밖에는 실제 데이터로 채우거나(chart_set_data·add_nodes), 남은 요소를 재배치하거나(move_nodes·set_group_count·align_nodes), 페이지를 delete 하세요."
+    },
+    {
+      "severity": "error",
+      "code": "hole",
+      "message": "page 6#2(최종 11쪽): 6n29#2 가 지워진 394×328 영역(left 124, top 604)이 0%만 채워져 있습니다 — 이대로 저장하면 빈 영역이 남습니다. 새 표·차트를 넣을 자리면 table_create·chart_create 의 box 를 이 영역에 맞춰 덮으면 해결됩니다. 그 밖에는 실제 데이터로 채우거나(chart_set_data·add_nodes), 남은 요소를 재배치하거나(move_nodes·set_group_count·align_nodes), 페이지를 delete 하세요."
+    },
+    {
+      "severity": "error",
+      "code": "hole",
+      "message": "page 6#2(최종 11쪽): 6n31#2 가 지워진 394×328 영역(left 548, top 604)이 0%만 채워져 있습니다 — 이대로 저장하면 빈 영역이 남습니다. 새 표·차트를 넣을 자리면 table_create·chart_create 의 box 를 이 영역에 맞춰 덮으면 해결됩니다. 그 밖에는 실제 데이터로 채우거나(chart_set_data·add_nodes), 남은 요소를 재배치하거나(move_nodes·set_group_count·align_nodes), 페이지를 delete 하세요."
+    },
+    {
+      "severity": "error",
+      "code": "hole",
+      "message": "page 6#2(최종 11쪽): 6n48#2 가 지워진 394×246 영역(left 971, top 414)이 0%만 채워져 있습니다 — 이대로 저장하면 빈 영역이 남습니다. 새 표·차트를 넣을 자리면 table_create·chart_create 의 box 를 이 영역에 맞춰 덮으면 해결됩니다. 그 밖에는 실제 데이터로 채우거나(chart_set_data·add_nodes), 남은 요소를 재배치하거나(move_nodes·set_group_count·align_nodes), 페이지를 delete 하세요."
+    },
+    {
+      "severity": "error",
+      "code": "hole",
+      "message": "page 6#2(최종 11쪽): 6n51#2 가 지워진 394×246 영역(left 548, top 414)이 0%만 채워져 있습니다 — 이대로 저장하면 빈 영역이 남습니다. 새 표·차트를 넣을 자리면 table_create·chart_create 의 box 를 이 영역에 맞춰 덮으면 해결됩니다. 그 밖에는 실제 데이터로 채우거나(chart_set_data·add_nodes), 남은 요소를 재배치하거나(move_nodes·set_group_count·align_nodes), 페이지를 delete 하세요."
+    },
+    {
+      "severity": "error",
+      "code": "hole",
+      "message": "page 6#2(최종 11쪽): 6n53#2 가 지워진 394×246 영역(left 124, top 414)이 0%만 채워져 있습니다 — 이대로 저장하면 빈 영역이 남습니다. 새 표·차트를 넣을 자리면 table_create·chart_create 의 box 를 이 영역에 맞춰 덮으면 해결됩니다. 그 밖에는 실제 데이터로 채우거나(chart_set_data·add_nodes), 남은 요소를 재배치하거나(move_nodes·set_group_count·align_nodes), 페이지를 delete 하세요."
+    },
+    {
+      "severity": "error",
+      "code": "hole",
+      "message": "page 6#3(최종 13쪽): 6n10#3 가 지워진 394×328 영역(left 971, top 604)이 0%만 채워져 있습니다 — 이대로 저장하면 빈 영역이 남습니다. 새 표·차트를 넣을 자리면 table_create·chart_create 의 box 를 이 영역에 맞춰 덮으면 해결됩니다. 그 밖에는 실제 데이터로 채우거나(chart_set_data·add_nodes), 남은 요소를 재배치하거나(move_nodes·set_group_count·align_nodes), 페이지를 delete 하세요."
+    },
+    {
+      "severity": "error",
+      "code": "hole",
+      "message": "page 6#3(최종 13쪽): 6n18#3 가 지워진 394×328 영역(left 1394, top 604)이 0%만 채워져 있습니다 — 이대로 저장하면 빈 영역이 남습니다. 새 표·차트를 넣을 자리면 table_create·chart_create 의 box 를 이 영역에 맞춰 덮으면 해결됩니다. 그 밖에는 실제 데이터로 채우거나(chart_set_data·add_nodes), 남은 요소를 재배치하거나(move_nodes·set_group_count·align_nodes), 페이지를 delete 하세요."
+    },
+    {
+      "severity": "error",
+      "code": "hole",
+      "message": "page 6#3(최종 13쪽): 6n27#3 가 지워진 394×246 영역(left 1394, top 414)이 0%만 채워져 있습니다 — 이대로 저장하면 빈 영역이 남습니다. 새 표·차트를 넣을 자리면 table_create·chart_create 의 box 를 이 영역에 맞춰 덮으면 해결됩니다. 그 밖에는 실제 데이터로 채우거나(chart_set_data·add_nodes), 남은 요소를 재배치하거나(move_nodes·set_group_count·align_nodes), 페이지를 delete 하세요."
+    },
+    {
+      "severity": "error",
+      "code": "hole",
+      "message": "page 6#3(최종 13쪽): 6n29#3 가 지워진 394×328 영역(left 124, top 604)이 0%만 채워져 있습니다 — 이대로 저장하면 빈 영역이 남습니다. 새 표·차트를 넣을 자리면 table_create·chart_create 의 box 를 이 영역에 맞춰 덮으면 해결됩니다. 그 밖에는 실제 데이터로 채우거나(chart_set_data·add_nodes), 남은 요소를 재배치하거나(move_nodes·set_group_count·align_nodes), 페이지를 delete 하세요."
+    },
+    {
+      "severity": "error",
+      "code": "hole",
+      "message": "page 6#3(최종 13쪽): 6n31#3 가 지워진 394×328 영역(left 548, top 604)이 0%만 채워져 있습니다 — 이대로 저장하면 빈 영역이 남습니다. 새 표·차트를 넣을 자리면 table_create·chart_create 의 box 를 이 영역에 맞춰 덮으면 해결됩니다. 그 밖에는 실제 데이터로 채우거나(chart_set_data·add_nodes), 남은 요소를 재배치하거나(move_nodes·set_group_count·align_nodes), 페이지를 delete 하세요."
+    },
+    {
+      "severity": "error",
+      "code": "hole",
+      "message": "page 6#3(최종 13쪽): 6n48#3 가 지워진 394×246 영역(left 971, top 414)이 0%만 채워져 있습니다 — 이대로 저장하면 빈 영역이 남습니다. 새 표·차트를 넣을 자리면 table_create·chart_create 의 box 를 이 영역에 맞춰 덮으면 해결됩니다. 그 밖에는 실제 데이터로 채우거나(chart_set_data·add_nodes), 남은 요소를 재배치하거나(move_nodes·set_group_count·align_nodes), 페이지를 delete 하세요."
+    },
+    {
+      "severity": "error",
+      "code": "hole",
+      "message": "page 6#3(최종 13쪽): 6n51#3 가 지워진 394×246 영역(left 548, top 414)이 0%만 채워져 있습니다 — 이대로 저장하면 빈 영역이 남습니다. 새 표·차트를 넣을 자리면 table_create·chart_create 의 box 를 이 영역에 맞춰 덮으면 해결됩니다. 그 밖에는 실제 데이터로 채우거나(chart_set_data·add_nodes), 남은 요소를 재배치하거나(move_nodes·set_group_count·align_nodes), 페이지를 delete 하세요."
+    },
+    {
+      "severity": "error",
+      "code": "hole",
+      "message": "page 6#3(최종 13쪽): 6n53#3 가 지워진 394×246 영역(left 124, top 414)이 0%만 채워져 있습니다 — 이대로 저장하면 빈 영역이 남습니다. 새 표·차트를 넣을 자리면 table_create·chart_create 의 box 를 이 영역에 맞춰 덮으면 해결됩니다. 그 밖에는 실제 데이터로 채우거나(chart_set_data·add_nodes), 남은 요소를 재배치하거나(move_nodes·set_group_count·align_nodes), 페이지를 delete 하세요."
+    },
+    {
+      "severity": "error",
+      "code": "hole",
+      "message": "page 6#4(최종 17쪽): 6n10#4 가 지워진 394×328 영역(left 971, top 604)이 0%만 채워져 있습니다 — 이대로 저장하면 빈 영역이 남습니다. 새 표·차트를 넣을 자리면 table_create·chart_create 의 box 를 이 영역에 맞춰 덮으면 해결됩니다. 그 밖에는 실제 데이터로 채우거나(chart_set_data·add_nodes), 남은 요소를 재배치하거나(move_nodes·set_group_count·align_nodes), 페이지를 delete 하세요."
+    },
+    {
+      "severity": "error",
+      "code": "hole",
+      "message": "page 6#4(최종 17쪽): 6n18#4 가 지워진 394×328 영역(left 1394, top 604)이 0%만 채워져 있습니다 — 이대로 저장하면 빈 영역이 남습니다. 새 표·차트를 넣을 자리면 table_create·chart_create 의 box 를 이 영역에 맞춰 덮으면 해결됩니다. 그 밖에는 실제 데이터로 채우거나(chart_set_data·add_nodes), 남은 요소를 재배치하거나(move_nodes·set_group_count·align_nodes), 페이지를 delete 하세요."
+    },
+    {
+      "severity": "error",
+      "code": "hole",
+      "message": "page 6#4(최종 17쪽): 6n27#4 가 지워진 394×246 영역(left 1394, top 414)이 0%만 채워져 있습니다 — 이대로 저장하면 빈 영역이 남습니다. 새 표·차트를 넣을 자리면 table_create·chart_create 의 box 를 이 영역에 맞춰 덮으면 해결됩니다. 그 밖에는 실제 데이터로 채우거나(chart_set_data·add_nodes), 남은 요소를 재배치하거나(move_nodes·set_group_count·align_nodes), 페이지를 delete 하세요."
+    },
+    {
+      "severity": "error",
+      "code": "hole",
+      "message": "page 6#4(최종 17쪽): 6n29#4 가 지워진 394×328 영역(left 124, top 604)이 0%만 채워져 있습니다 — 이대로 저장하면 빈 영역이 남습니다. 새 표·차트를 넣을 자리면 table_create·chart_create 의 box 를 이 영역에 맞춰 덮으면 해결됩니다. 그 밖에는 실제 데이터로 채우거나(chart_set_data·add_nodes), 남은 요소를 재배치하거나(move_nodes·set_group_count·align_nodes), 페이지를 delete 하세요."
+    },
+    {
+      "severity": "error",
+      "code": "hole",
+      "message": "page 6#4(최종 17쪽): 6n31#4 가 지워진 394×328 영역(left 548, top 604)이 0%만 채워져 있습니다 — 이대로 저장하면 빈 영역이 남습니다. 새 표·차트를 넣을 자리면 table_create·chart_create 의 box 를 이 영역에 맞춰 덮으면 해결됩니다. 그 밖에는 실제 데이터로 채우거나(chart_set_data·add_nodes), 남은 요소를 재배치하거나(move_nodes·set_group_count·align_nodes), 페이지를 delete 하세요."
+    },
+    {
+      "severity": "error",
+      "code": "hole",
+      "message": "page 6#4(최종 17쪽): 6n48#4 가 지워진 394×246 영역(left 971, top 414)이 0%만 채워져 있습니다 — 이대로 저장하면 빈 영역이 남습니다. 새 표·차트를 넣을 자리면 table_create·chart_create 의 box 를 이 영역에 맞춰 덮으면 해결됩니다. 그 밖에는 실제 데이터로 채우거나(chart_set_data·add_nodes), 남은 요소를 재배치하거나(move_nodes·set_group_count·align_nodes), 페이지를 delete 하세요."
+    },
+    {
+      "severity": "error",
+      "code": "hole",
+      "message": "page 6#4(최종 17쪽): 6n51#4 가 지워진 394×246 영역(left 548, top 414)이 0%만 채워져 있습니다 — 이대로 저장하면 빈 영역이 남습니다. 새 표·차트를 넣을 자리면 table_create·chart_create 의 box 를 이 영역에 맞춰 덮으면 해결됩니다. 그 밖에는 실제 데이터로 채우거나(chart_set_data·add_nodes), 남은 요소를 재배치하거나(move_nodes·set_group_count·align_nodes), 페이지를 delete 하세요."
+    },
+    {
+      "severity": "error",
+      "code": "hole",
+      "message": "page 6#4(최종 17쪽): 6n53#4 가 지워진 394×246 영역(left 124, top 414)이 0%만 채워져 있습니다 — 이대로 저장하면 빈 영역이 남습니다. 새 표·차트를 넣을 자리면 table_create·chart_create 의 box 를 이 영역에 맞춰 덮으면 해결됩니다. 그 밖에는 실제 데이터로 채우거나(chart_set_data·add_nodes), 남은 요소를 재배치하거나(move_nodes·set_group_count·align_nodes), 페이지를 delete 하세요."
+    },
+    {
+      "severity": "error",
+      "code": "hole",
+      "message": "page 9#2(최종 10쪽): 9n42#2 가 지워진 813×192 영역(left 124, top 732)이 0%만 채워져 있습니다 — 이대로 저장하면 빈 영역이 남습니다. 새 표·차트를 넣을 자리면 table_create·chart_create 의 box 를 이 영역에 맞춰 덮으면 해결됩니다. 그 밖에는 실제 데이터로 채우거나(chart_set_data·add_nodes), 남은 요소를 재배치하거나(move_nodes·set_group_count·align_nodes), 페이지를 delete 하세요."
+    },
+    {
+      "severity": "warning",
+      "code": "series_text",
+      "message": "9n36#2:0: 수치 4개를 이어 넣은 계열 후보(\"2V · 5초 $0.35 · 60\")가 텍스트에 있습니다. 실제 계열이면 전체 값을 기존 표·차트 또는 table_create·chart_create 에 먼저 담고 본문을 요약하세요. 값을 삭제해 경고만 없애지 마세요. 이미 담긴 요약·오탐의 판단은 안내서 design/plan-data의 \"데이터로 표·차트 새로 만들기\"를 따르세요."
+    },
+    {
+      "severity": "warning",
+      "code": "grow_overlap",
+      "message": "최종 10쪽: 9n41#2 가 원본 1줄에서 2줄로 자라 9n34#2 를 가립니다 (left=124.3, top=279.8, width=64.3, height=64.3) (작은 쪽의 100%). 텍스트를 줄이는 것이 먼저이고, 제목·부제·아이콘처럼 한 묶음이 분명하면 move_nodes 로 함께 옮기세요. 가림을 없애려고 9n34#2 를 지우거나 fontSize 를 지정하지 마세요.",
+      "detail": {
+        "pageIndex": 9,
+        "node": "9n41#2",
+        "other": "9n34#2",
+        "was": 1,
+        "now": 2,
+        "kind": "overlap",
+        "overlapRatio": 1,
+        "beforeRatio": 0,
+        "intersection": {
+          "left": 124.28044991338834,
+          "top": 279.76583788259387,
+          "width": 64.33108070944184,
+          "height": 64.33108070944184
+        }
+      }
+    },
+    {
+      "severity": "warning",
+      "code": "grow_overlap",
+      "message": "최종 10쪽: 9n41#2 가 원본 1줄에서 2줄로 자라 9n35#2 를 가립니다 (left=128.8, top=284.3, width=55.3, height=55.3) (작은 쪽의 100%). 텍스트를 줄이는 것이 먼저이고, 제목·부제·아이콘처럼 한 묶음이 분명하면 move_nodes 로 함께 옮기세요. 가림을 없애려고 9n35#2 를 지우거나 fontSize 를 지정하지 마세요.",
+      "detail": {
+        "pageIndex": 9,
+        "node": "9n41#2",
+        "other": "9n35#2",
+        "was": 1,
+        "now": 2,
+        "kind": "overlap",
+        "overlapRatio": 1,
+        "beforeRatio": 0,
+        "intersection": {
+          "left": 128.78896163426612,
+          "top": 284.274349603472,
+          "width": 55.314057267685484,
+          "height": 55.314057267685484
+        }
+      }
+    },
+    {
+      "severity": "warning",
+      "code": "table_overlap",
+      "message": "최종 10쪽: 새 표 3728b03c-4735-5fb2-bbc5-25c740c60252 와 9n36#2 의 경계가 (left=124.3, top=475.0, width=594.7, height=5.0)에서 교차합니다 (작은 쪽의 5.3%). 실제 셀·글자 가림은 화면과 함께 확인하세요. 저장 전 안내서 design/plan-data의 \"표 영역 확보와 묶음 이동\"에 따라 검토하세요.",
+      "detail": {
+        "pageIndex": 9,
+        "table": "3728b03c-4735-5fb2-bbc5-25c740c60252",
+        "node": "9n36#2",
+        "tableBox": {
+          "left": 124,
+          "top": 475,
+          "width": 1665,
+          "height": 225.28
+        },
+        "nodeBox": {
+          "left": 124.28044991338834,
+          "top": 385.3856286174871,
+          "width": 594.7,
+          "height": 94.65879,
+          "angle": 0,
+          "angleType": "radian"
+        },
+        "intersection": {
+          "left": 124.28044991338834,
+          "top": 475,
+          "width": 594.7,
+          "height": 5.044418617487111
+        },
+        "overlapRatio": 0.053290546155165416
+      }
+    },
+    {
+      "severity": "warning",
+      "code": "dup",
+      "message": "0n1 · 0n15: 같은 문구가 한 페이지에 중복 배치됐습니다 ('AETHON')"
+    },
+    {
+      "severity": "info",
+      "code": "plan",
+      "message": "템플릿 13p → 최종 19p (delete 5 · delete_nodes 26 · duplicate 6 · reorder 1 · replace_image 1 · table_create 2) | 최종 순서: 0, 3, 3#2, 4, 6, 3#3, 4#2, 9, 7, 9#2, 6#2, 10, 6#3, 10#2, 2, 3#4, 6#4, 2#2, 4#3"
+    },
+    {
+      "severity": "info",
+      "code": "group",
+      "message": "39개 배지 텍스트 가운데 정렬"
+    },
+    {
+      "severity": "info",
+      "code": "fit",
+      "message": "텍스트 1건의 크기를 자동으로 맞췄습니다 — 박스보다 넓거나 옆 텍스트에 닿은 슬롯은 fontSize 를 줄였고, 명시적 개행은 줄 수가 늘어납니다.",
+      "detail": {
+        "count": 1,
+        "notes": [
+          "9n41#2: 명시적 개행으로 1줄 늘어납니다 — 위아래 요소와 겹칠 수 있습니다"
+        ]
+      }
+    },
+    {
+      "severity": "info",
+      "code": "word_break",
+      "message": "한글 본문 95개의 줄바꿈을 어절 단위(keep-all)로 바꿨습니다 — 어절 중간에서 줄이 끊기지 않습니다. 줄 수와 grow·orphan 은 이 규칙으로 센 값이고, 폭을 넘는 어절이 있는 슬롯은 바꾸지 않았습니다.",
+      "detail": {
+        "count": 95,
+        "notes": [
+          "0n8: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "2n39: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "2n32: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "2n25: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "2n20: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "3n30: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "3n24: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "3n29: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "3n18: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "3n17: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "4n23: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "4n50: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "4n41: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "4n42: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "4n44: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "4n22: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "4n43: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "4n16: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "4n21: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "6n17: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "6n19: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "7n28: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "7n29: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "7n57: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "7n54: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "7n6: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "7n27: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "7n39: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "7n14: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "9n41: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "9n36: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "10n20: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "10n42: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "10n41: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "10n38: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "10n45: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "10n25: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "10n1: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "10n43: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "10n37: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "10n4: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "10n44: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "3n30#2: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "3n24#2: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "3n19#2: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "3n29#2: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "3n26#2: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "3n18#2: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "3n27#2: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "3n17#2: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "3n30#3: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "3n24#3: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "3n29#3: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "3n18#3: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "3n27#3: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "3n17#3: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "6n17#2: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "6n19#2: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "6n17#3: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "6n19#3: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "10n20#2: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "10n42#2: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "10n41#2: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "10n38#2: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "10n25#2: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "10n1#2: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "10n43#2: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "10n37#2: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "10n4#2: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "10n44#2: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "3n30#4: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "3n24#4: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "3n29#4: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "3n18#4: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "3n17#4: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "6n17#4: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "6n19#4: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "4n23#2: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "4n41#2: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "4n44#2: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "4n43#2: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "4n16#2: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "4n21#2: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "2n39#2: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "2n32#2: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "2n25#2: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "2n20#2: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "9n41#2: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "9n36#2: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "4n23#3: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "4n41#3: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "4n44#3: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "4n43#3: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "4n16#3: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다.",
+          "4n21#3: 줄바꿈을 어절 단위(keep-all)로 바꿨습니다."
+        ]
+      }
+    },
+    {
+      "severity": "info",
+      "code": "running_applied",
+      "message": "3n4:0: 반복 라벨 'AETHON' 을 다른 페이지의 같은 자리 17곳에 복사했습니다."
+    },
+    {
+      "severity": "info",
+      "code": "running_applied",
+      "message": "3n28:0: 반복 라벨 'Aethon IR 2026' 을 다른 페이지의 같은 자리 17곳에 복사했습니다."
+    },
+    {
+      "severity": "info",
+      "code": "enclosure",
+      "message": "한 줄 제목을 감싼 외곽 도형의 폭을 글자 폭 변화에 맞춰 조정한 곳 6개입니다.",
+      "detail": {
+        "count": 6,
+        "notes": [
+          "2n15: 외곽 도형 2n8 폭을 167.4→175.4px 로 조정했습니다.",
+          "2n16: 외곽 도형 2n9 폭을 167.4→135.4px 로 조정했습니다.",
+          "2n38: 외곽 도형 2n40 폭을 167.4→174.2px 로 조정했습니다.",
+          "2n15#2: 외곽 도형 2n8#2 폭을 167.4→125.8px 로 조정했습니다.",
+          "2n16#2: 외곽 도형 2n9#2 폭을 167.4→159.8px 로 조정했습니다.",
+          "2n38#2: 외곽 도형 2n40#2 폭을 167.4→128.6px 로 조정했습니다."
+        ]
+      }
+    },
+    {
+      "severity": "info",
+      "code": "image",
+      "message": "0n9: 34nAL0cXGNawfCMXY024o 리소스로 교체했습니다 — 박스를 덮도록 x0.380 로 맞춰 중앙 크롭 (원본의 94% 가 보임)."
+    }
+  ]
+}

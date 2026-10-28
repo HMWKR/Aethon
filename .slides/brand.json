@@ -1,0 +1,22 @@
+{
+  "fidelity": "brand",
+  "template": "C:/Users/jusan/Desktop/AethonP/artifacts/aethon-ir-v6/output/Aethon-IR-v6.1-MiriCanvas.pptx",
+  "fonts": {
+    "heading": "Pretendard Medium",
+    "body": "Pretendard Light"
+  },
+  "colours": {
+    "ink": "#000000",
+    "paper": "#FFFFFF",
+    "accent": "#7BD1FA",
+    "accent2": "#D3FDF4",
+    "muted": "#4B5563"
+  },
+  "source": {
+    "kind": "user_selected_existing_deck_and_template_manifest",
+    "deck": "C:/Users/jusan/Desktop/AethonP/artifacts/aethon-ir-v6/output/Aethon-IR-v6.1-MiriCanvas.pptx",
+    "template_manifest": "C:/Users/jusan/Desktop/AethonP/artifacts/aethon-ir-v6/evidence/template-manifest.json",
+    "capture_date": "2026-10-28",
+    "note": "Observed style for the current Aethon IR task; not a verified company-wide identity guide. PPTX also uses Pretendard Regular and LINE Seed Sans TH Bold/Regular. Original template includes sky-to-mint gradients and rounded pale-gray surfaces."
+  }
+}

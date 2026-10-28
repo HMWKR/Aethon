@@ -1,0 +1,10 @@
+{"schema":"openai.presentation.layout/v5","unit":"px","slide":{"id":"sl/jdderz","index":0,"layout":{"id":"ly/nq9o32d8","name":"Blank"},"backgroundColor":"rgba(255,255,255,1)","position":{"left":0,"top":0,"width":1600,"height":900}},
+"elements":[
+{"id":"sh/54zqd432","kind":"textbox","position":{"left":80,"top":60,"width":900,"height":45},"text":"REALIZESOFT","style":{"fontSize":25,"typeface":"Malgun Gothic","color":"#151C28","bold":true,"alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"sh/ih87ip4r","kind":"textbox","position":{"left":82,"top":260,"width":860,"height":130},"text":"개인 VTuber·소규모 버추얼팀의\nAI 음악영상 제작 작업대","style":{"fontSize":39,"typeface":"Malgun Gothic","color":"#151C28","alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"sh/jih8bulc","kind":"textbox","position":{"left":75,"top":395,"width":920,"height":150},"text":"AETHON","style":{"fontSize":126,"typeface":"Malgun Gothic","color":"#151C28","bold":true,"alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"sh/wf6pgfml","kind":"textbox","position":{"left":84,"top":564,"width":820,"height":70},"text":"한 캐릭터의 다음 음악영상까지","style":{"fontSize":32,"typeface":"Malgun Gothic","color":"#126A9A","alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"im/ob2pkjmh","kind":"image","position":{"left":990,"top":225,"width":530,"height":530},"fit":"contain","alt":"Aethon-Ink-Symbol.png"},
+{"id":"sh/ado7e54f","kind":"textbox","position":{"left":84,"top":750,"width":1050,"height":70},"text":"이성민  RealizeSoft(현실화하는소프트) 대표\n경복대학교 소프트웨어융합학과","style":{"fontSize":23,"typeface":"Malgun Gothic","color":"#151C28","alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"sh/vex87al0","kind":"textbox","position":{"left":84,"top":846,"width":1100,"height":30},"text":"2026 창업아이디어 경진대회","style":{"fontSize":18,"typeface":"Malgun Gothic","color":"#566371","alignment":"left"},"geometry":"rect","lineWidth":0}
+]}
